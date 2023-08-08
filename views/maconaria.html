@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maçonaria</title>
+  <link rel="icon" href="../img/logo_icon.png">
+  <link rel="stylesheet" href="../css/css.css">
+  <link href="../assets/css/solid.css" rel="stylesheet">
+  <link href="../assets/css/brands.css" rel="stylesheet">
+  <link href="../assets/css/fontawesome.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <section id="modal-area">
+    <div id="modal-conteudo">
+      <div id="modal-img">
+        <img src="../img/logo_icon.png">
+        <button id="btn-fechar-area" onclick="areaRestritaAberta()"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="modal-campos">
+        <form action="">
+          <input type="text" placeholder="CIM" required>
+          <input type="password" placeholder="Senha" required>
+          <div id="recaptcha" class="g-recaptcha" data-sitekey="your_site_key"></div>
+          <button type="submits">Acessar</button>
+        </form>
+        <a onclick="modalRecurar()">Esqueci minha senha</a>
+        <a onclick="modalPrimeiro()">Primeiro acesso</a>
+      </div>
+      <div id="modal-recuperar">
+        <form action="">
+          <input type="text" placeholder="CPF" required>
+          <button type="submit" onclick="mostrarMensagemRecuperar()">Enviar</button>
+          <h5 id="mensagem-recuperacao">Uma nova senha para meu email!</h5>
+        </form>
+        <a onclick="modalRecurar(); ocultarMensagemRecuperar();">Lembrou da Senha? Faça o Login</a>
+      </div>
+      <div id="modal-primeiro">
+        <form action="">
+          <input type="text" placeholder="CPF" required>
+          <input type="text" placeholder="CIM" required>
+          <button type="submit" onclick="mostrarMensagemPrimeiro()">Enviar</button>
+          <h5 id="mensagem-primeiro">Uma senha para meu email!</h5>
+        </form>
+        <a onclick="modalPrimeiro(); ocultarMensagemPrimeiro();">Não é seu primeiro acesso? Faça o Login</a>
+      </div>
+    </div>
+  </section>
+
+  <header id="top">
+    <figure id="logo">
+      <a href="../index.html">
+        <img src="../img/logo-gorgs.png">
+      </a>
+      <div id="logo-cont">
+        <a id="logo-home" href="../index.html">
+          <img src="../img/logo-txt.png">
+        </a>
+        <div>
+          <a id="icone-facebook" href="https://www.facebook.com/grandeorienters" target="_blank">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a id="icone-twitter" href="https://twitter.com/gorgs_comab" target="_blank">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a id="icone-youtube" href="https://www.youtube.com/channel/UCqd2UyXMiOHVNWdphQYjc0Q" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </figure>
+
+    <div id="mobile">
+      <button onclick="mobile()"><i class="fa-sharp fa-solid fa-bars"></i></button>
+    </div>
+
+    <!-- Menu padrão -->
+
+    <nav id="menu">
+      <ul>
+
+        <div id="dropdown-main">
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              <p>
+                GORGS Digital
+              </p>
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
+            </a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="">Ciclo de Palestras</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Cursos</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Biblioteca Virtual</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">GORGS TV</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              <p>
+                Gerir Loja
+              </p>
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
+            </a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="">Processos</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Cadastro da Loja</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Nominata</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Irmãos da Loja</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Financeiro</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Sistema de Lojas</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              Institucional
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i></a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="../views/institucional.html">O GORGS</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/poder-executivo.html">Poder Executivo</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/palm.html">Poder Legislativo</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/poder-judiciario.html">Poder Judiciário</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/lojas.html">Lojas Maçônicas</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="../views/noticias.html">Notícias</a>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="">Eleição</a>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="../views/contato.html">Contatos</a>
+          </div>
+
+        </div>
+
+        <div id="btn-area">
+          <button id="area" onclick="areaRestritaFechada()">Olá, Fulano
+            <i id="icon-area" class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+
+      </ul>
+    </nav>
+
+    <!-- Menu Mobile -->
+
+    <nav id="menu-mobile">
+
+      <div id="perfil">
+        <div id="perfil-img">
+          <img src="../img/sem_foto.jpg">
+        </div>
+        <div id="perfil-info">
+          <p>Fulano Rodriguês da Silva Santos Corrêa</p>
+          <p>CIM: 55555</p>
+          <p>Venerável Mestre Marcelo Moreira Tostes</p>
+          <p>Iniciação: 01/01/2000</p>
+          <p>Elevação: 01/01/2000</p>
+          <p>Exaltação: 01/01/2000</p>
+          <p>Instalação: 01/01/2000</p>
+        </div>
+        <a id="btn-config" href="">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+      </div>
+      <div id="topicos">
+        <hr>
+        <hr>
+        <hr>
+        <button onclick="dropdownMenuLateral('meu-perfil-top-mobi', 'perfil-arrow-mobi')">
+          Meu Perfil
+          <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down droped-arrow"></i>
+        </button>
+        <div id="meu-perfil-top-mobi" class="droped-cont">
+          <a href="">Página do Irmão</a>
+          <hr>
+          <a href="">Dados</a>
+          <hr>
+          <a href="">Preferências</a>
+          <hr>
+          <a href="">Financeiro</a>
+          <hr>
+          <a href="">Presenças</a>
+          <hr>
+          <a href="">Troca de Senha</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('publicacoes-top-mobi', 'publicacoes-arrow-mobi')">
+          Publicações
+          <i id="publicacoes-arrow-mobi" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="publicacoes-top-mobi">
+          <a href="">Boletim Informativo</a>
+          <hr>
+          <a href="">Legislação</a>
+          <hr>
+          <a href="">Rituais Especiais</a>
+          <hr>
+          <a href="">Formulários</a>
+          <hr>
+          <a href="">Diversos</a>
+          <hr>
+          <a href="">Eleição</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('loja-top-mobi', 'loja-arrow-mobi')">
+          Loja
+          <i id="loja-arrow-mobi" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="loja-top-mobi">
+          <a href="">Atas / Balaústres</a>
+          <hr>
+          <a href="">Candidatos</a>
+          <hr>
+          <a href="">Aniversários</a>
+        </div>
+        <hr>
+        <a href="">
+          <button>
+            Troca de Loja
+          </button>
+        </a>
+        <hr>
+        <a href="">
+          <button>
+            Banco de Negócios
+          </button>
+        </a>
+        <hr>
+        <hr>
+        <hr>
+        <button onclick="dropdownMenuLateral('digital-top', 'digital-arrow')">
+          GORGS Digital
+          <i id="digital-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="digital-top">
+          <a href="">Ciclo de Palestras</a>
+          <hr>
+          <a href="">Cursos</a>
+          <hr>
+          <a href="">Biblioteca Virtual</a>
+          <hr>
+          <a href="">GORGS TV</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('gerir-top', 'gerir-arrow')">
+          Gerir Loja
+          <i id="gerir-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="gerir-top">
+          <a href="">Processos</a>
+          <hr>
+          <a href="">Cadastro da Loja</a>
+          <hr>
+          <a href="">Nominata</a>
+          <hr>
+          <a href="">Irmãos da Loja</a>
+          <hr>
+          <a href="">Financeiro</a>
+          <hr>
+          <a href="">Sistema de Lojas</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('inst-top', 'inst-arrow')">
+          Institucional
+          <i id="inst-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="inst-top">
+          <a href="../views/institucional.html">O GORGS</a>
+          <hr>
+          <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
+          <hr>
+          <a href="../views/poder-executivo.html">Poder Executivo</a>
+          <hr>
+          <a href="../views/palm.html">Poder Legislativo</a>
+          <hr>
+          <a href="../views/poder-judiciario.html">Poder Judiciário</a>
+          <hr>
+          <a href="../views/lojas.html">Lojas Maçônicas</a>
+          <hr>
+          <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
+        </div>
+        <hr>
+        <a href="../views/noticias.html">
+          <button>
+            Notícias
+          </button>
+        </a>
+        <hr>
+        <a href="">
+          <button>
+            Eleição
+          </button>
+        </a>
+        <hr>
+        <a href="../views/contato.html">
+          <button>
+            Contatos
+          </button>
+        </a>
+        <hr>
+        <hr>
+        <hr>
+        <a href="">
+            <button>
+              Sair
+            </button>
+          </a>
+          <hr>
+          <button id="area-mobile" onclick="areaRestritaAberta()">FAÇA SEU LOGIN</button>
+          <hr>
+          <hr>
+        <hr>
+      </div>
+    </nav>
+
+    <div id="home">
+      <a href="#top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+
+  </header>
+
+  <main id="main">
+    <div id="maconaria">
+      <div id="maconaria-titulo">
+        <div id="maconaria-text">
+          <h2>MAÇONARIA</h2>
+          <p>A Maçonaria é uma instituição essencialmente filantrópica, educativa, progressista e iniciática
+            que
+            proclama a prevalência do espírito sobre a matéria. Pugna pelo aperfeiçoamento moral,
+            intelectual e
+            social da humanidade, por meio do cumprimento inflexível do dever, da prática desinteressada da
+            beneficência e da investigação constante da verdade.</p>
+        </div>
+        <div id="maconaria-img">
+          <img src="../img/icone_maconaria.png">
+        </div>
+      </div>
+      <div id="maconaria-conteudo">
+
+      </div>
+    </div>
+    <div id="oq-e">
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont1', 'seta1')">
+          <i id="seta1" class="fa-solid fa-chevron-down"></i>O QUE É A MAÇONARIA?
+        </button>
+
+        <div id="cont1">
+          <p>
+            A Maçonaria é uma organização fraternal que tem como princípio básico o amor fraterno, a prática da
+            caridade e a busca da Verdade. Existe um velho ditado que diz: “A Maçonaria escolhe homens de bem e
+            faz deles ainda melhores”. É normal dizer-se que os homens são o produto do meio que frequentam
+            durante as suas vidas. A Maçonaria oferece a cada um dos seus membros a oportunidade de conviver
+            regularmente com homens de bom caráter, o que reforça o seu próprio desenvolvimento pessoal e moral.
+            A garantia dessa fraternal convivência é conseguida pela proibição de discussões
+            politico-partidárias ou religioso-sectárias, visto que esses assuntos, têm dividido os homens ao
+            longo da história. Os maçons, sem discutir as suas crenças pessoais nestes dois assuntos, incentivam
+            os homens a serem religiosos sem particularizar uma religião e encoraja-os a serem ativos nas suas
+            comunidades, também sem particularizar o meio de expressão política. Os maçons, também conhecidos
+            como “pedreiros livres”, não encontram na Maçonaria ensinamentos sobre a arte da construção, como o
+            faziam os maçons operativos da Idade Média. Assim, as ferramentas comuns que eram usadas pelos
+            canteiros medievais, como o maço, o cinzel, o nivel, o prumo, o compasso e outros, têm cada uma um
+            significado simbólico na Maçonaria. A Maçonaria distingue-se de outras ordens fraternais pela sua
+            ênfase no caráter moral, no seu sistema de rituais e na sua longa tradição, com uma história que
+            data aproximadamente do século XVII. Há três graus na Maçonaria, Aprendiz, Companheiro e Mestre. A
+            maioria das lojas têm reuniões regulares e semanais e congregam-se em potências Maçônicas, chamadas
+            Grandes Lojas ou Grandes Orientes.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont2', 'seta2')">
+          <i id="seta2" class="fa-solid fa-chevron-down"></i>O QUE É RITO?
+        </button>
+
+        <div id="cont2">
+          <p>
+            O Rito é um corpo de normas que regem os trabalhos de uma Loja, quando em reunião regular.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont3', 'seta3')">
+          <i id="seta3" class="fa-solid fa-chevron-down"></i>SE A MAÇONARIA NÃO É UMA RELIGIÃO, PORQUE É QUE USA UM
+          RITUAL?
+        </button>
+
+        <div id="cont3">
+          <p>
+            A relação entre ritual e religião é muito freqüente, mas se analisarmos o assunto vamos notar que os
+            rituais são uma parte de nós que pouco notamos. Ritual é simplesmente a maneira como algumas coisas
+            são feitas,uma espécie de procedimento padrão para impor ordem e disciplina aos trabalhos. Uma
+            reunião de condôminos obedece a uma ordem determinada, da mesma forma que uma reunião de pais e
+            professores num colégio. Sem essa seqüência de atos a serem vencidos, temos a indisciplina e a perda
+            de tempo. O resultado será sempre questionável. Há rituais sociais ou convenções que nos dizem como
+            participar de uma conversação, esperando por uma pausa, como enfrentar uma fila, com paciência, sem
+            empurrar ou tentar passar à frente com algum tipo de artifício. A Maçonaria usa um ritual porque é
+            um modo efetivo para ensinar idéias importantes. Além disso, o ritual Maçônico é muito rico e muito
+            antigo, remontando aos primórdios de sua criação.
+          </p>
+        </div>
+      </div>
+
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont4', 'seta4')">
+          <i id="seta4" class="fa-solid fa-chevron-down"></i>O QUE SE APRENDE AO SE ENTRAR PARA A MAÇONARIA?
+        </button>
+
+        <div id="cont4">
+          <p>
+            Os maçons aprendem os seus preceitos em reuniões, que seguem liturgias, herdadas dos usos e costumes
+            dos antigos (medievais) construtores de catedrais, utilizando como meio de transmissão dos seus
+            ensinamentos, os símbolos e as alegorias dos antigos pedreiros. Entre outras coisas, nas Lojas
+            maçônicas aprende-se a amar a pátria em que se vive, a se submeter às leis e às autoridades
+            legalmente constituídas e considerar o trabalho como um dever essencial ao ser humano. A Maçonaria
+            ensina e pratica os princípios e os ideais da decência, honestidade, gentileza, honradez,
+            compreensão e afeto.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont5', 'seta5')">
+          <i id="seta5" class="fa-solid fa-chevron-down"></i>O QUE É UM TEMPLO MAÇÔNICO?
+        </button>
+
+        <div id="cont5">
+          <p>
+            Templo é o local onde se realizam as reuniões regulares das Lojas Maçónicas. Essas reuniões, nos
+            seus primórdios, não eram feitas em local específico. A partir de construção do Freemason’s hall, na
+            Inglaterra, em 1776, as reuniões ganharam um local fixo. Muitas Lojas, em função do tamanho de seu
+            quadro, utilizam as instalações ou templos de outras lojas.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont6', 'seta6')">
+          <i id="seta6" class="fa-solid fa-chevron-down"></i>OS MAÇONS SÃO RACISTAS OU ELITISTAS?
+        </button>
+
+        <div id="cont6">
+          <p>
+            Quanto ao racismo, a Maçonaria estabelece explicitamente a igualdade entre os homens sem considerar
+            raça, credo ou cor. Se considerarmos que apenas são convidados a participar da Maçonaria homens
+            virtuosos e representantes da sociedade, pode-se dizer que ela é uma elite, embora o correto seja
+            afirmar que ela impõe critérios rigorosos para a iniciação de um novo membro. Costuma-se dizer que:
+            o que no homem comum é uma virtude, no maçom é uma obrigação. Como se depreende, os critérios de
+            seleção não se baseiam em valores materiais. A Maçonaria congrega uma ampla faixa de pessoas:
+            profissionais liberais, comerciantes, professores, artistas, políticos, trabalhadores
+            especializados, bancários, banqueiros, militares empresários, etc.. perante a Maçonaria todos são
+            iguais.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont7', 'seta7')">
+          <i id="seta7" class="fa-solid fa-chevron-down"></i>QUEM É O CHEFE DA MAÇONARIA?
+        </button>
+
+        <div id="cont7">
+          <p>
+            A Maçonaria não tem um chefe propriamente dito, mas cada Potência Maçônica é presidida por um
+            oficial denominado Grão-Mestre. Eleito periodicamente pelo povo maçônico da jurisdição, o
+            Grão-Mestre é a autoridade máxima em sua Potência Maçônica.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont8', 'seta8')">
+          <i id="seta8" class="fa-solid fa-chevron-down"></i>UMA VEZ INICIADO NA MAÇONARIA, UMA PESSOA JAMAIS PODERÁ
+          SAIR?
+        </button>
+
+        <div id="cont8">
+          <p>
+            Não há esse impedimento. Desejando afastar-se da Maçonaria, basta que o maçom requeira o seu
+            afastamento a Loja, pois isso é um direito seu. A Maçonaria preza a liberdade dos seus membros tanto
+            quanto luta para preservar a liberdade dos cidadãos em geral.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont9', 'seta9')">
+          <i id="seta9" class="fa-solid fa-chevron-down"></i>A MAÇONARIA É UMA RELIGIÃO?
+        </button>
+
+        <div id="cont9">
+          <p>
+            Não, a Maçonaria não é uma religião, mas defende a existência de um Ser Supremo ou princípio
+            Criador. Uma religião é muito mais complexa, implicando em detalhes como a existência de um plano
+            para salvação ou caminho pelo qual se alcança uma recompensa depois da vida terrena. Implica também
+            numa teologia que tenta descrever a natureza de Deus e divulga a descrição de modos ou práticas
+            pelos quais um homem ou uma mulher podem buscar comunicar-se com Deus. A Maçonaria não faz nenhuma
+            dessas coisas. Apenas abre e fecha os seus trabalhos com uma oração e ensina que nenhum homem
+            deveria começar qualquer empresa importante sem antes buscar apoio espiritual em Deus. Apesar disso,
+            não ensina aos homens como eles devem rezar ou o que devem pedir. Ao invés disso, prega que cada um
+            tem que achar as suas respostas para as suas grandes perguntas na sua própria fé, na sua igreja,
+            sinagoga, templo ou qualquer outro templo religioso.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont10', 'seta10')">
+          <i id="seta10" class="fa-solid fa-chevron-down"></i>QUAIS SÃO AS EXIGÊNCIAS PARA SE TORNAR MAÇOM?
+        </button>
+
+        <div id="cont10">
+          <p>
+            É necessário que o candidato prime pela moral e pelos bons costumes.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont11', 'seta11')">
+          <i id="seta11" class="fa-solid fa-chevron-down"></i>COMO SE FAZ PARA SER MAÇOM?
+        </button>
+
+        <div id="cont11">
+          <p>
+            É preciso que o candidato seja indicado por um Mestre Maçom e tenha a sua iniciação aprovada pela
+            Loja. A admissão é exclusiva para Homens. Um Maçom pode notar que alguém tem as qualidades
+            necessárias; propõe para admissão em uma Loja e, caso venha a ser aceito, a sua admissão será
+            providenciada. Tenha paciência. Esse processo pode demorar algum tempo e é preciso ter certeza de
+            que haverá sintonia de interesses entre os objetivos da Instituição e os seus objetivos. É
+            fundamental que sua decisão seja benéfica para você e sua família.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont12', 'seta12')">
+          <i id="seta12" class="fa-solid fa-chevron-down"></i>UM RELIGIOSO PODE SER MAÇOM?
+        </button>
+
+        <div id="cont12">
+          <p>
+            Nada impede que um religioso seja aceito como maçom. O que jamais se verá, no entanto, é um ateu ser
+            recebido na Maçonaria regular, pois um dos princípios básicos para a admissão na Ordem é a crença
+            num Ser Supremo.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont13', 'seta13')">
+          <i id="seta13" class="fa-solid fa-chevron-down"></i>OS MAÇONS SÃO ANTI-CATÓLICOS?
+        </button>
+
+        <div id="cont13">
+          <p>
+            Em absoluto! Nada existe a esse respeito nas tradições e rituais maçônicos. Saliente-se que cada
+            maçom possui as suas próprias convicções religiosas e todos convivem fraternalmente nas reuniões das
+            suas Lojas e fora delas. A Maçonaria combate o sectarismo religioso em qualquer das suas
+            manifestações e respeita a crença e a profissão religiosa dos seus membros.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont14', 'seta14')">
+          <i id="seta14" class="fa-solid fa-chevron-down"></i>OS RITUAIS MAÇÔNICOS CRIAM EMBARAÇOS AO CANDIDATO?
+        </button>
+
+        <div id="cont14">
+          <p>
+            Não. Os rituais em geral e os utilizados na cerimônia de iniciação foram escritos para sublinhar
+            virtudes que deverão ser desenvolvidas pelos candidatos, tais como, Justiça, Amor Fraternal,
+            Temperança, Caridade, Solidariedade, etc.. Atualmente use-se nos rituais uma linguagem erudita e
+            ricamente ilustrada por simbolismo. Em nenhum momento são criadas situações que possam embaraçar ou
+            desagradar os candidatos, ou que poderiam violar as suas convicções patrióticas, crença religiosa ou
+            familiar.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont15', 'seta15')">
+          <i id="seta15" class="fa-solid fa-chevron-down"></i>A MAÇONARIA É UMA SOCIEDADE SECRETA?
+        </button>
+
+        <div id="cont15">
+          <p>
+            Sociedades secretas geralmente são definidas como organizações desconhecidas do público e cuja
+            existência seja escondida. A Maçonaria, por outro lado, é bem conhecida e orgulha-se de demonstrar a
+            sua existência. Os seus Templos e as suas Lojas são facilmente identificados e muitos deles figuram
+            nas listas telefônicas . Muitos de seus membros costumam usar anéis, distintivos de lapela,
+            alfinetes de gravata que os identificam como maçons. Freqüentemente os maçons participam ativamente
+            junto à sua comunidade em trabalhos assistenciais. Finalmente, algumas atividades maçônicas são
+            abertas e acessíveis ao público.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont16', 'seta16')">
+          <i id="arrow16" class="fa-solid fa-chevron-down"></i>A MAÇONARIA NÃO É APENAS UM CLUBE DE NEGÓCIOS?
+        </button>
+
+        <div id="cont16">
+          <p>
+            Não. Dificilmente seria aprovado um candidato que quisesse entrar para a Maçonaria apenas por
+            interesses comerciais. De qualquer forma, com o decorrer do tempo, os maçons vão criando grandes
+            amizades uns com os outros, e não se deve estranhar quando algum negócio seja feito entre eles.
+          </p>
+        </div>
+      </div>
+
+      <div id="dropdown-area">
+        <button onclick="dropdown('cont17', 'seta17')">
+          <i id="seta17" class="fa-solid fa-chevron-down"></i>COMO POSSO ME TORNAR UM MAÇOM?
+        </button>
+
+        <div id="cont17">
+          <p>
+            A Maçonaria – e o Grande Oriente do Rio Grande do Sul, por extensão – organiza-se na forma de
+            associação de direito privado. É regida, além da legislação do País, por seus estatutos e
+            regulamentos.
+
+            Não se pode afirmar que a Maçonaria é uma entidade secreta, já que seus atos devem ser devidamente
+            registrados nos cartórios de registro público.
+
+            A Maçonaria é, por característica, uma associação discreta.
+
+            Não é, de forma alguma, um clube social: não se obtém ingresso através da compra de um passe ou
+            joia.
+
+            Seus associados são escolhidos através da indicação de outro Maçom.
+
+            O candidato passa por processo de avaliação, aprovação e, finalmente, ingresso.
+
+            O Grande Oriente do Rio Grande do Sul não publica anúncios em jornais, revistas, páginas na
+            Internet, outdoor ou qualquer meio de propaganda.
+
+            Caso haja interesse em ingressar, o candidato deve refletir sobre os conceitos emitidos nesta
+            página; se ainda assim estiver disposto, deverá estar sempre a postos, pois ao cumprir seus deveres
+            como cidadão, um Maçom que o conheça estará atento e fará o convite no momento certo.
+
+            Algumas características serão observadas:
+
+            • Crer em uma força criadora de todas as coisas, não importando a sua religião;
+
+            • Agir sempre em consonância com as virtudes morais da humanidade;
+
+            • Estar disposto ao estudo filosófico e doutrinário da Ordem Maçônica;
+
+            • Estar disposto a agir sempre pelo engrandecimento da Pátria e da humanidade;
+
+            • Manter reputação ilibada e agir dentro dos princípios éticos universais, trabalhando pela
+            construção de uma sociedade mais justa e fraterna.
+
+            • Ter mais de 21anos;
+
+            • Exercer alguma atividade econômica lícita;
+
+            • Ser capaz de prover seu sustento e de sua família;
+
+            • Concordância da sua companheira (se casado ou viva em união estável);
+
+            • Ter residência e domicílio fixos na cidade onde for convidado.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="rodape">
+
+    <div id="rodape-logo">
+      <img src="../img/logo-branco.png">
+    </div>
+
+    <div id="rodape-endereco">
+      <div>
+        <h4>Palácio Maçônico:</h4>
+        <p>Rua Jerônimo Coelho, 116 - Centro.</p>
+        <p>CEP: 90010-240.</p>
+        <h5>Fone: (51) 3272-3700</h5>
+      </div>
+
+      <div>
+        <h4>Centro Templário:</h4>
+        <p>Rua Quatro Jacós, 75 - Menino Deus.</p>
+        <p>CEP: 90150-010.</p>
+        <h5>Fone: (51) 3095-1612 </h5>
+      </div>
+
+    </div>
+  </footer>
+
+  <section id="radio">
+    <audio id="player" controls loop preload src="https://stream-50.zeno.fm/t91ercqdz38uv?zs=L0_XyZvYRwOHDdket63HBw">
+    </audio>
+    <button id="btn-radio" onclick="ocultarRadio()">
+      <img id="radio-logo" src="../img/logo-radio.png">
+      <i id="icone-radio" class="fa-solid fa-chevron-left"></i>
+    </button>
+  </section>
+
+  <section id="meus-dados">
+    <div id="perfil">
+      <div id="perfil-img">
+        <img src="../img/sem_foto.jpg">
+      </div>
+      <div id="perfil-info">
+        <p>Fulano Rodriguês da Silva Santos Corrêa</p>
+        <p>CIM: 55555</p>
+        <p>Venerável Mestre Marcelo Moreira Tostes</p>
+        <p>Iniciação: 01/01/2000</p>
+        <p>Elevação: 01/01/2000</p>
+        <p>Exaltação: 01/01/2000</p>
+        <p>Instalação: 01/01/2000</p>
+      </div>
+      <a id="btn-config" href="">
+        <i class="fa-solid fa-gear"></i>
+      </a>
+    </div>
+    <div id="topicos">
+      <button onclick="dropdownMenuLateral('meu-perfil-top', 'perfil-arrow')">
+        Meu Perfil
+        <i id="perfil-arrow" class="fa-solid fa-chevron-down droped-arrow"></i>
+      </button>
+      <div id="meu-perfil-top" class="droped-cont">
+        <a href="">Página do Irmão</a>
+        <hr>
+        <a href="">Mensagens</a>
+        <hr>
+        <a href="">Dados</a>
+        <hr>
+        <a href="">Preferências</a>
+        <hr>
+        <a href="">Financeiro</a>
+        <hr>
+        <a href="">Presenças</a>
+        <hr>
+        <a href="">Troca de Senha</a>
+      </div>
+      <hr>
+      <button onclick="dropdownMenuLateral('publicacoes-top', 'publicacoes-arrow')">
+        Publicações
+        <i id="publicacoes-arrow" class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div id="publicacoes-top">
+        <a href="">Boletim Informativo</a>
+        <hr>
+        <a href="">Legislação</a>
+        <hr>
+        <a href="">Rituais Especiais</a>
+        <hr>
+        <a href="">Formulários</a>
+        <hr>
+        <a href="">Diversos</a>
+        <hr>
+        <a href="">Eleição</a>
+      </div>
+      <hr>
+      <button onclick="dropdownMenuLateral('loja-top', 'loja-arrow')">
+        Loja
+        <i id="loja-arrow" class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div id="loja-top">
+        <a href="">Atas / Balaústres</a>
+        <hr>
+        <a href="">Candidatos</a>
+        <hr>
+        <a href="">Aniversários</a>
+      </div>
+      <hr>
+      <a href="">
+        <button>
+          Troca de Loja
+        </button>
+      </a>
+      <hr>
+      <a href="">
+        <button>
+          Banco de Negócios
+        </button>
+      </a>
+      <hr>
+      <a href="">
+        <button>
+          Sair
+        </button>
+      </a>
+      <hr>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="../js/functions.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://kit.fontawesome.com/ed1cc67055.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

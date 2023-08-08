@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departamentos do GORGS</title>
+    <link rel="icon" href="../img/logo_icon.png">
+    <link rel="stylesheet" href="../css/css.css">
+    <link href="../assets/css/solid.css" rel="stylesheet">
+    <link href="../assets/css/brands.css" rel="stylesheet">
+    <link href="../assets/css/fontawesome.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <section id="modal-area">
+      <div id="modal-conteudo">
+        <div id="modal-img">
+          <img src="../img/logo_icon.png">
+          <button id="btn-fechar-area" onclick="areaRestritaAberta()"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="modal-campos">
+          <form action="">
+            <input type="text" placeholder="CIM" required>
+            <input type="password" placeholder="Senha" required>
+            <div id="recaptcha" class="g-recaptcha" data-sitekey="your_site_key"></div>
+            <button type="submits">Acessar</button>
+          </form>
+            <a onclick="modalRecurar()">Esqueci minha senha</a>
+            <a onclick="modalPrimeiro()">Primeiro acesso</a>
+        </div>
+        <div id="modal-recuperar">
+          <form action="">
+            <input type="text" placeholder="CPF" required>
+            <button type="submit" onclick="mostrarMensagemRecuperar()">Enviar</button>
+            <h5 id="mensagem-recuperacao">Uma nova senha para meu email!</h5>
+          </form>
+          <a onclick="modalRecurar(); ocultarMensagemRecuperar();">Lembrou da Senha? Faça o Login</a>
+        </div>
+        <div id="modal-primeiro">
+          <form action="">
+            <input type="text" placeholder="CPF" required>
+            <input type="text" placeholder="CIM" required>
+            <button type="submit" onclick="mostrarMensagemPrimeiro()">Enviar</button>
+            <h5 id="mensagem-primeiro">Uma senha para meu email!</h5>
+          </form>
+          <a onclick="modalPrimeiro(); ocultarMensagemPrimeiro();">Não é seu primeiro acesso? Faça o Login</a>
+        </div>
+      </div>
+    </section>
+
+    <header id="top">
+      <figure id="logo">
+        <a href="../index.html">
+          <img src="../img/logo-gorgs.png">
+        </a>
+        <div id="logo-cont">
+          <a id="logo-home" href="../index.html">
+            <img src="../img/logo-txt.png">
+          </a>
+          <div>
+            <a id="icone-facebook" href="https://www.facebook.com/grandeorienters" target="_blank">
+              <i class="fa-brands fa-square-facebook"></i>
+            </a>
+            <a id="icone-twitter" href="https://twitter.com/gorgs_comab" target="_blank">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a id="icone-youtube" href="https://www.youtube.com/channel/UCqd2UyXMiOHVNWdphQYjc0Q" target="_blank">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </figure>
+  
+      <div id="mobile">
+      <button onclick="mobile()"><i class="fa-sharp fa-solid fa-bars"></i></button>
+    </div>
+  
+      <!-- Menu padrão -->
+  
+      <nav id="menu">
+        <ul>
+  
+          <div id="dropdown-main">
+  
+            <div id="dropdown">
+              <a id="dropdown-titulo">
+                <p>
+                  GORGS Digital
+                </p>
+                <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
+              </a>
+              <ul id="dropdown-item">
+                <li>
+                  <a href="">Ciclo de Palestras</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="">Cursos</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="">Biblioteca Virtual</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="">GORGS TV</a>
+                </li>
+              </ul>
+            </div>
+  
+            <div id="dropdown">
+              <a id="dropdown-titulo">
+                <p>
+                  Gerir Loja
+                </p>
+                <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
+              </a>
+              <ul id="dropdown-item">
+                <li>
+                  <a href="">Processos</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="">Cadastro da Loja</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="">Nominata</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="">Irmãos da Loja</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="">Financeiro</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="">Sistema de Lojas</a>
+                </li>
+              </ul>
+            </div>
+  
+            <div id="dropdown">
+              <a id="dropdown-titulo">
+                Institucional
+                <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i></a>
+              <ul id="dropdown-item">
+                <li>
+                  <a href="../views/institucional.html">O GORGS</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="../views/poder-executivo.html">Poder Executivo</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="../views/palm.html">Poder Legislativo</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="../views/poder-judiciario.html">Poder Judiciário</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="../views/lojas.html">Lojas Maçônicas</a>
+                  <hr>
+                </li>
+                <li>
+                  <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
+                </li>
+              </ul>
+            </div>
+  
+            <div id="dropdown">
+              <a id="dropdown-titulo" href="../views/noticias.html">Notícias</a>
+            </div>
+  
+            <div id="dropdown">
+              <a id="dropdown-titulo" href="">Eleição</a>
+            </div>
+  
+            <div id="dropdown">
+              <a id="dropdown-titulo" href="../views/contato.html">Contatos</a>
+            </div>
+  
+          </div>
+  
+          <div id="btn-area">
+            <button id="area" onclick="areaRestritaFechada()">Olá, Fulano
+              <i id="icon-area" class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+  
+        </ul>
+      </nav>
+  
+      <!-- Menu Mobile -->
+  
+      <nav id="menu-mobile">
+  
+        <div id="perfil">
+          <div id="perfil-img">
+            <img src="../img/sem_foto.jpg">
+          </div>
+          <div id="perfil-info">
+            <p>Fulano Rodriguês da Silva Santos Corrêa</p>
+            <p>CIM: 55555</p>
+            <p>Venerável Mestre Marcelo Moreira Tostes</p>
+            <p>Iniciação: 01/01/2000</p>
+            <p>Elevação: 01/01/2000</p>
+            <p>Exaltação: 01/01/2000</p>
+            <p>Instalação: 01/01/2000</p>
+          </div>
+          <a id="btn-config" href="">
+            <i class="fa-solid fa-gear"></i>
+          </a>
+        </div>
+        <div id="topicos">
+          <hr>
+          <hr>
+          <hr>
+          <button onclick="dropdownMenuLateral('meu-perfil-top-mobi', 'perfil-arrow-mobi')">
+            Meu Perfil
+            <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down droped-arrow"></i>
+          </button>
+          <div id="meu-perfil-top-mobi" class="droped-cont">
+            <a href="">Página do Irmão</a>
+            <hr>
+            <a href="">Dados</a>
+            <hr>
+            <a href="">Preferências</a>
+            <hr>
+            <a href="">Financeiro</a>
+            <hr>
+            <a href="">Presenças</a>
+            <hr>
+            <a href="">Troca de Senha</a>
+          </div>
+          <hr>
+          <button onclick="dropdownMenuLateral('publicacoes-top-mobi', 'publicacoes-arrow-mobi')">
+            Publicações
+            <i id="publicacoes-arrow-mobi" class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div id="publicacoes-top-mobi">
+            <a href="">Boletim Informativo</a>
+            <hr>
+            <a href="">Legislação</a>
+            <hr>
+            <a href="">Rituais Especiais</a>
+            <hr>
+            <a href="">Formulários</a>
+            <hr>
+            <a href="">Diversos</a>
+            <hr>
+            <a href="">Eleição</a>
+          </div>
+          <hr>
+          <button onclick="dropdownMenuLateral('loja-top-mobi', 'loja-arrow-mobi')">
+            Loja
+            <i id="loja-arrow-mobi" class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div id="loja-top-mobi">
+            <a href="">Atas / Balaústres</a>
+            <hr>
+            <a href="">Candidatos</a>
+            <hr>
+            <a href="">Aniversários</a>
+          </div>
+          <hr>
+          <a href="">
+            <button>
+              Troca de Loja
+            </button>
+          </a>
+          <hr>
+          <a href="">
+            <button>
+              Banco de Negócios
+            </button>
+          </a>
+          <hr>
+          <hr>
+          <hr>
+          <button onclick="dropdownMenuLateral('digital-top', 'digital-arrow')">
+            GORGS Digital
+            <i id="digital-arrow" class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div id="digital-top">
+            <a href="">Ciclo de Palestras</a>
+            <hr>
+            <a href="">Cursos</a>
+            <hr>
+            <a href="">Biblioteca Virtual</a>
+            <hr>
+            <a href="">GORGS TV</a>
+          </div>
+          <hr>
+          <button onclick="dropdownMenuLateral('gerir-top', 'gerir-arrow')">
+            Gerir Loja
+            <i id="gerir-arrow" class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div id="gerir-top">
+            <a href="">Processos</a>
+            <hr>
+            <a href="">Cadastro da Loja</a>
+            <hr>
+            <a href="">Nominata</a>
+            <hr>
+            <a href="">Irmãos da Loja</a>
+            <hr>
+            <a href="">Financeiro</a>
+            <hr>
+            <a href="">Sistema de Lojas</a>
+          </div>
+          <hr>
+          <button onclick="dropdownMenuLateral('inst-top', 'inst-arrow')">
+            Institucional
+            <i id="inst-arrow" class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div id="inst-top">
+            <a href="../views/institucional.html">O GORGS</a>
+            <hr>
+            <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
+            <hr>
+            <a href="../views/poder-executivo.html">Poder Executivo</a>
+            <hr>
+            <a href="../views/palm.html">Poder Legislativo</a>
+            <hr>
+            <a href="../views/poder-judiciario.html">Poder Judiciário</a>
+            <hr>
+            <a href="../views/lojas.html">Lojas Maçônicas</a>
+            <hr>
+            <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
+          </div>
+          <hr>
+          <a href="../views/noticias.html">
+            <button>
+              Notícias
+            </button>
+          </a>
+          <hr>
+          <a href="">
+            <button>
+              Eleição
+            </button>
+          </a>
+          <hr>
+          <a href="../views/contato.html">
+            <button>
+              Contatos
+            </button>
+          </a>
+          <hr>
+          <hr>
+          <hr>
+          <a href="">
+            <button>
+              Sair
+            </button>
+          </a>
+          <hr>
+          <button id="area-mobile" onclick="areaRestritaAberta()">FAÇA SEU LOGIN</button>
+          <hr>
+          <hr>
+          <hr>
+        </div>
+      </nav>
+  
+      <div id="home">
+        <a href="#top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+  
+    </header>
+
+    <main id="main">
+
+        <div id="departamentos">
+
+            <div id="departamentos-titulo">
+                <h2>DEPARTAMENTOS DO GORGS</h2>
+                <p>Os Ministérios são órgãos auxiliares do Executivo e funcionam de forma autônoma. Seus titulares e
+                    adjuntos estão ligados diretamente ao Grão-Mestrado e são de livre nomeação e substituição pelo
+                    Grão-Mestre. Podem ser subdivididos em setores de acordo com a necessidade do serviço e no interesse
+                    dos mesmos.</p>
+            </div>
+            <div id="departamentos-icone">
+                <img src="../img/icone_ministerios.png">
+            </div>
+
+        </div>
+        <div id="departamentos-navegacao">
+            <a href="d-lit.html">
+                <button>Departamentos de Liturgia e Ritualística</button>
+            </a>
+            <a href="d-eve.html">
+                <button>Departamentos de Eventos e Cerimonial</button>
+            </a>
+            <a href="d-par.html">
+                <button>Departamentos de Assuntos Paramaçônicos</button>
+            </a>
+        </div>
+
+    </main>
+
+    <footer id="rodape">
+
+      <div id="rodape-logo">
+          <img src="../img/logo-branco.png">
+      </div>
+
+      <div id="rodape-endereco">
+          <div>
+              <h4>Palácio Maçônico:</h4>
+              <p>Rua Jerônimo Coelho, 116 - Centro.</p>
+              <p>CEP: 90010-240.</p>
+              <h5>Fone: (51) 3272-3700</h5>
+          </div>
+
+          <div>
+              <h4>Centro Templário:</h4>
+              <p>Rua Quatro Jacós, 75 - Menino Deus.</p>
+              <p>CEP: 90150-010.</p>
+              <h5>Fone: (51) 3095-1612 </h5>
+          </div>
+
+      </div>
+    </footer>
+
+    <section id="radio">
+        <audio id="player" controls loop preload src="https://stream-50.zeno.fm/t91ercqdz38uv?zs=L0_XyZvYRwOHDdket63HBw">
+        </audio>
+        <button id="btn-radio" onclick="ocultarRadio()">
+          <img id="radio-logo" src="../img/logo-radio.png">
+          <i id="icone-radio" class="fa-solid fa-chevron-left"></i>
+        </button>
+    </section>
+
+    <section id="meus-dados">
+      <div id="perfil">
+        <div id="perfil-img">
+          <img src="../img/sem_foto.jpg">
+        </div>
+        <div id="perfil-info">
+          <p>Fulano Rodriguês da Silva Santos Corrêa</p>
+          <p>CIM: 55555</p>
+          <p>Venerável Mestre Marcelo Moreira Tostes</p>
+          <p>Iniciação: 01/01/2000</p>
+          <p>Elevação: 01/01/2000</p>
+          <p>Exaltação: 01/01/2000</p>
+          <p>Instalação: 01/01/2000</p>
+        </div>
+        <a id="btn-config" href="">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+      </div>
+      <div id="topicos">
+        <button onclick="dropdownMenuLateral('meu-perfil-top', 'perfil-arrow')">
+          Meu Perfil
+          <i id="perfil-arrow" class="fa-solid fa-chevron-down droped-arrow"></i>
+        </button>
+        <div id="meu-perfil-top" class="droped-cont">
+          <a href="">Página do Irmão</a>
+        <hr>
+        <a href="">Mensagens</a>
+        <hr>
+          <a href="">Dados</a>
+          <hr>
+          <a href="">Preferências</a>
+          <hr>
+          <a href="">Financeiro</a>
+          <hr>
+          <a href="">Presenças</a>
+          <hr>
+          <a href="">Troca de Senha</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('publicacoes-top', 'publicacoes-arrow')">
+          Publicações
+          <i id="publicacoes-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="publicacoes-top">
+          <a href="">Boletim Informativo</a>
+          <hr>
+          <a href="">Legislação</a>
+          <hr>
+          <a href="">Rituais Especiais</a>
+          <hr>
+          <a href="">Formulários</a>
+          <hr>
+          <a href="">Diversos</a>
+          <hr>
+          <a href="">Eleição</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('loja-top', 'loja-arrow')">
+          Loja
+          <i id="loja-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="loja-top">
+          <a href="">Atas / Balaústres</a>
+          <hr>
+          <a href="">Candidatos</a>
+          <hr>
+          <a href="">Aniversários</a>
+        </div>
+        <hr>
+        <a href="">
+          <button>
+            Troca de Loja
+          </button>
+        </a>
+        <hr>
+        <a href="">
+          <button>
+            Banco de Negócios
+          </button>
+        </a>
+        <hr>
+        <a href="">
+          <button>
+            Sair
+          </button>
+        </a>
+        <hr>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="../js/functions.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://kit.fontawesome.com/ed1cc67055.js" crossorigin="anonymous"></script>
+</body>
+</body>
+
+</html>

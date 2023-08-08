@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confederações Maçônicas</title>
+  <link rel="icon" href="../img/logo_icon.png">
+  <link rel="stylesheet" href="../css/css.css">
+  <link href="../assets/css/solid.css" rel="stylesheet">
+  <link href="../assets/css/brands.css" rel="stylesheet">
+  <link href="../assets/css/fontawesome.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <section id="modal-area">
+    <div id="modal-conteudo">
+      <div id="modal-img">
+        <img src="../img/logo_icon.png">
+        <button id="btn-fechar-area" onclick="areaRestritaAberta()"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="modal-campos">
+        <form action="">
+          <input type="text" placeholder="CIM" required>
+          <input type="password" placeholder="Senha" required>
+          <div id="recaptcha" class="g-recaptcha" data-sitekey="your_site_key"></div>
+          <button type="submits">Acessar</button>
+        </form>
+        <a onclick="modalRecurar()">Esqueci minha senha</a>
+        <a onclick="modalPrimeiro()">Primeiro acesso</a>
+      </div>
+      <div id="modal-recuperar">
+        <form action="">
+          <input type="text" placeholder="CPF" required>
+          <button type="submit" onclick="mostrarMensagemRecuperar()">Enviar</button>
+          <h5 id="mensagem-recuperacao">Uma nova senha para meu email!</h5>
+        </form>
+        <a onclick="modalRecurar(); ocultarMensagemRecuperar();">Lembrou da Senha? Faça o Login</a>
+      </div>
+      <div id="modal-primeiro">
+        <form action="">
+          <input type="text" placeholder="CPF" required>
+          <input type="text" placeholder="CIM" required>
+          <button type="submit" onclick="mostrarMensagemPrimeiro()">Enviar</button>
+          <h5 id="mensagem-primeiro">Uma senha para meu email!</h5>
+        </form>
+        <a onclick="modalPrimeiro(); ocultarMensagemPrimeiro();">Não é seu primeiro acesso? Faça o Login</a>
+      </div>
+    </div>
+  </section>
+
+  <header id="top">
+    <figure id="logo">
+      <a href="../index.html">
+        <img src="../img/logo-gorgs.png">
+      </a>
+      <div id="logo-cont">
+        <a id="logo-home" href="../index.html">
+          <img src="../img/logo-txt.png">
+        </a>
+        <div>
+          <a id="icone-facebook" href="https://www.facebook.com/grandeorienters" target="_blank">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a id="icone-twitter" href="https://twitter.com/gorgs_comab" target="_blank">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a id="icone-youtube" href="https://www.youtube.com/channel/UCqd2UyXMiOHVNWdphQYjc0Q" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </figure>
+
+    <div id="mobile">
+      <button onclick="mobile()"><i class="fa-sharp fa-solid fa-bars"></i></button>
+    </div>
+
+    <!-- Menu padrão -->
+
+    <nav id="menu">
+      <ul>
+
+        <div id="dropdown-main">
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              <p>
+                GORGS Digital
+              </p>
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
+            </a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="">Ciclo de Palestras</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Cursos</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Biblioteca Virtual</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">GORGS TV</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              <p>
+                Gerir Loja
+              </p>
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
+            </a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="">Processos</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Cadastro da Loja</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Nominata</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Irmãos da Loja</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Financeiro</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Sistema de Lojas</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              Institucional
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i></a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="../views/institucional.html">O GORGS</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/poder-executivo.html">Poder Executivo</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/palm.html">Poder Legislativo</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/poder-judiciario.html">Poder Judiciário</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/lojas.html">Lojas Maçônicas</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="../views/noticias.html">Notícias</a>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="">Eleição</a>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="../views/contato.html">Contatos</a>
+          </div>
+
+        </div>
+
+        <div id="btn-area">
+          <button id="area" onclick="areaRestritaFechada()">Olá, Fulano
+            <i id="icon-area" class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+
+      </ul>
+    </nav>
+
+    <!-- Menu Mobile -->
+
+    <nav id="menu-mobile">
+
+      <div id="perfil">
+        <div id="perfil-img">
+          <img src="../img/sem_foto.jpg">
+        </div>
+        <div id="perfil-info">
+          <p>Fulano Rodriguês da Silva Santos Corrêa</p>
+          <p>CIM: 55555</p>
+          <p>Venerável Mestre Marcelo Moreira Tostes</p>
+          <p>Iniciação: 01/01/2000</p>
+          <p>Elevação: 01/01/2000</p>
+          <p>Exaltação: 01/01/2000</p>
+          <p>Instalação: 01/01/2000</p>
+        </div>
+        <a id="btn-config" href="">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+      </div>
+      <div id="topicos">
+        <hr>
+        <hr>
+        <hr>
+        <button onclick="dropdownMenuLateral('meu-perfil-top-mobi', 'perfil-arrow-mobi')">
+          Meu Perfil
+          <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down droped-arrow"></i>
+        </button>
+        <div id="meu-perfil-top-mobi" class="droped-cont">
+          <a href="">Página do Irmão</a>
+          <hr>
+          <a href="">Dados</a>
+          <hr>
+          <a href="">Preferências</a>
+          <hr>
+          <a href="">Financeiro</a>
+          <hr>
+          <a href="">Presenças</a>
+          <hr>
+          <a href="">Troca de Senha</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('publicacoes-top-mobi', 'publicacoes-arrow-mobi')">
+          Publicações
+          <i id="publicacoes-arrow-mobi" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="publicacoes-top-mobi">
+          <a href="">Boletim Informativo</a>
+          <hr>
+          <a href="">Legislação</a>
+          <hr>
+          <a href="">Rituais Especiais</a>
+          <hr>
+          <a href="">Formulários</a>
+          <hr>
+          <a href="">Diversos</a>
+          <hr>
+          <a href="">Eleição</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('loja-top-mobi', 'loja-arrow-mobi')">
+          Loja
+          <i id="loja-arrow-mobi" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="loja-top-mobi">
+          <a href="">Atas / Balaústres</a>
+          <hr>
+          <a href="">Candidatos</a>
+          <hr>
+          <a href="">Aniversários</a>
+        </div>
+        <hr>
+        <a href="">
+          <button>
+            Troca de Loja
+          </button>
+        </a>
+        <hr>
+        <a href="">
+          <button>
+            Banco de Negócios
+          </button>
+        </a>
+        <hr>
+        <hr>
+        <hr>
+        <button onclick="dropdownMenuLateral('digital-top', 'digital-arrow')">
+          GORGS Digital
+          <i id="digital-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="digital-top">
+          <a href="">Ciclo de Palestras</a>
+          <hr>
+          <a href="">Cursos</a>
+          <hr>
+          <a href="">Biblioteca Virtual</a>
+          <hr>
+          <a href="">GORGS TV</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('gerir-top', 'gerir-arrow')">
+          Gerir Loja
+          <i id="gerir-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="gerir-top">
+          <a href="">Processos</a>
+          <hr>
+          <a href="">Cadastro da Loja</a>
+          <hr>
+          <a href="">Nominata</a>
+          <hr>
+          <a href="">Irmãos da Loja</a>
+          <hr>
+          <a href="">Financeiro</a>
+          <hr>
+          <a href="">Sistema de Lojas</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('inst-top', 'inst-arrow')">
+          Institucional
+          <i id="inst-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="inst-top">
+          <a href="../views/institucional.html">O GORGS</a>
+          <hr>
+          <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
+          <hr>
+          <a href="../views/poder-executivo.html">Poder Executivo</a>
+          <hr>
+          <a href="../views/palm.html">Poder Legislativo</a>
+          <hr>
+          <a href="../views/poder-judiciario.html">Poder Judiciário</a>
+          <hr>
+          <a href="../views/lojas.html">Lojas Maçônicas</a>
+          <hr>
+          <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
+        </div>
+        <hr>
+        <a href="../views/noticias.html">
+          <button>
+            Notícias
+          </button>
+        </a>
+        <hr>
+        <a href="">
+          <button>
+            Eleição
+          </button>
+        </a>
+        <hr>
+        <a href="../views/contato.html">
+          <button>
+            Contatos
+          </button>
+        </a>
+        <hr>
+        <hr>
+        <hr>
+        <a href="">
+            <button>
+              Sair
+            </button>
+          </a>
+          <hr>
+          <button id="area-mobile" onclick="areaRestritaAberta()">FAÇA SEU LOGIN</button>
+          <hr>
+          <hr>
+        <hr>
+      </div>
+    </nav>
+
+    <div id="home">
+      <a href="#top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+
+  </header>
+
+  <main id="main">
+    <div id="confederacoes-maconicas">
+      <div id="titulo-conf">
+        <div>
+          <h2>CONFEDERAÇÕES MAÇÔNICAS</h2>
+          <p>As potências Maçônicas regulares reúnem-se em grandes blocos maçônicos em todo mundo. Conheça aqui as
+            confederações Maçônicas.</p>
+        </div>
+        <div>
+          <img src="../img/icone_confederacoes2.png">
+        </div>
+      </div>
+      <div id="conteudo-conf">
+
+        <h2>CONFEDERAÇÕES MAÇÔNICAS</h2>
+
+        <div id="lista">
+
+          <div id="dropdown-area">
+            <button onclick="dropdown('cont1', 'seta1')">
+              <i id="seta1" class="fa-solid fa-chevron-down"></i>CONFEDERAÇÃO MAÇÔNICA DO BRASIL – COMAB
+            </button>
+
+            <div id="cont1">
+              <div id="ordem-div">
+                <div>
+                  <img src="../img/logo-comab.png">
+                </div>
+                <div>
+                  <a href="https://comab.org.br/" target="_blank">ACESSE O SITE DA COMAB</a>
+                  <p>A Confederação Maçônica do Brasil – fundada em 06/04/1991 – sucessora do Colégio de Presidentes da
+                    Maçonaria Brasileira – fundado em 04/08/1973 – tem como missão congregar os Grandes Orientes
+                    Estaduais
+                    confederados, avançando nas fronteiras da integração, produzindo e transmitindo ideias e ideais de
+                    modo a contribuir para o desenvolvimento da educação pátria, da difusão dos Postulados da Maçonaria
+                    Universal e do progresso da sociedade através da valorização do ser humano. Sua visão é ser,
+                    permanentemente, uma Confederação Maçônica plenamente partícipe das grandes causas nacionais
+                    socioeconômicas, culturais e políticas; articulada, reconhecida e integrada internacionalmente;
+                    promotora da fraternidade, atuando pela prática: das virtudes, da solidariedade social, da liberdade
+                    de expressão e de consciência, em benefício a humanidade.</p>
+                  <h3>Grandes Orientes</h3>
+                  <p>– Grande Oriente de Alagoas;</p>
+                  <p>– Grande Oriente Amazonense;</p>
+                  <p>– Grande Oriente Amapaense;</p>
+                  <p>– Grande Oriente da Bahia;</p>
+                  <p>– Grande Oriente do Ceará;</p>
+                  <p>– Grande Oriente de Goiás;</p>
+                  <p>– Grande Oriente do Maranhão;</p>
+                  <p>– Grande Oriente do Estado do Mato Grosso;</p>
+                  <p>– Grande Oriente de Mato Grosso do Sul;</p>
+                  <p>– Grande Oriente Minas Gerais;</p>
+                  <p>– Grande Oriente do Estado do Pará;</p>
+                  <p>– Grande Oriente Paulista;</p>
+                  <p>– Grande Oriente da Paraíba;</p>
+                  <p>– Grande Oriente do Paraná;</p>
+                  <p>– Grande Oriente de Pernambuco;</p>
+                  <p>– Grande Oriente do Estado do Piauí;</p>
+                  <p>– Grande Oriente do Rio de Janeiro;</p>
+                  <p>– Grande Oriente do Estado do Rio Grande do Norte;</p>
+                  <p>– Grande Oriente do Rio Grande do Sul;</p>
+                  <p>– Grande Oriente do Roraima;</p>
+                  <p>– Grande Oriente de Santa Catarina;</p>
+                  <p>– Grande Oriente do Sergipe.</p>
+                  <h3>PRESIDENTES até 1991 (Colégio de Grão-Mestres da Maçonaria Brasileira)</h3>
+                  <p>Athos Vieira de Andrade (Minas Gerais) 1973/1975</p>
+                  <p>Osmar Maia Diógenes (Ceará) 1974/1975</p>
+                  <p>Danylo José Fernandes (São Paulo) 1975/1976</p>
+                  <p>Frederico Renato Móttola (Rio Grande do Sul) 1976/1977</p>
+                  <p>Enoch Vieira dos Santos (Paraná) 1977/1978</p>
+                  <p>Nilson Constantino (Mato Grosso) 1978/1979</p>
+                  <p>Armando de Lima Fagundes (Rio Grande do Norte) 1979/1980</p>
+                  <p>Miguel Christakis (Santa Catarina) 1980/1981</p>
+                  <p>Raimundo Ferreira Marques (Maranhão) 1981/1982</p>
+                  <p>José Menezes Junior (São Paulo) 1982/1983</p>
+                  <p>Djalma Marques de Melo (Pernanbuco) 1983/1984</p>
+                  <p>Willian Atallah (Mato Grosso do Sul) 1984/1985</p>
+                  <p>Athenágoras Café Carvalhaes (Minas Gerais) 1985/1986</p>
+                  <p>Pedro Branco (Rio de Janeiro) 1986/1987</p>
+                  <p>José Augusto Bezerra (Ceará) 1987/1988</p>
+                  <p>José Frederico Zanin (São Paulo) 1988/1989</p>
+                  <p>Francisco Vady Nozar Melo (Santa Catarina) 1989/1990</p>
+                  <p>Raimundo Ferreira Marques (Maranhão) 1990/1991</p>
+                  <h3>PRESIDENTES a partir de 1991 (COMAB)</h3>
+                  <p>Milton Barbosa da Silva (Rio Grande do Sul) 1991/1992</p>
+                  <p>Hirohito Torres Lage (Minas Gerais) 1992/1993</p>
+                  <p>Antônio do Carmo Ferreira (Pernambuco) 1993/1994</p>
+                  <p>Lourival Pedro Kaled (Paraná) 1994/1995</p>
+                  <p>João Laércio Gagliardi Fernandes (Paraíba) 1995/1996</p>
+                  <p>José Carlos Pacheco (Santa Catarina) 1996/1997</p>
+                  <p>Helton Barroso Drey (Minas Gerais) 1997/1998</p>
+                  <p>Anselmo Falcão de Arruda (Mato Grosso) 1998/1999</p>
+                  <p>João Batista Coringa da Silva (Rio Grande do Norte) 1999/2000</p>
+                  <p>Milton Barbosa da Silva (Rio Grande do Sul) 2000/2001</p>
+                  <p>Plínio Ferreira Marques (Maranhão) 2001/2002</p>
+                  <p>José Mattos Silva (São Paulo) 2002/2003</p>
+                  <p>Sebastião Moreira Feitosa (Piauí) 2003/2004</p>
+                  <p>Ward Sousa Gusmão (Rio de Janeiro) 2004/2005</p>
+                  <p>Antônio do Carmo Ferreira (Pernambuco) 2005/2006</p>
+                  <p>Ticiano Duarte (Rio Grande do Norte) 2006/2007</p>
+                  <p>João Krainski Neto (Paraná) 2007/2008</p>
+                  <p>Heber Xavier (Mato Grosso do Sul) 2008/2009</p>
+                  <p>José Aristides Fermino (Rio Grande do Sul) 2009/2010</p>
+                  <p>Rubens Ricardo Franz (Santa Catarina) 2010/2011</p>
+                  <p>José Simioni (Mato Grosso) – 2011/2013</p>
+                  <p>Lázaro Emanuel Franco Salles (Minas Gerais) – 2013/2014</p>
+                  <p>Jurandir Alves de Vasconcelos (São Paulo) – 2014/2015</p>
+                  <p>Amilcar Silva Júnior (Mato Grosso do Sul) – 2015/2016</p>
+                  <p>João Krainski Neto (Paraná) – 2016/2017</p>
+                  <p>Gilberto Lima da Silva (Bahia) – 2017/2018</p>
+                  <p>Tadeu Pedro Drago (Rio Grande do Sul) – 2018/2019</p>
+                  <p>Noê Paulino de Carvalho (Maranhão) – 2019/2020</p>
+                  <p>José Paulo Sanches Orrútia (Amazonas) – 2021</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="dropdown-area">
+            <button onclick="dropdown('cont2', 'seta2')">
+              <i id="seta2" class="fa-solid fa-chevron-down"></i>CONFEDERAÇÃO MAÇÔNICA INTERAMERICANA – CMI</button>
+
+            <div id="cont2">
+              <div id="ordem-div">
+                <div>
+                  <img src="../img/cmi.png">
+                </div>
+                <div>
+                  <a href="http://www.cmisecretariaejecutiva.org/jst3/es/" target="_blank">ACESSE O SITE DA
+                    CMI</a>
+                  <p>A Confederação Maçônica Interamericana (CMI), fundada em 14 de abril de 1947, é uma organização sem
+                    fins lucrativos que reúne 74 Potências Maçônicas distribuídas em 25 países na América do Norte, do
+                    Sul, Central, Caribe e Europa. Promove a construção de um modelo institucional inovador através da
+                    integração da Maçonaria Ibero-Americana e, por extensão, da Maçonaria Universal, baseada em três
+                    pilares: Comunicação – Participação – Colaboração.</p>
+                  <p>Assim, busca desenvolver todo o potencial existente em uma organização que tem mais de 350mil
+                    membros
+                    que, através da troca de ideias, atividades, princípios, preocupações e experiências, ou seja, sua
+                    maneira de ver e entender o mundo, buscam enriquecer o pensamento da humanidade e de suas culturas.
+                  </p>
+                  <p>Entender as profundas transformações que estão ocorrendo no mundo, com processos que estão mudando
+                    a
+                    forma de relacionamento, superando barreiras geográficas e culturais, mudanças que ignoram todos os
+                    paradigmas e constroem novas formas de entender as crescentes necessidades sociais e visões humanas;
+                    neste ambiente, é imperativo adaptar as ferramentas de trabalho das grandes potências confederadas
+                    às
+                    novas tecnologias da informação, adaptando seus processos operativos aos sistemas atuais e
+                    incentivando a participação de todos os seus membros, em um ambiente colaborativo, para alcançar
+                    resultados benefícios tangíveis para o Maçom, sua família e a sociedade da qual ele faz parte.</p>
+                  <h3>CONSELHO EXECUTIVO</h3>
+                  <div id="conselho">
+                    <div>
+                      <p><b>Presidente</b></p>
+                      <p><b>Vice-Presidente da Zona 1</b></p>
+                      <p><b>Vice-Presidente da Zona 2</b></p>
+                      <p><b>Vice-Presidente da Zona 3</b></p>
+                      <p><b>Vice-Presidente da Zona 4</b></p>
+                      <p><b>Vice-Presidente da Zona 5</b></p>
+                      <p><b>Vice-Presidente da Zona 6</b></p>
+                      <p><b>Secretária Executiva</b></p>
+                      <p><b>Tesouraria</b></p>
+                      <p><b>Órgão Consultivo</b></p>
+                    </div>
+                    <div>
+                      <p>José Adolfo Crespo Bonadona</p>
+                      <p>José Javier López González</p>
+                      <p>Jean-Pierre Servel</p>
+                      <p>Germán Salinas Castro</p>
+                      <p>Alexander Alarcón Camacho</p>
+                      <p>Geraldo de Souza Macedo</p>
+                      <p>José Garchitorena</p>
+                      <p>Pedro Luis Longo</p>
+                      <p>Enrique López Adrián</p>
+                      <p>Rudy Barbosa Levy</p>
+                      <p>Tomás Alvarez Manrique</p>
+                      <p>Rafael Aragón Guevara</p>
+                    </div>
+                  </div>
+                  <h3>Zona 1</h3>
+                  <p><a href="http://www.dcgrandlodge.org/"  target="_blank">Grande Loja, FAAM, do Distrito de Columbia</a></p>
+                  <p><a href="http://www.masonesdebajacalifornia.com/"  target="_blank">Grande Loja do Estado de Baja California</a></p>
+                  <p><a href="https://www.granlogia-cosmos.org/"  target="_blank">Grand Lodge Cosmos do Estado de Chihuaha</a></p>
+                  <p>Grande Loja Benito Juarez do Estado de Coahuila</p>
+                  <p>Grande Loja Guadalupe Victoria do Estado de Durango</p>
+                  <p>Grande Loja do Estado de Hidalgo</p>
+                  <p>Grande Loja Benito Juárez do Estado de Oaxaca</p>
+                  <p>Grande Loja Pacífico do Estado de Sonora</p>
+                  <p><a href="http://www.granlogiaelpotosi.mx/site/"  target="_blank">Grande Loja do Estado Soberano e Independente El
+                      Potosí</a></p>
+                  <p><a href="http://mrgleq.webs.com/"  target="_blank">Grande Loga do Estado de Querétaro</a></p>
+                  <p>Andrés Quintana Roo Grande Loja do Estado de Quintana Roo</p>
+                  <p><a href="http://www.muyrespetablegranlogiadesinaloa.org/"  target="_blank">Grande Loja de Antigos, Gratuitos e
+                      Aceitos
+                      Maçons de Sinaloa</a></p>
+                  <p><a href="https://www.facebook.com/logiarestauracion.masoneriatabasco">Grande Loja do Estado
+                      Restauração de Tabasco</a></p>
+                  <p><a href="http://www.mrglvm.org/"  target="_blank">Grand Lodge Valley of Mexico</a></p>
+                  <p><a href="http://www.glumver.com/"  target="_blank">Gra Logia Unida Mexicana do Estado de Veracruz</a></p>
+                  <h3>Zona 2</h3>
+                  <p><a href="http://www.granlogiacuba.org/"  target="_blank">Grande Loja de Cuba</a></p>
+                  <p><a href="http://www.glnf.fr/"  target="_blank">Gande Loge Nationale Française</a></p>
+                  <p><a href="http://www.godh1824.ht/"  target="_blank">Grande Oriente d’Haiti de 1824</a></p>
+                  <p><a href="http://www.granlogiasoberanadepr.org/GLSPR/Portal.html">Grande Loja Soberana de Maçons
+                      Livres e Aceitos de Porto Rico</a></p>
+                  <p><a href="http://www.granlogiard.org/"  target="_blank">Grande Loja da República Dominicana</a></p>
+                  <h3>Zona 3</h3>
+                  <p>Grande Loja da Costa Rica</p>
+                  <p><a href="http://www.glc.sv/"  target="_blank">Grande Loja Cuscatlan de El Salvador</a></p>
+                  <p><a href="http://www.granlogiaguatemala.org/"  target="_blank">Grande Loja da Guatemala</a></p>
+                  <p>Grande Loja de Honduras</p>
+                  <p>Soberano Grande Loja Simbólica da Nicarágua</p>
+                  <p><a href="http://www.granlogiadepanama.org/"  target="_blank">Grande Loja do Panamá</a></p>
+                  <h3>Zona 4</h3>
+                  <p>Grande Loja Nacional da Colômbia com Sede em Barranquilla</p>
+                  <p><a href="http://granlogiadecolombia.co/"  target="_blank">Grande Loja da Colômbia com sede em Bogotá</a></p>
+                  <p>Grande Loja dos Andes com sede em Bucaramanga</p>
+                  <p><a href="http://www.glodc.com/"  target="_blank">Grande Loja Ocidental da Colômbia com sede em Cali</a></p>
+                  <p><a href="http://www.serenisimagranlogiacartagena.org/"  target="_blank">Grande Loja Nacional Serenissima da Colômbia
+                      com sede em Cartagena das Índias</a></p>
+                  <p><a href="http://www.granlogiaorientaldecolombia.com/"  target="_blank">Grand Oriental Lodge da Colômbia Francisco de
+                      Paula Santander</a></p>
+                  <p>Grande Loja do Equador</p>
+                  <p><a href="http://www.glede.com.ec/"  target="_blank">Grande Loja Equatorial do Equador</a></p>
+                  <p><a href="http://www.granlogia.org.ve/"  target="_blank">Grande Loja da República da Venezuela</a></p>
+                  <h3>Zona 5</h3>
+                  <p><a href="http://www.gleac.com.br/"  target="_blank">Grande Loja Maçônica do Estado do Acre</a></p>
+                  <p><a href="http://www.glomeal.com.br/"  target="_blank">Grande Loja Maçônica do Estado de Alagoas</a></p>
+                  <p><a href="http://www.glomap.org.br/"  target="_blank">Grande Loja Maçônica do Estado de Amapá</a></p>
+                  <p><a href="http://www.glomam.org.br/"  target="_blank">Grande Loja Maçônica do Amazonas</a></p>
+                  <p><a href="http://www.gleb.org.br/"  target="_blank">Grande Loja Maçônica do Estado da Bahia</a></p>
+                  <p><a href="http://www.glmdf.org.br/"  target="_blank">Grande Loja Maçônica do Distrito Federal</a></p>
+                  <p><a href="http://www.glmees.org.br/v2/"  target="_blank">Grande Loja Maçônica do Estado do Espírito Santo</a></p>
+                  <p><a href="http://www.gleg.com.br/"  target="_blank">Grande Loja Maçônica do Estado de Goiás</a></p>
+                  <p><a href="http://www.glema.com.br/"  target="_blank">Grande Loja Maçônica do Estado do Maranhão</a></p>
+                  <p><a href="http://www.glemt.org/"  target="_blank">Grande Loja Maçônica do Estado de Mato Grosso</a></p>
+                  <p><a href="http://www.grandelojams.org.br/"  target="_blank">Grande Loja Maçônica do Mato Grosso do Sul</a></p>
+                  <p><a href="http://www.glmmg.org.br/app/"  target="_blank">Grande Loja Maçônica de Minas Gerais</a></p>
+                  <p><a href="http://www.glepa.org.br/"  target="_blank">Grande Loja Maçônica do Estado do Pará</a></p>
+                  <p><a href="http://glp.org.br/site/"  target="_blank">Grande Loja do Paraná</a></p>
+                  <p><a href="http://glpe.com.br/"  target="_blank">Grande Loja Maçônica de Pernambuco</a></p>
+                  <p><a href="http://www.glmpi.com.br/"  target="_blank">Grande Loja Maçônica do Piauí</a></p>
+                  <p><a href="http://www.glern.org/"  target="_blank">Grande Loja Maçônica do Estado do Rio Grande do Norte</a></p>
+                  <p><a href="http://www.glojars.org.br/"  target="_blank">Grande Loja Maçônica do Estado do Rio Grande do Sul</a></p>
+                  <p><a href="http://www.glomaron.org.br/"  target="_blank">Grande Loja Maçônica do Estado de Rondônia</a></p>
+                  <p><a href="https://glomerr.mvu.com.br/"  target="_blank">Grande Loja Maçônica do Estado de Roraima</a></p>
+                  <p><a href="http://www.mrglsc.org.br/"  target="_blank">Grande Loja de Santa Catarina</a></p>
+                  <p><a href="http://www.glesp.org.br/"  target="_blank">Grande Loja Maçônica do Estado de São Paulo</a></p>
+                  <p><a href="http://glmese.com/"  target="_blank">Grande Loja Maçônica do Estado de Sergipe</a></p>
+                  <p><a href="http://blog.msmacom.com.br/grande-loja-maconica-estado-tocantins">Grande Loja Maçônica do
+                      Estado do Tocantins</a></p>
+                  <p><a href="http://www.goemt.org.br/"  target="_blank">Grande Oriente do Estado de Mato Grosso</a></p>
+                  <p><a href="http://www.goms.org.br/"  target="_blank">Grande Oriente do Mato Grosso do Sul</a></p>
+                  <p><a href="http://www.gomg.org.br/"  target="_blank">Grande Oriente de Minas Gerais</a></p>
+                  <p><a href="http://www.gop.org.br/"  target="_blank">Grande Oriente do Paraná</a></p>
+                  <p><a href="http://www.gop-sp.org.br/"  target="_blank">Grande Oriente Paulista</a></p>
+                  <p><a href="http://www.gorgs.org.br/"  target="_blank">Grande Oriente do Rio Grande do Sul</a></p>
+                  <p><a href="https://gosc.org.br/"  target="_blank">Grande Oriente de Santa Catarina</a></p>
+                  <h3>Zona 6</h3>
+                  <p><a href="http://www.masoneria-argentina.org.ar/"  target="_blank">Grande Loja da Argentina de Maçons Livres e
+                      Aceitos</a></p>
+                  <p><a href="http://www.granlogiadebolivia.bo/"  target="_blank">Grande Loja da Bolívia</a></p>
+                  <p><a href="http://www.gob.org.br/"  target="_blank">Grande Oriente do Brasil</a></p>
+                  <p><a href="http://www.granlogia.cl/"  target="_blank">Grande Loja do Chile</a></p>
+                  <p><a href="http://www.gle.org/"  target="_blank">Grande Loja da Espanha, de Maçons Antigos, Livres e Aceitos</a></p>
+                  <p><a href="http://granlogia.org.py/"  target="_blank">Grande Loja Simbólica do Paraguai</a></p>
+                  <p><a href="http://www.glperu.org.pe/"  target="_blank">Grande Loja dos Antigos, Livre e Aceito Maçons da República do
+                      Peru</a></p>
+                  <p><a href="http://www.gllp.pt/"  target="_blank">Grande Loja Legal do Portugal / GLRP</a></p>
+                  <p><a href="http://www.masoneriadeluruguay.org/"  target="_blank">Grande Loja da Maçonaria do Uruguai</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="dropdown-area">
+            <button onclick="dropdown('cont3', 'seta3')">
+              <i id="seta3" class="fa-solid fa-chevron-down"></i>CONFERÊNCIA MUNDIAL DAS GRANDES LOJAS
+              REGULARES</button>
+            <div id="cont3">
+              <div id="ordem-div">
+                <div>
+                  <img src="../img/icone_confederacoes2.png">
+                </div>
+                <div>
+                  <p>EM BREVE MAIS INFORMAÇÕES</p>
+                  <a href="">ACESSE AQUI</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="dropdown-area">
+            <button onclick="dropdown('cont4', 'seta4')">
+              <i id="seta4" class="fa-solid fa-chevron-down"></i>LIST OF LODGES</button>
+            <div id="cont4">
+              <div id="ordem-div">
+
+                <div>
+                  <img src="../img/icone_confederacoes2.png">
+                </div>
+                <div>
+                  <p>EM BREVE MAIS INFORMAÇÕES</p>
+                  <a href="">ACESSE AQUI</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tratados">
+          <h2>Tratados de Reconhecimentos e Amizade do GORGS</h2>
+          <p>1 Grande Loja do Rio Grande do Sul (CMSB) – (Recognition and Sharing of Territory)</p>
+          <p>2 The National Grand Lodge of Romania</p>
+          <p>3 Gran Logia de España</p>
+          <p>4 United Grand Lodges of Germany</p>
+          <p>5 Grand Lodge of the District of Columbia</p>
+          <p>6 Grand Lodge of the State of New York</p>
+          <p>7 Grand Lodge of Pennsylvania</p>
+          <p>8 The Grand Lodge of Connecticut</p>
+          <p>9 The Grand Lodge of Maryland</p>
+          <p>10 The Grand Lodge of Hawaii of F. & A.M.</p>
+          <p>11 The Grand Lodge of A. F. M. of South Carolina</p>
+          <p>12 The Grand Lodge of Maine</p>
+          <p>13 The Grand Lodge of Florida of F. & A.M.</p>
+          <p>14 Grand Lodge of Michigan</p>
+          <p>15 The Grand Lodge of Massachusetts of A. F. & A.M.</p>
+          <p>16 The Masonic Grand Lodge Of Oregon</p>
+          <p>17 The Grand Lodge of New Hampshire</p>
+          <p>18 Grand Lodge of South Dakota</p>
+          <p>19 The Grand Lodge of A.F. & A.M. of Montana</p>
+          <p>20 The Grand Lodge of Vermont of F. & A.M.</p>
+          <p>21 The Grand Lodge of A. F. & A. M. of North Carolina</p>
+          <p>22 The Grand Lodge of Kentucky F. & A.M.</p>
+          <p>23 The M.W. Grand Lodge of A.F. & A.M. of the State of West Virginia</p>
+          <p>24 The Grand Lodge of A.F. & A.M. of Virginia</p>
+          <p>25 The Grand Lodge F. & A.M. of Alabama</p>
+          <p>26 The Grand Lodge of Texas</p>
+          <p>27 The Grand Lodge of Kansas</p>
+          <p>28 The Grand Lodge of Idaho</p>
+          <p>29 Grand Lodge of Rhode Island and Providence Plantation</p>
+          <p>30 The Grand Lodge of Minnesota</p>
+          <p>31 Grand Lodge of F. & A.M. of Tennessee</p>
+          <p>32 The United Grand Lodge of New South Wales</p>
+          <p>33 Grand Lodge of A.F. & A.M. of British Columbia and Yukon – Canada</p>
+          <p>34 The Grand Lodge of Canada – In The Province of Ontario of A.F. & A.M.</p>
+          <p>35 The Grand Lodge of Quebec of A.F. & A.M. – Canada</p>
+          <p>36 Grand Lodge of Slovakia</p>
+          <p>37 Grande Loja Legal de Portugal</p>
+          <p>38 Grande Loja de Santa Catarina (CMSB)</p>
+          <p>39 Grande Loja do Mato Grosso (CMSB)</p>
+          <p>40 Grande Loja do Paraná (CMSB)</p>
+          <p>41 Grande Loja Maçônica do Distrito Federal (CMSB)</p>
+          <p>42 Grande Loja Maçônica do Estado da Bahia (CMSB)</p>
+          <p>43 Grande Oriente do Paraná (COMAB – CMI)</p>
+          <p>44 Grande Oriente do Mato Grosso (COMAB – CMI)</p>
+          <p>45 Grande Oriente de Santa Catarina (COMAB – CMI)</p>
+          <p>46 Gran Logia Simbolica del Paraguay</p>
+          <p>47 40. Grand Orient D’Haiti</p>
+          <p>48 Gran Logia del Uruguay</p>
+          <p>49 Grande Loge Unie de Côte D’Ivoire</p>
+          <p>50 Gran Logia de la Republica de Venezuela</p>
+          <p>51 Gran Logia de Colombia</p>
+          <p>52 Ser. Gran Logia Nacional de Colombia con Sede en Cartagena de Indias</p>
+          <p>53 Gran Logia de Los Andes com sede em Bucamaranga</p>
+          <p>54 Gran Logia de la Argentina</p>
+          <p>55 Gran Logia de Chile</p>
+          <p>56 Gran Logia de Panamá</p>
+          <p>57 Gran Logia de Guatemala</p>
+          <p>58 Gran Logia de Honduras</p>
+          <p>59 Gran Logia Cuscatlán El Salvador</p>
+          <p>60 Gran Logia Equinoccial del Ecuador</p>
+          <p>61 Gran Logia de Costa Rica</p>
+          <p>62 Gran Logia del Peru</p>
+          <p>63 Gran Logia Simbólica de Nicarágua</p>
+          <p>64 Gran Logia de Bolívia</p>
+          <p>65 Gran Logia Soberana de Puerto Rico</p>
+          <p>66 Gran Logia de la República Dominicana</p>
+          <p>67 Grande Loge Suisse Alpina</p>
+          <p>68 Grand East of the Netherlands</p>
+          <p>69 Gran Logia de Cuba</p>
+          <p>70 Grande Oriente d´Italia</p>
+          <p>71 Gran Logia de Puerto Rico</p>
+          <p>72 Gran Logia del Estado “Andrés Quintana Roo”</p>
+          <p>73 Gran Logia Regular y Confederada Del Estado de Chiapas</p>
+          <p>74 Gran Logia “Cosmos” del Estado de Chihuahua</p>
+          <p>75 Gran Logia “Benito Juárez” del Estado de Coahuila</p>
+          <p>76 Gran Logia De Estado Soberana e Independiente “El Potosí” de LL.’. y AA.’. MM.’.</p>
+          <p>77 Gran Logia del Estado de Nayarit</p>
+          <p>78 Gran Logia del Estado de Hidalgo Fundada en 1940</p>
+          <p>79 Gran Logia “Occidental Mexicana” de AA.’. LL.’. y AA.’. MM.’. del Estado de Jalisco</p>
+          <p>80 Gran Logia del Estado de Campeche</p>
+          <p>81 Gran Logia del Estado de Nuevo León</p>
+          <p>82 Gran Logia de Estado “Baja California” de A.Ly.A.M.</p>
+          <p>83 Gran Logia del Estado De Querétaro de AA.’. LL.’. y AA.’. MM.’.</p>
+          <p>84 Gran Logia Suroeste do Estado de Colima</p>
+          <p>85 Gran Logia del Estado de Sinaloa</p>
+          <p>86 Gran Logia Restauracion del Estado de Tabasco Lorenzo Hernandes Monteiro</p>
+          <p>87 Gran Logia “Unida Mexicana” De Ll.’. Y Aa.’. Mm.’. Del Estado De Veracruz</p>
+          <p>88 Gran Logia Benito Juárez del Estado de Oaxaca</p>
+          <p>89 Gran Logia “Unida La Oriental Peninsular” del Estado De Yucatán</p>
+          <p>90 Muy Respetable Gran Logia Valle de México</p>
+          <p>91 Gran Logia Guadalupe Victoria AA.’. LL.’. y AA.’. MM.’. del Estado de Durango</p>
+          <p>92 Gran Logia de AA.’. LL.’. y AA.’. MM.’. de Tamaulipas</p>
+          <p>93 The Grand Lodge of the State of Louisiana</p>
+          <p>94 Regularna Velika Loza Srbije (G.L. Sérvia)</p>
+          <p>95 Grand Lodge of Canada in the Province of Ontario</p>
+          <p>96 Grand Lodge F&AM of Ohio</p>
+          <p>97 Most Worshipful Prince Hall Grand Lodge of Texas</p>
+          <p>98 The Grand Lodge of New Jersey Free & Accept Masons</p>
+          <p>99 Grande Loja de Montenegro</p>
+          <p>100 Grande Oriente do Brasil</p>
+          <p>101 Grande Oriente de Pernambuco (COMAB)</p>
+          <p>102 Grande Oriente do Amazonas (COMAB)</p>
+          <p>103 Grande Oriente da Paraíba (COMAB)</p>
+          <p>104 Grande Oriente de Roraima (COMAB)</p>
+          <p>105 Grande Oriente do Mato Grosso do Sul (COMAB)</p>
+          <p>106 Prince Hall Grand Lodge f.&a.m. of the State of California</p>
+          <p>107 Grande Loja do Japão</p>
+          <span>(atualizada em 31/5/2019)</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="rodape">
+
+    <div id="rodape-logo">
+      <img src="../img/logo-branco.png">
+    </div>
+
+    <div id="rodape-endereco">
+      <div>
+        <h4>Palácio Maçônico:</h4>
+        <p>Rua Jerônimo Coelho, 116 - Centro.</p>
+        <p>CEP: 90010-240.</p>
+        <h5>Fone: (51) 3272-3700</h5>
+      </div>
+
+      <div>
+        <h4>Centro Templário:</h4>
+        <p>Rua Quatro Jacós, 75 - Menino Deus.</p>
+        <p>CEP: 90150-010.</p>
+        <h5>Fone: (51) 3095-1612 </h5>
+      </div>
+
+    </div>
+  </footer>
+
+  <section id="radio">
+    <audio id="player" controls loop preload src="https://stream-50.zeno.fm/t91ercqdz38uv?zs=L0_XyZvYRwOHDdket63HBw">
+    </audio>
+    <button id="btn-radio" onclick="ocultarRadio()">
+      <img id="radio-logo" src="../img/logo-radio.png">
+      <i id="icone-radio" class="fa-solid fa-chevron-left"></i>
+    </button>
+  </section>
+
+  <section id="meus-dados">
+    <div id="perfil">
+      <div id="perfil-img">
+        <img src="../img/sem_foto.jpg">
+      </div>
+      <div id="perfil-info">
+        <p>Fulano Rodriguês da Silva Santos Corrêa</p>
+        <p>CIM: 55555</p>
+        <p>Venerável Mestre Marcelo Moreira Tostes</p>
+        <p>Iniciação: 01/01/2000</p>
+        <p>Elevação: 01/01/2000</p>
+        <p>Exaltação: 01/01/2000</p>
+        <p>Instalação: 01/01/2000</p>
+      </div>
+      <a id="btn-config" href="">
+        <i class="fa-solid fa-gear"></i>
+      </a>
+    </div>
+    <div id="topicos">
+      <button onclick="dropdownMenuLateral('meu-perfil-top', 'perfil-arrow')">
+        Meu Perfil
+        <i id="perfil-arrow" class="fa-solid fa-chevron-down droped-arrow"></i>
+      </button>
+      <div id="meu-perfil-top" class="droped-cont">
+        <a href="">Página do Irmão</a>
+        <hr>
+        <a href="">Mensagens</a>
+        <hr>
+        <a href="">Dados</a>
+        <hr>
+        <a href="">Preferências</a>
+        <hr>
+        <a href="">Financeiro</a>
+        <hr>
+        <a href="">Presenças</a>
+        <hr>
+        <a href="">Troca de Senha</a>
+      </div>
+      <hr>
+      <button onclick="dropdownMenuLateral('publicacoes-top', 'publicacoes-arrow')">
+        Publicações
+        <i id="publicacoes-arrow" class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div id="publicacoes-top">
+        <a href="">Boletim Informativo</a>
+        <hr>
+        <a href="">Legislação</a>
+        <hr>
+        <a href="">Rituais Especiais</a>
+        <hr>
+        <a href="">Formulários</a>
+        <hr>
+        <a href="">Diversos</a>
+        <hr>
+        <a href="">Eleição</a>
+      </div>
+      <hr>
+      <button onclick="dropdownMenuLateral('loja-top', 'loja-arrow')">
+        Loja
+        <i id="loja-arrow" class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div id="loja-top">
+        <a href="">Atas / Balaústres</a>
+        <hr>
+        <a href="">Candidatos</a>
+        <hr>
+        <a href="">Aniversários</a>
+      </div>
+      <hr>
+      <a href="">
+        <button>
+          Troca de Loja
+        </button>
+      </a>
+      <hr>
+      <a href="">
+        <button>
+          Banco de Negócios
+        </button>
+      </a>
+      <hr>
+      <a href="">
+        <button>
+          Sair
+        </button>
+      </a>
+      <hr>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="../js/functions.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://kit.fontawesome.com/ed1cc67055.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

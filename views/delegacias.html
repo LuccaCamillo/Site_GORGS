@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delegacias Regionais</title>
+  <link rel="icon" href="../img/logo_icon.png">
+  <link rel="stylesheet" href="../css/css.css">
+  <link href="../assets/css/solid.css" rel="stylesheet">
+  <link href="../assets/css/brands.css" rel="stylesheet">
+  <link href="../assets/css/fontawesome.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <section id="modal-area">
+    <div id="modal-conteudo">
+      <div id="modal-img">
+        <img src="../img/logo_icon.png">
+        <button id="btn-fechar-area" onclick="areaRestritaAberta()"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="modal-campos">
+        <form action="">
+          <input type="text" placeholder="CIM" required>
+          <input type="password" placeholder="Senha" required>
+          <div id="recaptcha" class="g-recaptcha" data-sitekey="your_site_key"></div>
+          <button type="submits">Acessar</button>
+        </form>
+        <a onclick="modalRecurar()">Esqueci minha senha</a>
+        <a onclick="modalPrimeiro()">Primeiro acesso</a>
+      </div>
+      <div id="modal-recuperar">
+        <form action="">
+          <input type="text" placeholder="CPF" required>
+          <button type="submit" onclick="mostrarMensagemRecuperar()">Enviar</button>
+          <h5 id="mensagem-recuperacao">Uma nova senha para meu email!</h5>
+        </form>
+        <a onclick="modalRecurar(); ocultarMensagemRecuperar();">Lembrou da Senha? Faça o Login</a>
+      </div>
+      <div id="modal-primeiro">
+        <form action="">
+          <input type="text" placeholder="CPF" required>
+          <input type="text" placeholder="CIM" required>
+          <button type="submit" onclick="mostrarMensagemPrimeiro()">Enviar</button>
+          <h5 id="mensagem-primeiro">Uma senha para meu email!</h5>
+        </form>
+        <a onclick="modalPrimeiro(); ocultarMensagemPrimeiro();">Não é seu primeiro acesso? Faça o Login</a>
+      </div>
+    </div>
+  </section>
+
+  <header id="top">
+    <figure id="logo">
+      <a href="../index.html">
+        <img src="../img/logo-gorgs.png">
+      </a>
+      <div id="logo-cont">
+        <a id="logo-home" href="../index.html">
+          <img src="../img/logo-txt.png">
+        </a>
+        <div>
+          <a id="icone-facebook" href="https://www.facebook.com/grandeorienters" target="_blank">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a id="icone-twitter" href="https://twitter.com/gorgs_comab" target="_blank">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a id="icone-youtube" href="https://www.youtube.com/channel/UCqd2UyXMiOHVNWdphQYjc0Q" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </figure>
+
+    <div id="mobile">
+      <button onclick="mobile()"><i class="fa-sharp fa-solid fa-bars"></i></button>
+    </div>
+
+    <!-- Menu padrão -->
+
+    <nav id="menu">
+      <ul>
+
+        <div id="dropdown-main">
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              <p>
+                GORGS Digital
+              </p>
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
+            </a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="">Ciclo de Palestras</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Cursos</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Biblioteca Virtual</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">GORGS TV</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              <p>
+                Gerir Loja
+              </p>
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
+            </a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="">Processos</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Cadastro da Loja</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Nominata</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Irmãos da Loja</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Financeiro</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Sistema de Lojas</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              Institucional
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i></a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="../views/institucional.html">O GORGS</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/poder-executivo.html">Poder Executivo</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/palm.html">Poder Legislativo</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/poder-judiciario.html">Poder Judiciário</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/lojas.html">Lojas Maçônicas</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="../views/noticias.html">Notícias</a>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="">Eleição</a>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="../views/contato.html">Contatos</a>
+          </div>
+
+        </div>
+
+        <div id="btn-area">
+          <button id="area" onclick="areaRestritaFechada()">Olá, Fulano
+            <i id="icon-area" class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+
+      </ul>
+    </nav>
+
+    <!-- Menu Mobile -->
+
+    <nav id="menu-mobile">
+
+      <div id="perfil">
+        <div id="perfil-img">
+          <img src="../img/sem_foto.jpg">
+        </div>
+        <div id="perfil-info">
+          <p>Fulano Rodriguês da Silva Santos Corrêa</p>
+          <p>CIM: 55555</p>
+          <p>Venerável Mestre Marcelo Moreira Tostes</p>
+          <p>Iniciação: 01/01/2000</p>
+          <p>Elevação: 01/01/2000</p>
+          <p>Exaltação: 01/01/2000</p>
+          <p>Instalação: 01/01/2000</p>
+        </div>
+        <a id="btn-config" href="">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+      </div>
+      <div id="topicos">
+        <hr>
+        <hr>
+        <hr>
+        <button onclick="dropdownMenuLateral('meu-perfil-top-mobi', 'perfil-arrow-mobi')">
+          Meu Perfil
+          <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down droped-arrow"></i>
+        </button>
+        <div id="meu-perfil-top-mobi" class="droped-cont">
+          <a href="">Página do Irmão</a>
+          <hr>
+          <a href="">Dados</a>
+          <hr>
+          <a href="">Preferências</a>
+          <hr>
+          <a href="">Financeiro</a>
+          <hr>
+          <a href="">Presenças</a>
+          <hr>
+          <a href="">Troca de Senha</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('publicacoes-top-mobi', 'publicacoes-arrow-mobi')">
+          Publicações
+          <i id="publicacoes-arrow-mobi" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="publicacoes-top-mobi">
+          <a href="">Boletim Informativo</a>
+          <hr>
+          <a href="">Legislação</a>
+          <hr>
+          <a href="">Rituais Especiais</a>
+          <hr>
+          <a href="">Formulários</a>
+          <hr>
+          <a href="">Diversos</a>
+          <hr>
+          <a href="">Eleição</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('loja-top-mobi', 'loja-arrow-mobi')">
+          Loja
+          <i id="loja-arrow-mobi" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="loja-top-mobi">
+          <a href="">Atas / Balaústres</a>
+          <hr>
+          <a href="">Candidatos</a>
+          <hr>
+          <a href="">Aniversários</a>
+        </div>
+        <hr>
+        <a href="">
+          <button>
+            Troca de Loja
+          </button>
+        </a>
+        <hr>
+        <a href="">
+          <button>
+            Banco de Negócios
+          </button>
+        </a>
+        <hr>
+        <hr>
+        <hr>
+        <button onclick="dropdownMenuLateral('digital-top', 'digital-arrow')">
+          GORGS Digital
+          <i id="digital-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="digital-top">
+          <a href="">Ciclo de Palestras</a>
+          <hr>
+          <a href="">Cursos</a>
+          <hr>
+          <a href="">Biblioteca Virtual</a>
+          <hr>
+          <a href="">GORGS TV</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('gerir-top', 'gerir-arrow')">
+          Gerir Loja
+          <i id="gerir-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="gerir-top">
+          <a href="">Processos</a>
+          <hr>
+          <a href="">Cadastro da Loja</a>
+          <hr>
+          <a href="">Nominata</a>
+          <hr>
+          <a href="">Irmãos da Loja</a>
+          <hr>
+          <a href="">Financeiro</a>
+          <hr>
+          <a href="">Sistema de Lojas</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('inst-top', 'inst-arrow')">
+          Institucional
+          <i id="inst-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="inst-top">
+          <a href="../views/institucional.html">O GORGS</a>
+          <hr>
+          <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
+          <hr>
+          <a href="../views/poder-executivo.html">Poder Executivo</a>
+          <hr>
+          <a href="../views/palm.html">Poder Legislativo</a>
+          <hr>
+          <a href="../views/poder-judiciario.html">Poder Judiciário</a>
+          <hr>
+          <a href="../views/lojas.html">Lojas Maçônicas</a>
+          <hr>
+          <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
+        </div>
+        <hr>
+        <a href="../views/noticias.html">
+          <button>
+            Notícias
+          </button>
+        </a>
+        <hr>
+        <a href="">
+          <button>
+            Eleição
+          </button>
+        </a>
+        <hr>
+        <a href="../views/contato.html">
+          <button>
+            Contatos
+          </button>
+        </a>
+        <hr>
+        <hr>
+        <hr>
+        <a href="">
+            <button>
+              Sair
+            </button>
+          </a>
+          <hr>
+          <button id="area-mobile" onclick="areaRestritaAberta()">FAÇA SEU LOGIN</button>
+          <hr>
+          <hr>
+        <hr>
+      </div>
+    </nav>
+
+    <div id="home">
+      <a href="#top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+
+  </header>
+
+  <main id="main">
+    <div id="delegacias">
+      <div id="delecias-titulo">
+        <div id="delecias-text">
+          <h2>DELEGACIAS REGIONAIS</h2>
+          <p>O Delegado Regional é um elo entre as Lojas Maçônicas e o Grão-Mestre. As regiões são delimitadas
+            territorialmente, congregando Oficinas das cidades mais próximas. A Delegacia conta também com
+            um Delegado Adjunto e um Secretário. O território gaúcho está hoje dividido em 33 Regiões
+            Maçônicas.</p>
+        </div>
+        <div id="delecias-img">
+          <img src="../img/icone_maconaria.png">
+        </div>
+      </div>
+      <div id="delecias-conteudo">
+        <h2>ATRIBUIÇÕES DOS DELEGADOS REGIONAIS</h2>
+        <p>• Representar, na Região, o Grão-Mestre.</p>
+        <p>• Visitar, no mínimo duas vezes por ano, as Lojas e Triângulos da região, procurando promover o
+          congraçamento e a regularidade de seu funcionamento.</p>
+        <p>• Zelar pelo fiel cumprimento das leis e pela observância do ritual adotado.</p>
+        <p>• Promover a instalação de Triângulos nas localidades da região onde não exista Loja da Potência.</p>
+        <p>• Presidir as sessões realizadas em conjunto pelas Lojas da região.</p>
+        <p>• Presidir o Colégio de Veneráveis-Mestres de sua região.</p>
+        <p>• Apresentar semestralmente relatório ao Grão-Mestre, dando conta do trabalho realizado.</p>
+        <h3>CLIQUE NA REGIÃO E CONHEÇA OS REPRESENTANTES</h3>
+      </div>
+
+      <div id="delecias-dropdown">
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont1', 'seta1')">
+            <i id="seta1" class="fa-solid fa-chevron-down"></i> 1ª região - Sede: PORTO ALEGRE
+          </button>
+
+          <div id="cont1">
+            <p><b>SEDE:</b> PORTO ALEGRE</p>
+            <p><b>REGIÃO:</b> 1ª região</p>
+            <p><b>JURISDIÇÃO:</b> Porto Alegre – Palácio Maçônico</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> mario@agrocontinental.com.br</p>
+            <p><b>DELEGADO:</b> Mário Inácio Giehl</p>
+            <p><b>ADJUNTO:</b> Thiago Rampanelli Teixeira Mendes</p>
+            <p><b>SECRETÁRIO:</b> Marco Antônio Perottoni</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont2', 'seta2')">
+            <i id="seta2" class="fa-solid fa-chevron-down"></i> 2ª região - Sede: PORTO ALEGRE
+          </button>
+
+          <div id="cont2">
+            <p><b>SEDE:</b> PORTO ALEGRE</p>
+            <p><b>REGIÃO:</b> 2ª região</p>
+            <p><b>JURISDIÇÃO:</b> Porto Alegre – Palácio Maçônico</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> paulovieiraadvog@yahoo.com.br</p>
+            <p><b>DELEGADO:</b> Paulo Roberto da Silva Vieira</p>
+            <p><b>ADJUNTO:</b> Mirto Antônio Zeni</p>
+            <p><b>SECRETÁRIO:</b> João Alfredo Fracasso</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont3', 'seta3')">
+            <i id="seta3" class="fa-solid fa-chevron-down"></i> 3ª região - Sede: PORTO ALEGRE
+          </button>
+
+          <div id="cont3">
+            <p><b>SEDE:</b> PORTO ALEGRE</p>
+            <p><b>REGIÃO:</b> 3ª região</p>
+            <p><b>JURISDIÇÃO:</b> Porto Alegre – Centro Templário ‘Grão-Mestre Milton Barbosa da Silva’</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b></p>
+            <p><b>DELEGADO:</b> Paulo Sérgio de Oliveira Ilha</p>
+            <p><b>ADJUNTO:</b> Pedro Luiz Terres Glória</p>
+            <p><b>SECRETÁRIO:</b> Verardi Hörbe</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont4', 'seta4')">
+            <i id="seta4" class="fa-solid fa-chevron-down"></i> 4ª região - Sede: PORTO ALEGRE
+          </button>
+
+          <div id="cont4">
+            <p><b>SEDE:</b> PORTO ALEGRE</p>
+            <p><b>REGIÃO:</b> 4ª região</p>
+            <p><b>JURISDIÇÃO:</b> Porto Alegre – Centro Templário ‘Grão-Mestre Milton Barbosa da Silva’</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> lubunos@gmail.com</p>
+            <p><b>DELEGADO:</b> Vanius Guariglia</p>
+            <p><b>ADJUNTO:</b> José Horácio de Oliveira Gattiboni</p>
+            <p><b>SECRETÁRIO:</b> André Luis Souza de Moura</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont5', 'seta5')">
+            <i id="seta5" class="fa-solid fa-chevron-down"></i> 5ª região - Sede: PORTO ALEGRE
+          </button>
+
+          <div id="cont5">
+            <p><b>SEDE:</b> PORTO ALEGRE</p>
+            <p><b>REGIÃO:</b> 5ª região</p>
+            <p><b>JURISDIÇÃO:</b> Porto Alegre – ‘Centro Templário Grão-Mestre Milton Barbosa da Silva’</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> sergiomarcos.rs@gmail.com</p>
+            <p><b>DELEGADO:</b> Sergio Antonio Clezar Marcos</p>
+            <p><b>ADJUNTO:</b> Otavio Santiago de Faria</p>
+            <p><b>SECRETÁRIO:</b> Marcos Vinicius da Luz Goulart</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont6', 'seta6')">
+            <i id="seta6" class="fa-solid fa-chevron-down"></i> 6ª região - Sede: PORTO ALEGRE
+          </button>
+
+          <div id="cont6">
+            <p><b>SEDE:</b> PORTO ALEGRE</p>
+            <p><b>REGIÃO:</b> 6ª região</p>
+            <p><b>JURISDIÇÃO:</b> Porto Alegre – Bairros</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> vilsoncs@terra.com.br</p>
+            <p><b>DELEGADO:</b> Vilson Carlos da Silveira</p>
+            <p><b>ADJUNTO:</b> Jerônimo Ramirez Vicêncio</p>
+            <p><b>SECRETÁRIO:</b> Enio Maganeli</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont7', 'seta7')">
+            <i id="seta7" class="fa-solid fa-chevron-down"></i> 7ª região - Sede: PORTO ALEGRE
+          </button>
+
+          <div id="cont7">
+            <p><b>SEDE:</b> PORTO ALEGRE</p>
+            <p><b>REGIÃO:</b> 7ª região</p>
+            <p><b>JURISDIÇÃO:</b> Porto Alegre – Bairros</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> fabiopimentel09@gmail.com</p>
+            <p><b>DELEGADO:</b> Fabio Ricardo Navarro Pimentel</p>
+            <p><b>ADJUNTO:</b> Ivaldo Pedro Barbieri</p>
+            <p><b>SECRETÁRIO:</b> Rudimar Santos Couto</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont8', 'seta8')">
+            <i id="seta8" class="fa-solid fa-chevron-down"></i> 8ª região - Sede: CANOAS
+          </button>
+
+          <div id="cont8">
+            <p><b>SEDE:</b> CANOAS</p>
+            <p><b>REGIÃO:</b> 8ª região</p>
+            <p><b>JURISDIÇÃO:</b> Canoas, Esteio, Guaíba e Eldorado do Sul</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> jaircomim1951@gmail.com</p>
+            <p><b>DELEGADO:</b> Jairo Comim Dziedzinski</p>
+            <p><b>ADJUNTO:</b> Paulo Cesar Lessa Bettim</p>
+            <p><b>SECRETÁRIO:</b></p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont9', 'seta9')">
+            <i id="seta9" class="fa-solid fa-chevron-down"></i> 9ª região - Sede: SÃO LEOPOLDO
+          </button>
+
+          <div id="cont9">
+            <p><b>SEDE:</b> SÃO LEOPOLDO</p>
+            <p><b>REGIÃO:</b> 9ª região</p>
+            <p><b>JURISDIÇÃO:</b> São Leopoldo, São Sebastião do Caí e Montenegro</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> zhantonio@gmail.com</p>
+            <p><b>DELEGADO:</b> José Antônio Oliveira dos Santos</p>
+            <p><b>ADJUNTO:</b> Gilberto José Sarmento</p>
+            <p><b>SECRETÁRIO:</b> Gildo Adolar Oliveira dos Santos</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont10', 'seta10')">
+            <i id="seta10" class="fa-solid fa-chevron-down"></i> 10ª região - Sede: NOVO HAMBURGO
+          </button>
+
+          <div id="cont10">
+            <p><b>SEDE:</b> NOVO HAMBURGO</p>
+            <p><b>REGIÃO:</b> 10ª região</p>
+            <p><b>JURISDIÇÃO:</b> Novo Hamburgo, Dois Irmãos, Estância Velha, Sapiranga e Ivoti</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> luizhenrique@eafricana.com.br</p>
+            <p><b>DELEGADO:</b> Luiz Henrique Weber</p>
+            <p><b>ADJUNTO:</b> Ricardo Valmor Berg/p>
+            <p><b>SECRETÁRIO:</b> Ruy Fernando Fajardo Kern</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont11', 'seta11')">
+            <i id="seta11" class="fa-solid fa-chevron-down"></i> 11ª região - Sede: CAXIAS DO SUL
+          </button>
+
+          <div id="cont11">
+            <p><b>SEDE:</b> CAXIAS DO SUL</p>
+            <p><b>REGIÃO:</b> 11ª região</p>
+            <p><b>JURISDIÇÃO:</b> Caxias do Sul e Flores da Cunha</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> rtroian@uol.com.br</p>
+            <p><b>DELEGADO:</b> Roberto Troian</p>
+            <p><b>ADJUNTO:</b> Fábio Scuro</p>
+            <p><b>SECRETÁRIO:</b> Mauricio Rugeri Grazziotin</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont12', 'seta12')">
+            <i id="seta12" class="fa-solid fa-chevron-down"></i> 12ª região - Sede: CAXIAS DO SUL
+          </button>
+
+          <div id="cont12">
+            <p><b>SEDE:</b> CAXIAS DO SUL</p>
+            <p><b>REGIÃO:</b> 12ª região</p>
+            <p><b>JURISDIÇÃO:</b> Caxias do Sul, Farroupilha e Feliz</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> miltom@serranaimobiliaria.com.br</p>
+            <p><b>DELEGADO:</b> Milton Carlos Silva de Souza</p>
+            <p><b>ADJUNTO:</b> José Dirceu Gonçalves dos Reis</p>
+            <p><b>SECRETÁRIO:</b> Edson Luís Muller</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont13', 'seta13')">
+            <i id="seta13" class="fa-solid fa-chevron-down"></i> 13ª região - Sede: TAQUARA
+          </button>
+
+          <div id="cont13">
+            <p><b>SEDE:</b> TAQUARA</p>
+            <p><b>REGIÃO:</b> 13ª região</p>
+            <p><b>JURISDIÇÃO:</b> Taquara, Igrejinha e São Francisco de Paula</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> manfredhu@bol.com.br</p>
+            <p><b>DELEGADO:</b> Márcio Carlos Brambila</p>
+            <p><b>ADJUNTO:</b> Manfred Helmut Uhlrich</p>
+            <p><b>SECRETÁRIO:</b> Rodrigo Silva de Matos</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont14', 'seta14')">
+            <i id="seta14" class="fa-solid fa-chevron-down"></i> 14ª região - Sede: LAGOA VERMELHA
+          </button>
+
+          <div id="cont14">
+            <p><b>SEDE:</b> LAGOA VERMELHA</p>
+            <p><b>REGIÃO:</b> 14ª região</p>
+            <p><b>JURISDIÇÃO:</b> Lagoa Vermelha, Vacaria, Bom Jesus, São José do Ouro e Sananduva</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> gilberto@mussattoagro.com.br</p>
+            <p><b>DELEGADO:</b> Gilberto Marques</p>
+            <p><b>ADJUNTO:</b> Anselmo Rodrigues Nunes</p>
+            <p><b>SECRETÁRIO:</b> Eloi Francisco Barbosa da Silva</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont15', 'seta15')">
+            <i id="seta15" class="fa-solid fa-chevron-down"></i> 15ª região - Sede: BENTO GONÇALVES
+          </button>
+
+          <div id="cont15">
+            <p><b>SEDE:</b> BENTO GONÇALVES</p>
+            <p><b>REGIÃO:</b> 15ª região</p>
+            <p><b>JURISDIÇÃO:</b> Bento Gonçalves, Carlos Barbosa, Garibaldi, Veranópolis, Nova Prata,
+              Serafina Corrêa e Guaporé</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> iraja@vinocap.com.br</p>
+            <p><b>DELEGADO:</b> Reginaldo Oliveira Rosa</p>
+            <p><b>ADJUNTO:</b> Irajá Valduga Vasseur</p>
+            <p><b>SECRETÁRIO:</b> Léo Clóvis Fabris</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont16', 'seta16')">
+            <i id="seta16" class="fa-solid fa-chevron-down"></i> 16ª região - Sede: VIAMÃO
+          </button>
+
+          <div id="cont16">
+            <p><b>SEDE:</b> VIAMÃO</p>
+            <p><b>REGIÃO:</b> 16ª região</p>
+            <p><b>JURISDIÇÃO:</b> Viamão, Gravataí e Cachoeirinha</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> miltonportolan@gm</p>
+            <p><b>DELEGADO:</b> Milton Cesar Garcia Portolan</p>
+            <p><b>ADJUNTO:</b> Julio Cesar Lima</p>
+            <p><b>SECRETÁRIO:</b> Gilberto Langner Levy</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont17', 'seta17')">
+            <i id="seta17" class="fa-solid fa-chevron-down"></i> 17ª região - Sede: TRAMANDAÍ
+          </button>
+
+          <div id="cont17">
+            <p><b>SEDE:</b> TRAMANDAÍ</p>
+            <p><b>REGIÃO:</b> 17ª região</p>
+            <p><b>JURISDIÇÃO:</b> Tramandaí, Osório, Torres, Capão da Canoa, Santo Antônio da Patrulha,
+              Xangri-lá, Imbé e Mostardas</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> alberto9799@gmail.com</p>
+            <p><b>DELEGADO:</b> Alberto Augusto Ribeiro</p>
+            <p><b>ADJUNTO:</b> Vitor Daniel Lobato</p>
+            <p><b>SECRETÁRIO:</b> Rubens dos Santos Freitas</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont18', 'seta18')">
+            <i id="seta18" class="fa-solid fa-chevron-down"></i> 18ª região - Sede: RIO GRANDE
+          </button>
+
+          <div id="cont18">
+            <p><b>SEDE:</b> RIO GRANDE</p>
+            <p><b>REGIÃO:</b> 18ª região</p>
+            <p><b>JURISDIÇÃO:</b> Rio Grande, Santa Vitória do Palmar e São José do Norte</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> niltonfandrade@yahoo.com.br</p>
+            <p><b>DELEGADO:</b> Nilton Farias Andrade</p>
+            <p><b>ADJUNTO:</b> Fábio Augusto Braga de Castro</p>
+            <p><b>SECRETÁRIO:</b> Fernando Inacio Gonçalves do Amaral</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont19', 'seta19')">
+            <i id="seta19" class="fa-solid fa-chevron-down"></i> 19ª região - Sede: PELOTAS
+          </button>
+
+          <div id="cont19">
+            <p><b>SEDE:</b> PELOTAS</p>
+            <p><b>REGIÃO:</b> 19ª região</p>
+            <p><b>JURISDIÇÃO:</b> Pelotas, São Lourenço do Sul, Piratini, Pedro Osório e Camaquã</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> cimarino3@yahoo.com.br</p>
+            <p><b>DELEGADO:</b> Cimarino Alves D’avila</p>
+            <p><b>ADJUNTO:</b> Claudio Rony Montezano Aliende</p>
+            <p><b>SECRETÁRIO:</b> Luciano Müller dos Santos</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont20', 'seta20')">
+            <i id="seta20" class="fa-solid fa-chevron-down"></i> 20ª região - Sede: PORTO ALEGRE
+          </button>
+
+          <div id="cont20">
+            <p><b>SEDE:</b> PORTO ALEGRE</p>
+            <p><b>REGIÃO:</b> 20ª região</p>
+            <p><b>JURISDIÇÃO:</b> Porto Alegre (Bairros)</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b></p>
+            <p><b>DELEGADO:</b> Luiz Roberto Voelcker</p>
+            <p><b>ADJUNTO:</b> Wilson Schmitt</p>
+            <p><b>SECRETÁRIO:</b></p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont21', 'seta21')">
+            <i id="seta21" class="fa-solid fa-chevron-down"></i> 21ª região - Sede: SANTA MARIA
+          </button>
+
+          <div id="cont21">
+            <p><b>SEDE:</b> SANTA MARIA</p>
+            <p><b>REGIÃO:</b> 21ª região</p>
+            <p><b>JURISDIÇÃO:</b> Santa Maria, Júlio de Castilhos, Itaara, São Martinho da Serra, São Pedro
+              do Sul, Jari e São Sepé</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> tarcisiomoro@uol.com.br</p>
+            <p><b>DELEGADO:</b> Tarcisio Anacleto Moro</p>
+            <p><b>ADJUNTO:</b> Paulo Ramon Pedrazzi</p>
+            <p><b>SECRETÁRIO:</b> João Carmos Alves da Silva</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont22', 'seta22')">
+            <i id="seta22" class="fa-solid fa-chevron-down"></i> 22ª região - Sede: LAJEADO
+          </button>
+
+          <div id="cont22">
+            <p><b>SEDE:</b> LAJEADO</p>
+            <p><b>REGIÃO:</b> 22ª região</p>
+            <p><b>JURISDIÇÃO:</b> Lajeado, Taquari, Roca Sales e Triunfo</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> betinho.diel@tabelionatoklein.com.br</p>
+            <p><b>DELEGADO:</b> Wilson Roberto Diel</p>
+            <p><b>ADJUNTO:</b> João Alberto Selig Junior</p>
+            <p><b>SECRETÁRIO:</b> José Paulo da Silveira</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont23', 'seta23')">
+            <i id="seta23" class="fa-solid fa-chevron-down"></i> 23ª região - Sede: SANTA CRUZ DO SUL
+          </button>
+
+          <div id="cont23">
+            <p><b>SEDE:</b> SANTA CRUZ DO SUL</p>
+            <p><b>REGIÃO:</b> 23ª região</p>
+            <p><b>JURISDIÇÃO:</b> Santa Cruz do Sul, Candelária, Rio Pardo, Venâncio Aires, Sobradinho e
+              Arroio do Tigre</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> jaccides69@hotmail.com</p>
+            <p><b>DELEGADO:</b> João Antônio Cides</p>
+            <p><b>ADJUNTO:</b> Vitor Gabriel Frohlich</p>
+            <p><b>SECRETÁRIO:</b> Adilson Schuenke</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont24', 'seta24')">
+            <i id="seta24" class="fa-solid fa-chevron-down"></i> 24ª região - Sede: PASSO FUNDO
+          </button>
+
+          <div id="cont24">
+            <p><b>SEDE:</b> PASSO FUNDO</p>
+            <p><b>REGIÃO:</b> 24ª região</p>
+            <p><b>JURISDIÇÃO:</b> Passo Fundo, Erechim, Getúlio Vargas, Tapejara, Sarandi, Carazinho,
+              Soledade e Espumoso</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> fjpivapf@gmail.com</p>
+            <p><b>DELEGADO:</b> Fioravante José Piva</p>
+            <p><b>ADJUNTO:</b> Carlos Alberto Rocha</p>
+            <p><b>SECRETÁRIO:</b> Plínio Costa Júnior</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont25', 'seta25')">
+            <i id="seta25" class="fa-solid fa-chevron-down"></i> 25ª região - Sede: SANTA ROSA
+          </button>
+
+          <div id="cont25">
+            <p><b>SEDE:</b> SANTA ROSA</p>
+            <p><b>REGIÃO:</b> 25ª região</p>
+            <p><b>JURISDIÇÃO:</b> Santa Rosa, Três de Maio, Horizontina e Santo Ângelo</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> jonesmazo@gmail.com</p>
+            <p><b>DELEGADO:</b> Jones Zarpellon Mazo</p>
+            <p><b>ADJUNTO:</b> André Antonio Dal`Aqua</p>
+            <p><b>SECRETÁRIO:</b> Alexandre Giordani</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont26', 'seta26')">
+            <i id="seta26" class="fa-solid fa-chevron-down"></i> 26ª região - Sede: SANTIAGO
+          </button>
+
+          <div id="cont26">
+            <p><b>SEDE:</b> SANTIAGO</p>
+            <p><b>REGIÃO:</b> 26ª região</p>
+            <p><b>JURISDIÇÃO:</b> Santiago, Jaguari, São Francisco de Assis e Cacequi</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> marioluiz.decarlo@gmail.com</p>
+            <p><b>DELEGADO:</b> Mário Luiz De Carlo</p>
+            <p><b>ADJUNTO:</b> Oneide Thadeu Gheler</p>
+            <p><b>SECRETÁRIO:</b> José Eduardo Rezende Bastos</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont27', 'seta27')">
+            <i id="seta27" class="fa-solid fa-chevron-down"></i> 27ª região - Sede: PALMEIRA DAS MISSÕES
+          </button>
+
+          <div id="cont27">
+            <p><b>SEDE:</b> PALMEIRA DAS MISSÕES</p>
+            <p><b>REGIÃO:</b> 27ª região</p>
+            <p><b>JURISDIÇÃO:</b> Palmeira das Missões, Chapada, Frederico Westphalen, Santo Augusto e
+              Nonoai</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> luizandredamiani@yahoo.com.br</p>
+            <p><b>DELEGADO:</b> Luiz Andre Damiani</p>
+            <p><b>ADJUNTO:</b> Marcos Paulo Klaus</p>
+            <p><b>SECRETÁRIO:</b> Olnei Vinciguerra</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont28', 'seta28')">
+            <i id="seta28" class="fa-solid fa-chevron-down"></i> 28ª região - Sede: SANTANA DO LIVRAMENTO
+          </button>
+
+          <div id="cont28">
+            <p><b>SEDE:</b> SANTANA DO LIVRAMENTO</p>
+            <p><b>REGIÃO:</b> 28ª região</p>
+            <p><b>JURISDIÇÃO:</b> Santana do Livramento, Quaraí, Rosário do Sul e Dom Pedrito</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> rlampert@v-expressa.com.br</p>
+            <p><b>DELEGADO:</b> Renato Barbosa Lampert</p>
+            <p><b>ADJUNTO:</b> Luis Augusto de Lima Machado</p>
+            <p><b>SECRETÁRIO:</b> Sérgio Zani Vicente</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont29', 'seta29')">
+            <i id="seta29" class="fa-solid fa-chevron-down"></i> 29ª região - Sede: SÃO BORJA
+          </button>
+
+          <div id="cont29">
+            <p><b>SEDE:</b> SÃO BORJA</p>
+            <p><b>REGIÃO:</b> 29ª região</p>
+            <p><b>JURISDIÇÃO:</b> São Borja, Itaqui e São Luiz Gonzaga</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> augusto.ccr@terra.com.br</p>
+            <p><b>DELEGADO:</b> Augusto Gómez Canabarro Cunha</p>
+            <p><b>ADJUNTO:</b> Ramão Carlos Rodrigues Aguilar</p>
+            <p><b>SECRETÁRIO:</b> Jonas Richardt Canabarro Cunha</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont30', 'seta30')">
+            <i id="seta30" class="fa-solid fa-chevron-down"></i> 30ª região - Sede: CAÇAPAVA DO SUL
+          </button>
+
+          <div id="cont30">
+            <p><b>SEDE:</b> CAÇAPAVA DO SUL</p>
+            <p><b>REGIÃO:</b> 30ª região</p>
+            <p><b>JURISDIÇÃO:</b> Caçapava do Sul, Bagé, Santana da Boa Vista e Lavras do Sul</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> eng.marcelo@farrapo.com.br</p>
+            <p><b>DELEGADO:</b> Marcelo de Souza Silva</p>
+            <p><b>ADJUNTO:</b> André Pimentel dos Santos</p>
+            <p><b>SECRETÁRIO:</b> Diego Marzari</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont31', 'seta31')">
+            <i id="seta31" class="fa-solid fa-chevron-down"></i> 31ª região - Sede: URUGUAIANA
+          </button>
+
+          <div id="cont31">
+            <p><b>SEDE:</b> URUGUAIANA</p>
+            <p><b>REGIÃO:</b> 31ª região</p>
+            <p><b>JURISDIÇÃO:</b> Uruguaiana, Alegrete e Manoel Viana</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> salvadorsevero@icloud.com</p>
+            <p><b>DELEGADO:</b> Salvador Ferreira Severo</p>
+            <p><b>ADJUNTO:</b> Danilo Gonçalves Serpa</p>
+            <p><b>SECRETÁRIO:</b> James Alex Goulart Trein</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont32', 'seta32')">
+            <i id="seta32" class="fa-solid fa-chevron-down"></i> 32ª região - Sede: CRUZ ALTA
+          </button>
+
+          <div id="cont32">
+            <p><b>SEDE:</b> CRUZ ALTA</p>
+            <p><b>REGIÃO:</b> 32ª região</p>
+            <p><b>JURISDIÇÃO:</b> Cruz Alta, Ijuí, Tupanciretã, Salto do Jacuì, Panambí e Ibirubá</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> adaltro@adaltrolimaadvocacia.com.br</p>
+            <p><b>DELEGADO:</b> Adaltro Cezar Santos de Lima</p>
+            <p><b>ADJUNTO:</b> Abidon Antunes de Souza</p>
+            <p><b>SECRETÁRIO:</b> Ricardo Arnoldo Hanke Júnior</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont33', 'seta33')">
+            <i id="seta33" class="fa-solid fa-chevron-down"></i> 33ª região - Sede: AGUDO
+          </button>
+
+          <div id="cont33">
+            <p><b>SEDE:</b> AGUDO</p>
+            <p><b>REGIÃO:</b> 33ª região</p>
+            <p><b>JURISDIÇÃO:</b> Agudo, Faxinal do Soturno, Restinga Seca e Cachoeira do Sul</p>
+            <p><b>EXPANSÃO:</b></p>
+            <p><b>E-MAIL:</b> mauricio.diretiva@gmail.com</p>
+            <p><b>DELEGADO:</b> Luiz Mauricio da Rosa</p>
+            <p><b>ADJUNTO:</b> Ademar José Coradini</p>
+            <p><b>SECRETÁRIO:</b> Pedro Daroncho Osmari</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="rodape">
+
+    <div id="rodape-logo">
+      <img src="../img/logo-branco.png">
+    </div>
+
+    <div id="rodape-endereco">
+      <div>
+        <h4>Palácio Maçônico:</h4>
+        <p>Rua Jerônimo Coelho, 116 - Centro.</p>
+        <p>CEP: 90010-240.</p>
+        <h5>Fone: (51) 3272-3700</h5>
+      </div>
+
+      <div>
+        <h4>Centro Templário:</h4>
+        <p>Rua Quatro Jacós, 75 - Menino Deus.</p>
+        <p>CEP: 90150-010.</p>
+        <h5>Fone: (51) 3095-1612 </h5>
+      </div>
+
+    </div>
+  </footer>
+
+  <section id="radio">
+    <audio id="player" controls loop preload src="https://stream-50.zeno.fm/t91ercqdz38uv?zs=L0_XyZvYRwOHDdket63HBw">
+    </audio>
+    <button id="btn-radio" onclick="ocultarRadio()">
+      <img id="radio-logo" src="../img/logo-radio.png">
+      <i id="icone-radio" class="fa-solid fa-chevron-left"></i>
+    </button>
+  </section>
+
+  <section id="meus-dados">
+    <div id="perfil">
+      <div id="perfil-img">
+        <img src="../img/sem_foto.jpg">
+      </div>
+      <div id="perfil-info">
+        <p>Fulano Rodriguês da Silva Santos Corrêa</p>
+        <p>CIM: 55555</p>
+        <p>Venerável Mestre Marcelo Moreira Tostes</p>
+        <p>Iniciação: 01/01/2000</p>
+        <p>Elevação: 01/01/2000</p>
+        <p>Exaltação: 01/01/2000</p>
+        <p>Instalação: 01/01/2000</p>
+      </div>
+      <a id="btn-config" href="">
+        <i class="fa-solid fa-gear"></i>
+      </a>
+    </div>
+    <div id="topicos">
+      <button onclick="dropdownMenuLateral('meu-perfil-top', 'perfil-arrow')">
+        Meu Perfil
+        <i id="perfil-arrow" class="fa-solid fa-chevron-down droped-arrow"></i>
+      </button>
+      <div id="meu-perfil-top" class="droped-cont">
+        <a href="">Página do Irmão</a>
+        <hr>
+        <a href="">Mensagens</a>
+        <hr>
+        <a href="">Dados</a>
+        <hr>
+        <a href="">Preferências</a>
+        <hr>
+        <a href="">Financeiro</a>
+        <hr>
+        <a href="">Presenças</a>
+        <hr>
+        <a href="">Troca de Senha</a>
+      </div>
+      <hr>
+      <button onclick="dropdownMenuLateral('publicacoes-top', 'publicacoes-arrow')">
+        Publicações
+        <i id="publicacoes-arrow" class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div id="publicacoes-top">
+        <a href="">Boletim Informativo</a>
+        <hr>
+        <a href="">Legislação</a>
+        <hr>
+        <a href="">Rituais Especiais</a>
+        <hr>
+        <a href="">Formulários</a>
+        <hr>
+        <a href="">Diversos</a>
+        <hr>
+        <a href="">Eleição</a>
+      </div>
+      <hr>
+      <button onclick="dropdownMenuLateral('loja-top', 'loja-arrow')">
+        Loja
+        <i id="loja-arrow" class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div id="loja-top">
+        <a href="">Atas / Balaústres</a>
+        <hr>
+        <a href="">Candidatos</a>
+        <hr>
+        <a href="">Aniversários</a>
+      </div>
+      <hr>
+      <a href="">
+        <button>
+          Troca de Loja
+        </button>
+      </a>
+      <hr>
+      <a href="">
+        <button>
+          Banco de Negócios
+        </button>
+      </a>
+      <hr>
+      <a href="">
+        <button>
+          Sair
+        </button>
+      </a>
+      <hr>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="../js/functions.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://kit.fontawesome.com/ed1cc67055.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

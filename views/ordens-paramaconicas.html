@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordens Paramaçônicas</title>
+  <link rel="icon" href="../img/logo_icon.png">
+  <link rel="stylesheet" href="../css/css.css">
+  <link href="../assets/css/solid.css" rel="stylesheet">
+  <link href="../assets/css/brands.css" rel="stylesheet">
+  <link href="../assets/css/fontawesome.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <section id="modal-area">
+    <div id="modal-conteudo">
+      <div id="modal-img">
+        <img src="../img/logo_icon.png">
+        <button id="btn-fechar-area" onclick="areaRestritaAberta()"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="modal-campos">
+        <form action="">
+          <input type="text" placeholder="CIM" required>
+          <input type="password" placeholder="Senha" required>
+          <div id="recaptcha" class="g-recaptcha" data-sitekey="your_site_key"></div>
+          <button type="submits">Acessar</button>
+        </form>
+        <a onclick="modalRecurar()">Esqueci minha senha</a>
+        <a onclick="modalPrimeiro()">Primeiro acesso</a>
+      </div>
+      <div id="modal-recuperar">
+        <form action="">
+          <input type="text" placeholder="CPF" required>
+          <button type="submit" onclick="mostrarMensagemRecuperar()">Enviar</button>
+          <h5 id="mensagem-recuperacao">Uma nova senha para meu email!</h5>
+        </form>
+        <a onclick="modalRecurar(); ocultarMensagemRecuperar();">Lembrou da Senha? Faça o Login</a>
+      </div>
+      <div id="modal-primeiro">
+        <form action="">
+          <input type="text" placeholder="CPF" required>
+          <input type="text" placeholder="CIM" required>
+          <button type="submit" onclick="mostrarMensagemPrimeiro()">Enviar</button>
+          <h5 id="mensagem-primeiro">Uma senha para meu email!</h5>
+        </form>
+        <a onclick="modalPrimeiro(); ocultarMensagemPrimeiro();">Não é seu primeiro acesso? Faça o Login</a>
+      </div>
+    </div>
+  </section>
+
+  <header id="top">
+    <figure id="logo">
+      <a href="../index.html">
+        <img src="../img/logo-gorgs.png">
+      </a>
+      <div id="logo-cont">
+        <a id="logo-home" href="../index.html">
+          <img src="../img/logo-txt.png">
+        </a>
+        <div>
+          <a id="icone-facebook" href="https://www.facebook.com/grandeorienters" target="_blank">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a id="icone-twitter" href="https://twitter.com/gorgs_comab" target="_blank">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a id="icone-youtube" href="https://www.youtube.com/channel/UCqd2UyXMiOHVNWdphQYjc0Q" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </figure>
+
+    <div id="mobile">
+      <button onclick="mobile()"><i class="fa-sharp fa-solid fa-bars"></i></button>
+    </div>
+
+    <!-- Menu padrão -->
+
+    <nav id="menu">
+      <ul>
+
+        <div id="dropdown-main">
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              <p>
+                GORGS Digital
+              </p>
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
+            </a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="">Ciclo de Palestras</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Cursos</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Biblioteca Virtual</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">GORGS TV</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              <p>
+                Gerir Loja
+              </p>
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
+            </a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="">Processos</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Cadastro da Loja</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Nominata</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Irmãos da Loja</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Financeiro</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Sistema de Lojas</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              Institucional
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i></a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="../views/institucional.html">O GORGS</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/poder-executivo.html">Poder Executivo</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/palm.html">Poder Legislativo</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/poder-judiciario.html">Poder Judiciário</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/lojas.html">Lojas Maçônicas</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="../views/noticias.html">Notícias</a>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="">Eleição</a>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="../views/contato.html">Contatos</a>
+          </div>
+
+        </div>
+
+        <div id="btn-area">
+          <button id="area" onclick="areaRestritaFechada()">Olá, Fulano
+            <i id="icon-area" class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+
+      </ul>
+    </nav>
+
+    <!-- Menu Mobile -->
+
+    <nav id="menu-mobile">
+
+      <div id="perfil">
+        <div id="perfil-img">
+          <img src="../img/sem_foto.jpg">
+        </div>
+        <div id="perfil-info">
+          <p>Fulano Rodriguês da Silva Santos Corrêa</p>
+          <p>CIM: 55555</p>
+          <p>Venerável Mestre Marcelo Moreira Tostes</p>
+          <p>Iniciação: 01/01/2000</p>
+          <p>Elevação: 01/01/2000</p>
+          <p>Exaltação: 01/01/2000</p>
+          <p>Instalação: 01/01/2000</p>
+        </div>
+        <a id="btn-config" href="">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+      </div>
+      <div id="topicos">
+        <hr>
+        <hr>
+        <hr>
+        <button onclick="dropdownMenuLateral('meu-perfil-top-mobi', 'perfil-arrow-mobi')">
+          Meu Perfil
+          <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down droped-arrow"></i>
+        </button>
+        <div id="meu-perfil-top-mobi" class="droped-cont">
+          <a href="">Página do Irmão</a>
+          <hr>
+          <a href="">Dados</a>
+          <hr>
+          <a href="">Preferências</a>
+          <hr>
+          <a href="">Financeiro</a>
+          <hr>
+          <a href="">Presenças</a>
+          <hr>
+          <a href="">Troca de Senha</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('publicacoes-top-mobi', 'publicacoes-arrow-mobi')">
+          Publicações
+          <i id="publicacoes-arrow-mobi" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="publicacoes-top-mobi">
+          <a href="">Boletim Informativo</a>
+          <hr>
+          <a href="">Legislação</a>
+          <hr>
+          <a href="">Rituais Especiais</a>
+          <hr>
+          <a href="">Formulários</a>
+          <hr>
+          <a href="">Diversos</a>
+          <hr>
+          <a href="">Eleição</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('loja-top-mobi', 'loja-arrow-mobi')">
+          Loja
+          <i id="loja-arrow-mobi" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="loja-top-mobi">
+          <a href="">Atas / Balaústres</a>
+          <hr>
+          <a href="">Candidatos</a>
+          <hr>
+          <a href="">Aniversários</a>
+        </div>
+        <hr>
+        <a href="">
+          <button>
+            Troca de Loja
+          </button>
+        </a>
+        <hr>
+        <a href="">
+          <button>
+            Banco de Negócios
+          </button>
+        </a>
+        <hr>
+        <hr>
+        <hr>
+        <button onclick="dropdownMenuLateral('digital-top', 'digital-arrow')">
+          GORGS Digital
+          <i id="digital-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="digital-top">
+          <a href="">Ciclo de Palestras</a>
+          <hr>
+          <a href="">Cursos</a>
+          <hr>
+          <a href="">Biblioteca Virtual</a>
+          <hr>
+          <a href="">GORGS TV</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('gerir-top', 'gerir-arrow')">
+          Gerir Loja
+          <i id="gerir-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="gerir-top">
+          <a href="">Processos</a>
+          <hr>
+          <a href="">Cadastro da Loja</a>
+          <hr>
+          <a href="">Nominata</a>
+          <hr>
+          <a href="">Irmãos da Loja</a>
+          <hr>
+          <a href="">Financeiro</a>
+          <hr>
+          <a href="">Sistema de Lojas</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('inst-top', 'inst-arrow')">
+          Institucional
+          <i id="inst-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="inst-top">
+          <a href="../views/institucional.html">O GORGS</a>
+          <hr>
+          <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
+          <hr>
+          <a href="../views/poder-executivo.html">Poder Executivo</a>
+          <hr>
+          <a href="../views/palm.html">Poder Legislativo</a>
+          <hr>
+          <a href="../views/poder-judiciario.html">Poder Judiciário</a>
+          <hr>
+          <a href="../views/lojas.html">Lojas Maçônicas</a>
+          <hr>
+          <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
+        </div>
+        <hr>
+        <a href="../views/noticias.html">
+          <button>
+            Notícias
+          </button>
+        </a>
+        <hr>
+        <a href="">
+          <button>
+            Eleição
+          </button>
+        </a>
+        <hr>
+        <a href="../views/contato.html">
+          <button>
+            Contatos
+          </button>
+        </a>
+        <hr>
+        <hr>
+        <hr>
+        <a href="">
+            <button>
+              Sair
+            </button>
+          </a>
+          <hr>
+          <button id="area-mobile" onclick="areaRestritaAberta()">FAÇA SEU LOGIN</button>
+          <hr>
+          <hr>
+        <hr>
+      </div>
+    </nav>
+
+    <div id="home">
+      <a href="#top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+
+  </header>
+
+  <main id="main">
+
+    <div id="ordem">
+
+      <div id="ordem-titulo">
+        <div id="ordem-text">
+          <h2>ORDENS PARAMAÇÔNICAS</h2>
+          <p>As ordens paramaçônicas têm seus regimes e administrações próprias, porém o fundamento de seus ensinamentos
+            segue os mesmos princípios da Maçonaria.</p>
+        </div>
+        <div id="ordem-img">
+          <img src="../img/icone_organizacoes3.png">
+        </div>
+      </div>
+
+      <div id="ordem-conteudo">
+
+        <h2>CONHEÇA AS ORDENS PARAMAÇÔNICAS</h2>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont1', 'seta1')">
+            <i id="seta1" class="fa-solid fa-chevron-down"></i>
+            Grande Associação Beneficente de Senhoras do GORGS – GABS
+          </button>
+
+          <div id="cont1">
+            <a href="https://www.facebook.com/gabsgorgs/" target="_blank">ACESSE A PÁGINA OFICIAL NO
+              FACEBOOK</a>
+            <h3>Grande Associação Beneficente de Senhoras do GORGS – GABS</h3>
+            <h3>A GABS reúne-se às quintas-feiras, a partir das 14h, no Centro Templário do GORGS (avenida Aureliano de
+              Figueiredo Pinto, 945, em Porto Alegre). Contatos pelo fone 51 3085-2719.</h3>
+            <p>O Grande Oriente do Rio Grande do Sul, em seu estatuto social, no Art. 1°, § 1°, anuncia como princípios
+              da instituição, entre outros, “a valorização das ideias humanitárias” e “a prática constante da caridade”.
+              No § 2°, abordando seus fundamentos filosóficos, preconiza “a prática desinteressada da beneficência”,
+              caracterizando-se como uma “instituição essencialmente filantrópica”. O documento defende ainda que “os
+              Maçons estendam os laços fraternos que os unem a toda a humanidade”. E, sendo princípios universais,
+              evidentemente não ficam adstritos aos membros das Oficinas Maçônicas ou à realização de seus trabalhos nas
+              respectivas Lojas. Esse legado de benemerência, de caridade, de amor ao próximo, a virtude moral essencial
+              em todo ser humano, estende-se às famílias de todo Maçom. Assim, a participação das mulheres, esposas,
+              filhas e familiares de Maçons é primordial na efetivação de práticas filantrópicas.</p>
+            <p>Assim nasce, em 26 de agosto de 1900, sob a coordenação do Grão-Mestre Antônio Antunes Ribas, a Grande
+              Associação Beneficente de Senhoras do Grande Oriente do Rio Grande do Sul – GABS. A entidade, desde seus
+              primórdios, tem sido agente de ações sociais altruístas, não só junto a Maçons e familiares, como também
+              em prol da sociedade em geral. Conforme a pesquisadora Eliana Colussi, o primeiro passo para a criação de
+              uma entidade paramaçônica com tal perfil ocorreu em São Leopoldo, onde a Maçonaria criou o Clube de
+              Beneficência, em 1898. O artigo primeiro do Estatuto dizia: “O Clube Beneficente de São Leopoldo tem por
+              fim auxiliar a Maçonaria em suas obras de caridade, e compõe-se unicamente de senhoras”. A GABS, fundada
+              dois anos depois, em Porto Alegre, criou ramificações pelo interior do Estado. A sede da associação era o
+              Templo do GORGS, e entre seus objetivos estavam a prática da beneficência, o auxílio à educação da mulher
+              e o amparo e instrução à infância desvalida até os sete anos. Destaca-se dos Estatutos Gerais: “Art.
+              Primeiro – Fica criada no Estado do Rio Grande do Sul a Grande Associação Beneficente de Senhoras, a qual
+              tem por fim a prática da beneficência; Art. Segundo – A grande Associação tem sua sede em Porto Alegre e
+              ramifica-se por todo o Estado, criando clubes locais; Art. Terceiro – Na capital, só haverá um clube, com
+              a denominação de Central, e em cada cidade, vila ou distrito, também um só que tomará a designação do
+              respectivo lugar; Art. Quarto – cada clube reger-se-á por estatutos particulares, dependentes de aprovação
+              da assembleia das sócias fundadoras”. Como a carência de recursos financeiros impediam a concretização dos
+              projetos filantrópicos, em 1904, o ministro das Finanças do GORGS, Francisco Caldas Júnior, elaborou um
+              projeto que incrementou recursos para a consecução desses objetivos: “I – Cada Maçom pagará em Loja, além
+              da contribuição regimental e conjuntamente com essa, mais a quota mensal de 3$500; II – Essa contribuição,
+              a que as oficinas darão os destinos adiante especificados, será assim distribuída (…) quinhentos réis para
+              o patrimônio da Grande Associação Beneficente de Senhoras, dois mil réis para o serviço permanente (…)”.
+            </p>
+            <p>A GABS teve o registro de seus estatutos realizado em 1901, com atualização em 1984. No ano de 1991, foi
+              declarada entidade de Utilidade Pública pelo município de Porto Alegre e pelo Estado do Rio Grande do Sul,
+              com seu registro definitivo na Secretaria do Trabalho, Ação Social e Comunitária.</p>
+            <p>Atualmente, a Grande Associação tem mantido seu caráter assistencial, praticando a caridade diariamente.
+              Auxilia diversas entidades, como a Creche Irmão Pedro Leonardo, a Sociedade das Filhas de Jesus, o Lar de
+              Idosos Simão Pedro, o Hospital Materno Infantil Presidente Vargas, o Lar Francisco de Assis, a Sociedade
+              Espírita Ramiro D’Ávila, a Casa da Criança com HIV, a Creche Tia Odete, o Amparo Santa Cruz e a SPAAN –
+              Sociedade Porto-alegrense de Auxílio aos Necessitados, entre tantas outras entidades que são auxiliadas de
+              forma sazonal, conforme a demanda e as possibilidades deste grupo de senhoras que tão bem representa a
+              fraternidade maçônica.</p>
+            <p>Mas, mesmo a “prática desinteressada da beneficência” só torna-se possível com organização, com equipe e
+              com recursos. Assim, a GABS realiza, com a frequência viável, eventos para angariar fundos e congregar
+              suas associadas. Para estas atividades, como chás, galetos, “ação entre amigos” e manufatura de artigos
+              para bazar, as senhoras convidam Maçons e amigos, a fim de apresentar o trabalho e conquistar novas
+              adeptas.</p>
+            <p>Mais do que solicitar apoio, que é extremamente necessário, de parte dos Maçons e das Lojas, as Cunhadas
+              da Grande Associação Beneficente de Senhoras do GORGS preferem ocupar este espaço para agradecer.
+              Agradecem a todos que, de alguma forma, tenham prestado auxílio, não só à GABS, mas a qualquer instituição
+              filantrópica, seja em pequenas comunidades ou na capital. Mais do que uma ação individual, a caridade é um
+              dos pilares fundamentais da doutrina Maçônica e, portanto, não há exclusividade para exercê-la. E
+              finalizam as cunhadas: “Fruto da difícil situação econômico-financeira que atravessa o País, a necessidade
+              de atendimento a instituições e pessoas aumentou consideravelmente. Felizmente, os esforços da Grande
+              Associação encontram sempre a adesão indispensável do Grão-Mestrado e das Lojas no sentido de atender a
+              todos os que baterem em nossa porta. Graças ao trabalho das associadas, aliado à compreensão e ajuda de
+              todos, chegamos a mais este período, atingindo os objetivos a que nos propomos, Resta, pois, agradecer e
+              pedir a Deus que nos ilumine e inspire, para podermos continuar com a nossa obra, com a mesma dedicação e
+              êxito até aqui demonstrados”.</p>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont2', 'seta2')">
+            <i id="seta2" class="fa-solid fa-chevron-down"></i>
+            Ordem DeMolay
+          </button>
+
+          <div id="cont2">
+            <div id="ordem-div">
+              <div>
+                <img src="../img/Logo-DeMolay.png">
+              </div>
+              <div>
+                <a href="https://www.demolaybrasil.org.br/" target="_blank">ACESSE O SITE DO SUPREMO CONSELHO
+                  DEMOLAY BRASIL</a>
+                <h3>Ordem DeMolay</h3>
+                <p>A Ordem DeMolay é a maior organização juvenil do mundo. É filosófica, filantrópica e sem fins
+                  lucrativos, já tendo iniciado, desde de sua origem, mais de 2,5 milhões de jovens. Trabalha alicerçada
+                  na máxima de que “educando-se o jovem estaremos nos eximindo da tarefa de ter que castigar o adulto”.
+                  Fundada em 18 de março de 1919 em Kansas City, Missouri, EUA, tem como objetivo formar jovens de 12 à
+                  21
+                  anos de idade melhores cidadãos e líderes através do desenvolvimento e fortalecimento da personalidade
+                  e
+                  enfatizando virtudes indispensáveis para a boa conduta social. Não é uma instituição Maçônica Juvenil,
+                  mas é unificada e dirigida por Maçons.</p>
+                <p>A Ordem DeMolay não tem a pretensão e não deseja tomar o lugar do Lar, da Igreja ou da Escola nessa
+                  busca do aperfeiçoamento, mas coadjuvá-los com um programa de ensinamentos, visando uma boa cidadania
+                  a
+                  seus membros. É baseado no espírito de fidelidade, liderança, responsabilidade e busca de um ideal, os
+                  valores e virtudes de seus membros, na busca de um mundo mais digno e justo para todos, sem
+                  distinções.
+                  Os ensinamentos DeMolay orientam seus integrantes a se dedicar à felicidade de seus semelhantes, não
+                  só
+                  porque a razão e a moral lhes impõem tal obrigação, mas também porque esse sentimento de solidariedade
+                  os faz irmãos.</p>
+                <p>Entre os países em que atua, destacam-se o Brasil, Estados Unidos, Austrália, Japão, Itália e
+                  Alemanha.
+                  Algumas nações trabalham para implantar a Ordem DeMolay como Inglaterra, França, Índia e Noruega. Além
+                  dos Estados Unidos, mais cinco países tem Supremo Conselho próprio, incluindo o Brasil.</p>
+                <p>Seu patrono, Jacques DeMolay, foi expedicionário das Cruzadas, no século XIV. Foi queimado no poste
+                  por
+                  não trair seus irmãos e seguidores. Do seu exemplo, a Ordem DeMolay aprendeu a lição e importância da
+                  honestidade, da lealdade e do amor fraterno. Possui em seu fundamento sete princípios essenciais, os
+                  quais chama de Virtudes Cardeais de um DeMolay: Amor Filial, Reverência pelas Coisas Sagradas,
+                  Cortesia,
+                  Companheirismo, Fidelidade, Pureza e Patriotismo. Assim, mais importantes se tornam as atividades e os
+                  esforços para alcançar a verdadeira compreensão mútua dos valores culturais e sociais de cada nação,
+                  independentemente de origem, raça, cor, nacionalidade, religião.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont3', 'seta3')">
+            <i id="seta3" class="fa-solid fa-chevron-down"></i>
+            Ordem Internacional das Filhas de Jó
+          </button>
+
+          <div id="cont3">
+            <div id="ordem-div">
+              <div>
+                <img src="../img/Logo-Filhas-de-Jó.png">
+              </div>
+              <div>
+                <a href="https://filhasdejors.com.br/" target="_blank">ACESSE O SITE DAS FILHAS DE
+                    JÓ</a>
+                <h3>Ordem Internacional das Filhas de Jó</h3>
+                <p>A Ordem Internacional das Filhas de Jó foi criada no dia 20 de outubro de 1921 pela Sra. Ethel T.
+                  Wead
+                  Mick, na cidade de Omaha, no Estado de Nebraska, Estados Unidos da América. Foi organizada com o
+                  apoio
+                  da Maçonaria e das instituições paramaçônicas locais.</p>
+                <p>Compreendendo a importância dos ensinamentos recebidos de sua mãe, especialmente as lições de
+                  literatura e drama encontrados no Livro de Jó, Ethel decidiu dar parte do seu tempo e de seu talento
+                  para tornar possível a todas as moças compartilharem desses raros privilégios que ela possuía. Os
+                  arquivos oficiais revelam que muitas reuniões preliminares foram realizadas por alguns
+                  Mestres-Maçons
+                  interessados e membros da Ordem Estrela do Oriente durante os anos de 1918 a 1920, na casa e no
+                  escritório do casal William e Ethel Mick.</p>
+                <p>Depois de diversos anos de estudos e considerações, foi fundada a Ordem Internacional das Filhas de
+                  Jó,
+                  em honra à memória de sua mãe, Sra. Elizabeth D. Wead. O principal objetivo da Ordem é reunir moças
+                  de
+                  13 a 20 anos que tenham parentesco ou relacionamento com Maçons para aperfeiçoamento do seu caráter
+                  através do desenvolvimento moral e espiritual, encontrado nos ensinamentos que destacam reverência a
+                  Deus e às Sagradas Escrituras, lealdade com a bandeira do País e às coisas que ela representa e amor
+                  para com os pais e familiares.</p>
+                <p>Os trabalhos ritualísticos, cerimônias, canções e leituras oferecem forte influência e inspiração
+                  sobre
+                  todos que assistem a reunião de um Bethel. O trabalho ritualístico da Ordem é baseado no triângulo,
+                  nas
+                  três Filhas de Jó, no Livro Sagrado e na Educação e combina emblemáticas representações de antigas
+                  eras
+                  latinas e gregas.</p>
+                <p>Baseado no Livro de Jó, o Bethel representa inocência, piedade, modéstia, retidão, honestidade,
+                  lealdade e compaixão pelos órfãos e viúvas. Essas virtudes são princípios fundamentais. As Filhas de
+                  Jó
+                  receberam este nome por seguirem os ensinamentos extraídos desse livro. São reconhecidas pelo uso de
+                  túnicas brancas (hobbys), como os utilizados na época de Jó. O desenho das chaves gregas na borda
+                  das
+                  capas é branco e simboliza a fé na forma de viver. É contínuo representando a vida eterna. As cores
+                  desta ordem são: branco, pureza e púrpura (roxo), significando realeza. Tem como lema: “A virtude é
+                  uma
+                  qualidade que grandemente honra uma mulher”.</p>
+                <p>O Bethel possui o Conselho Guardião, formado por Maçons, mães das integrantes, e/ou esposas de
+                  Maçons,
+                  que ajudam as Filhas de Jó na realização de seus trabalhos. Por esse Conselho passam todas as
+                  decisões
+                  necessárias. O Bethel é composto de 20 cargos. Os trabalhos são dirigidos pela Tríade:
+                  Honorável-Rainha,
+                  1ª Princesa e 2ª Princesa, que são eleitas. Os outros cargos são nomeados: secretária, tesoureira,
+                  capelã, bibliotecária, musicista, 1ª mensageira, 2ª mensageira, 3ª mensageira, 4ª mensageira, 5ª
+                  mensageira, 1ª zeladora, 2ª zeladora, guarda interna e guarda externa. As demais pertencem ao Coral
+                  do
+                  Bethel. Cada gestão dura em torno de seis meses.</p>
+                <p>As Filhas de Jó se reúnem em Templo Sagrado denominado “BETHEL”. Elas são iniciadas, reúnem-se
+                  ritualisticamente, possuem toques e palavras próprios. Em reunião ritualística, usam paramentos e
+                  utilizam instrumentos simbólicos. Para assistir a uma Cerimônia Ritualística ou uma reunião de um
+                  Bethel
+                  é preciso ser um Maçom regular, pai, padrasto, avô ou tutor de uma integrante ou candidata ao
+                  Bethel.
+                </p>
+                <p>Para ingressar como Filha de Jó, a menina precisa ter idade entre 11 e 20 anos incompletos, ter
+                  parentesco maçônico ou forte relacionamento com famílias maçônicas, ter disponibilidade para
+                  frequentar
+                  as reuniões e crer em um ente superior.</p>
+                <p>Para ser instalado, o Bethel precisa ser patrocinado por uma Loja Maçônica, uma Potência Maçônica
+                  ou
+                  um
+                  Grupo de Maçons. A autorização para Instalação de um Bethel vem dos Estados Unidos, através da
+                  Suprema-Guardiã. Sendo ser aprovado, recebe a Carta Constitutiva.</p>
+                <p>Após o recebimento de autorização, o Bethel deverá ser instituído de acordo com a Constituição e
+                  Estatuto do Supremo ou Grande Conselho Guardião. As candidatas são iniciadas por membros de um
+                  Bethel
+                  possuidor da carta Constitutiva quando disponível, caso contrário por uma Oficial Instituidora
+                  administrando o juramento. Os membros do Conselho Guardião do Bethel são nomeados para servirem ao
+                  Bethel por um período de um ano. As Oficiais do Bethel são eleitas ou nomeadas para servirem um
+                  mandato
+                  de seis meses no cargo, permitindo, desta forma que outras moças obtenham o benefício de ocuparem
+                  cargos.</p>
+                <p>É necessária a realização de atividades filantrópicas incluindo angariar fundos para caridade, além
+                  de
+                  coletas para caridade nacional, além do trabalho em favor daqueles que estejam em condição de
+                  vulnerabilidade. As atividades sociais do Bethel poderão incluir equipe de competição, coral,
+                  teatro,
+                  chás, recepções, festas formais, etc.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont4', 'seta4')">
+            <i id="seta4" class="fa-solid fa-chevron-down"></i>
+            Ordem da Estrela do Oriente
+          </button>
+
+          <div id="cont4">
+            <div id="ordem-div">
+              <div>
+                <img src="../img/Logo-Estrela-Oriente.png">
+              </div>
+              <div>
+                <a href="https://easternstar.org/" target="_blank">ACESSE O SITE DA ESTRELA DO
+                    ORIENTE</a>
+                <h3>Ordem da Estrela do Oriente</h3>
+                <p>A Ordem da Estrela do Oriente é uma organização (fraternidade) de adultos (homens e mulheres) e
+                  foi
+                  criada em 1850, pelo ilustre Maçom Dr. Robert Morris, advogado, escritor, poeta e ex-Grão-Mestre
+                  da
+                  Grande Loja Maçônica do Estado de Kentucky/EUA. Esta associação iniciática conta hoje com mais de
+                  1.200.000 de membros em todo o mundo e tem participação em vários países, como, Inglaterra,
+                  França,
+                  Espanha, Austrália, Alemanha, EUA, Japão, Itália, entre outros.</p>
+                <p>Tem como propósito através dos seus trabalhos ritualísticos, educar, edificar caráter, ressaltar
+                  valores morais e espirituais, fazer caridade e servir o próximo, além de dar suporte às Ordens
+                  Internacionais das Filhas de Jó e do Arco-Íris para Meninas. Nestes mais 150 anos de existência, a
+                  Ordem
+                  tem se destacado por suas inúmeras obras assistenciais, colocando-se como um alicerce social junto
+                  às
+                  Lojas Maçônicas e demais Organizações Maçônicas.</p>
+                <p>A Estrela do Oriente tem sido sempre uma fonte de inspiração para os que buscam a Luz e a
+                  Verdade. Na
+                  constante evolução da sociedade humana, quando chegou o tempo de a mulher desfrutar de uma
+                  fraternidade
+                  simbólica, não foi por acaso e sim por um inspirado pensamento que o fundador da Ordem da Estrela
+                  do
+                  Oriente escolheu esta luminária como emblema da Ordem, revelando nas Cinco Pontas da Estrela as
+                  características ou virtudes daquelas personagens bíblicas que representam os graus da Ordem: ADAH
+                  a
+                  Filha, RUTH a Viúva, ESTHER a Esposa, MARTHA a Irmã e ELECTA a Mãe.</p>
+                <p>Cabe ressaltar, principalmente aos Irmãos Maçons de que A ORDEM DA ESTRELA DO ORIENTE, NÃO É UMA
+                  RELIGIÃO E NEM UMA SOCIEDADE FEMINISTA, TÃO POUCO, MAÇONARIA FEMININA OU MISTA, mas sim, como dito
+                  anteriormente, uma associação iniciática adulta, criada por um Irmão visionário (Robert Morris)
+                  para
+                  oportunizar que as parentas de Mestre Maçom ativo e regular, tivessem um espaço para trabalharem
+                  suas
+                  potencialidades e consequentemente, se tornarem melhores cidadãs e poderem contribuir em grupo
+                  para
+                  tornar a sociedade mais humana e igualitária, somando-se com as demais organizações existentes com
+                  estes
+                  objetivos, na busca pela manutenção e valorização do núcleo familiar como célula mater da
+                  sociedade,
+                  além da incansável busca das melhorias necessárias, não somente ao gênero humano, mas ao mundo
+                  como um
+                  todo.</p>
+                <p>Além desse cunho social e fraternal, seu fundador tinha também o propósito de estimular o estudo
+                  das
+                  Sagradas Escrituras de acordo com um plano que seria facilmente compreendido.</p>
+                <p>As reuniões dos Capítulos são realizadas em Templo Maçônico transformado em uma Sala Capitular
+                  (pois
+                  estas inexistem) e necessitam ser apoiados por uma Loja Maçônica desde a sua criação, porém, por
+                  se
+                  tratar de uma Ordem de adultos, mantém-se por conta própria, porém, aceitando donativos e verbas
+                  para
+                  suas obras assistenciais.</p>
+                <p>Chegou ao Brasil, no Rio de Janeiro, em agosto de 1997 quando foram instituídos quatro Capítulos
+                  (unidades): Electa, Rio de Janeiro, Charlotte Mendenhall e Grande Rio. Hoje, existem vários
+                  Capítulos,
+                  estando presente nos estados de São Paulo, Espírito Santo, Minas Gerais, entre outros, além do
+                  Distrito
+                  Federal. No Rio Grande do Sul existem três: o Capítulo Cruzeiro do Sul nº 32 e o Capítulo Luz do
+                  Poente
+                  nº 27 em Porto Alegre e o Capítulo Fronteira Sul nº 28 em Bagé, sendo este o primeiro a ser
+                  fundado em
+                  nosso Estado no ano de 2000. Estes Capítulos são apoiados pelas Lojas Maçônicas Sabedoria e
+                  Prudência
+                  nº
+                  78, Hermanubis nº 34 e Adonai nº 58 respectivamente, Lojas estas, jurisdicionadas à GLMERGS.</p>
+                <p>Podem ser iniciados na Ordem da Estrela do Oriente (Easternstar): Mestres Maçons ativos e
+                  regulares
+                  (GLMERGS, GOB-RS e GORGS), esposas, filhas, filhas legalmente adotadas, mães, viúvas (exceto
+                  quando
+                  novamente casada), irmãs, meias irmãs, netas, bisnetas, madrastas, enteadas, noras, avós, bisavós,
+                  sobrinhas, filhas de sobrinhas, sogras e cunhadas de Mestre Maçom que esteja ativo e regular ou,
+                  caso
+                  esse Maçom seja falecido, com documentação de sua Loja Maçônica atestando sua regularidade na
+                  época do
+                  falecimento; assim como, os Membros de Maioridade (ou as jovens que tenham sido ativas por pelo
+                  menos
+                  três anos) da Ordem Internacional das Filhas de Jó (Job Daughter’s) ou da Ordem Internacional do
+                  Arco-Íris para Meninas (Rainbow Girls), desde que se cumpra o requisito da idade mínima de 18 anos
+                  (idade válida também para todas as categorias de parentesco maçônico feminino).</p>
+                <p>Os principais requisitos são: acreditar em um Ser Superior (Deus, Alá, etc…), estar apto(a) ao
+                  trabalho
+                  beneficente e/ou voluntariado, ter boa conduta moral e possuir sentimento de irmandade e
+                  fraternidade.
+                </p>
+                <p>Cada unidade (grupo) da Ordem da Estrela do Oriente chama-se Capítulo, e os Capítulos brasileiros
+                  estão
+                  sob a jurisdição direta do Grande Capítulo Geral, nos Estados Unidos, sede da Ordem.</p>
+                <p>Podem participar das Reuniões Ritualísticas Fechadas, somente os membros iniciados na Ordem da
+                  Estrela
+                  do Oriente. As Reuniões Abertas podem ser assistidas por não iniciados na Ordem.</p>
+                <p>A perda do direito maçônico de qualquer Mestre Maçom fará com este perca seus direitos no
+                  Capítulo da
+                  Ordem da Estrela do Oriente, mesmo que esteja regular neste. A perda dos direitos do Mestre Maçom
+                  na
+                  Ordem Maçônica, não implicará na privação do direito do membro feminino iniciado na Ordem da
+                  Estrela
+                  do
+                  Oriente e cujo parentesco por obrigatoriedade exista. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="dropdown-area">
+          <button onclick="dropdown('cont5', 'seta5')">
+            <i id="seta5" class="fa-solid fa-chevron-down"></i>
+            Club Shriner
+          </button>
+
+          <div id="cont5">
+            <div id="ordem-div">
+              <div>
+                <img src="../img/Logo-Shriner.png">
+              </div>
+              <div>
+                <a href="https://www.shrinersinternational.org/en" target="_blank">SHRINER
+                    INTERNATIONAL</a>
+                <p>A Shriners International é uma fraternidade baseada em diversão, companheirismo e nos
+                  princípios
+                  maçônicos de amor fraterno, auxílio e verdade. Com cerca de 325 mil membros em 194 templos
+                  (divisões)
+                  nos Estados Unidos, Canadá, Alemanha, México, Filipinas, Porto Rico e República do Panamá e
+                  Brasil, a
+                  fraternidade é aberta a homens de integridade de todas as esferas da vida.</p>
+                <p>A Shriners International também apoia os Hospitais Shriners para Crianças, um sistema de saúde
+                  com 22
+                  hospitais pediátricos dedicados a fornecer cuidados médicos, pesquisa de excelência mundial e
+                  oportunidades educacionais para os profissionais médicos.</p>
+                <p>Os Shriners são uma fraternidade de homens comprometidos com a família, envolvidos com o
+                  crescimento
+                  pessoal em curso, e dedicados à prestação de cuidados para crianças e famílias necessitadas. As
+                  experiências e interesses são diversos, mas estão unidos por valores compartilhados e uma
+                  vontade de
+                  se
+                  divertir, fazer o bem e construir relacionamentos que podem durar uma vida.</p>
+                <p>O Divan Imperial é o corpo governamental internacional da Shriners International. Este corpo
+                  governamental funciona como um conselho de administração corporativa e é composto por 13
+                  oficiais;
+                  cada
+                  um é eleito para a posição mais baixa no Divan e sobe uma posição a cada ano (com exceção do
+                  Tesoureiro
+                  Imperial e do Gravador Imperial).</p>
+                <p>A posição mais alta de liderança dentro da Shriners International é o Potentado Imperial, que é
+                  o
+                  presidente e o chefe executivo da Shriners International, eleito para um mandato de um ano. O
+                  Potentado
+                  Imperial passa o ano no cargo visitando muitos dos templos Shrine (divisões), participando de
+                  reuniões
+                  regionais da Shriners e visitando os Hospitais Shriners para Crianças. Também atua como
+                  Presidente do
+                  Conselho de Administração tanto do Hospitais Shriners para Crianças como da fraternidade.</p>
+                <p>Essa mesma estrutura organizacional é seguida a nível local em cada um dos 194 templos
+                  (divisões).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </main>
+
+  <footer id="rodape">
+
+    <div id="rodape-logo">
+      <img src="../img/logo-branco.png">
+    </div>
+
+    <div id="rodape-endereco">
+      <div>
+        <h4>Palácio Maçônico:</h4>
+        <p>Rua Jerônimo Coelho, 116 - Centro.</p>
+        <p>CEP: 90010-240.</p>
+        <h5>Fone: (51) 3272-3700</h5>
+      </div>
+
+      <div>
+        <h4>Centro Templário:</h4>
+        <p>Rua Quatro Jacós, 75 - Menino Deus.</p>
+        <p>CEP: 90150-010.</p>
+        <h5>Fone: (51) 3095-1612 </h5>
+      </div>
+
+    </div>
+  </footer>
+
+  <section id="radio">
+    <audio id="player" controls loop preload src="https://stream-50.zeno.fm/t91ercqdz38uv?zs=L0_XyZvYRwOHDdket63HBw">
+    </audio>
+    <button id="btn-radio" onclick="ocultarRadio()">
+      <img id="radio-logo" src="../img/logo-radio.png">
+      <i id="icone-radio" class="fa-solid fa-chevron-left"></i>
+    </button>
+  </section>
+
+  <section id="meus-dados">
+    <div id="perfil">
+      <div id="perfil-img">
+        <img src="../img/sem_foto.jpg">
+      </div>
+      <div id="perfil-info">
+        <p>Fulano Rodriguês da Silva Santos Corrêa</p>
+        <p>CIM: 55555</p>
+        <p>Venerável Mestre Marcelo Moreira Tostes</p>
+        <p>Iniciação: 01/01/2000</p>
+        <p>Elevação: 01/01/2000</p>
+        <p>Exaltação: 01/01/2000</p>
+        <p>Instalação: 01/01/2000</p>
+      </div>
+      <a id="btn-config" href="">
+        <i class="fa-solid fa-gear"></i>
+      </a>
+    </div>
+    <div id="topicos">
+      <button onclick="dropdownMenuLateral('meu-perfil-top', 'perfil-arrow')">
+        Meu Perfil
+        <i id="perfil-arrow" class="fa-solid fa-chevron-down droped-arrow"></i>
+      </button>
+      <div id="meu-perfil-top" class="droped-cont">
+        <a href="">Página do Irmão</a>
+        <hr>
+        <a href="">Mensagens</a>
+        <hr>
+        <a href="">Dados</a>
+        <hr>
+        <a href="">Preferências</a>
+        <hr>
+        <a href="">Financeiro</a>
+        <hr>
+        <a href="">Presenças</a>
+        <hr>
+        <a href="">Troca de Senha</a>
+      </div>
+      <hr>
+      <button onclick="dropdownMenuLateral('publicacoes-top', 'publicacoes-arrow')">
+        Publicações
+        <i id="publicacoes-arrow" class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div id="publicacoes-top">
+        <a href="">Boletim Informativo</a>
+        <hr>
+        <a href="">Legislação</a>
+        <hr>
+        <a href="">Rituais Especiais</a>
+        <hr>
+        <a href="">Formulários</a>
+        <hr>
+        <a href="">Diversos</a>
+        <hr>
+        <a href="">Eleição</a>
+      </div>
+      <hr>
+      <button onclick="dropdownMenuLateral('loja-top', 'loja-arrow')">
+        Loja
+        <i id="loja-arrow" class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div id="loja-top">
+        <a href="">Atas / Balaústres</a>
+        <hr>
+        <a href="">Candidatos</a>
+        <hr>
+        <a href="">Aniversários</a>
+      </div>
+      <hr>
+      <a href="">
+        <button>
+          Troca de Loja
+        </button>
+      </a>
+      <hr>
+      <a href="">
+        <button>
+          Banco de Negócios
+        </button>
+      </a>
+      <hr>
+      <a href="">
+        <button>
+          Sair
+        </button>
+      </a>
+      <hr>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="../js/functions.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://kit.fontawesome.com/ed1cc67055.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
