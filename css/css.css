@@ -3293,14 +3293,15 @@
 
 #gma-gma-img img {
     width: 100%;
-    display: block;
-    margin-left: 0px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 1px;
     border-radius: 5px;
+    transition: opacity 0.5s;
+    opacity: 1;
 }
 
 #gma-gma-img img.alterado {
-    display: none;
+    width: 0%;
+    opacity: 0;
 }
 
 @media (max-width: 768px) {
