@@ -195,7 +195,8 @@
         </div>
 
         <div id="btn-area">
-          <button id="area" onclick="areaRestritaAberta()">FAÇA SEU LOGIN
+          <button id="area" onclick="areaRestritaFechada()">Olá, Fulano
+            <i id="icon-area" class="fa-solid fa-chevron-down"></i>
           </button>
         </div>
 
@@ -206,9 +207,122 @@
 
     <nav id="menu-mobile">
       
+      <div id="perfil">
+        <div id="perfil-img">
+          <figure>
+            <img src="img/sem_foto.jpg">
+          </figure>
+          <h6>CIM: 55555</h6>
+        </div>
+        <div id="perfil-info">
+          <h6>FULANO RODRIGUÊS DA SILVA SANTOS CORRÊA</h6>
+          <h6>VENERÁVEL MESTRE MARCELO MOREIRA TOSTES N° 511</h6>
+          <p>Iniciação: 01/01/2000</p>
+          <p>Elevação: 01/01/2000</p>
+          <p>Exaltação: 01/01/2000</p>
+          <p>Instalação: 01/01/2000</p>
+        </div>
+        <a id="btn-config" href="">
+          <i class="fa-solid fa-gear"></i>
+        </a>
+      </div>
       <div id="topicos">
         <hr>
         <hr>
+        <hr>
+        <button onclick="dropdownMenuLateral('meu-perfil-top-mobi', 'perfil-arrow-mobi')">
+          Meu Perfil
+          <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="meu-perfil-top-mobi">
+          <a href="">Página do Irmão</a>
+          <hr>
+          <a href="">Dados</a>
+          <hr>
+          <a href="">Preferências</a>
+          <hr>
+          <a href="">Financeiro</a>
+          <hr>
+          <a href="">Presenças</a>
+          <hr>
+          <a href="">Troca de Senha</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('publicacoes-top-mobi', 'publicacoes-arrow-mobi')">
+          Publicações
+          <i id="publicacoes-arrow-mobi" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="publicacoes-top-mobi">
+          <a href="">Boletim Informativo</a>
+          <hr>
+          <a href="">Legislação</a>
+          <hr>
+          <a href="">Rituais Especiais</a>
+          <hr>
+          <a href="">Formulários</a>
+          <hr>
+          <a href="">Diversos</a>
+          <hr>
+          <a href="">Eleição</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('loja-top-mobi', 'loja-arrow-mobi')">
+          Loja
+          <i id="loja-arrow-mobi" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="loja-top-mobi">
+          <a href="">Atas / Balaústres</a>
+          <hr>
+          <a href="">Candidatos</a>
+          <hr>
+          <a href="">Aniversários</a>
+        </div>
+        <hr>
+        <a href="">
+          <button>
+            Troca de Loja
+          </button>
+        </a>
+        <hr>
+        <a href="">
+          <button>
+            Banco de Negócios
+          </button>
+        </a>
+        <hr>
+        <hr>
+        <hr>
+        <button onclick="dropdownMenuLateral('digital-top', 'digital-arrow')">
+          GORGS Digital
+          <i id="digital-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="digital-top">
+          <a href="">Ciclo de Palestras</a>
+          <hr>
+          <a href="">Cursos</a>
+          <hr>
+          <a href="">Biblioteca Virtual</a>
+          <hr>
+          <a href="">GORGS TV</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('gerir-top', 'gerir-arrow')">
+          Gestão Loja
+          <i id="gerir-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="gerir-top">
+          <a href="">Processos</a>
+          <hr>
+          <a href="">Cadastro da Loja</a>
+          <hr>
+          <a href="">Nominata</a>
+          <hr>
+          <a href="">Irmãos da Loja</a>
+          <hr>
+          <a href="">Financeiro</a>
+          <hr>
+          <a href="">Sistema de Lojas</a>
+        </div>
         <hr>
         <button onclick="dropdownMenuLateral('inst-top', 'inst-arrow')">
           Institucional
@@ -239,6 +353,20 @@
         <a href="views/contato.html">
           <button>
             Contatos
+          </button>
+        </a>
+        <hr>
+        <a href="">
+          <button>
+            Eleição
+          </button>
+        </a>
+        <hr>
+        <hr>
+        <hr>
+        <a href="">
+          <button>
+            Sair
           </button>
         </a>
         <hr>
@@ -500,12 +628,14 @@
   <section id="meus-dados">
     <div id="perfil">
       <div id="perfil-img">
-        <img src="img/sem_foto.jpg">
+        <figure>
+          <img src="img/sem_foto.jpg">
+        </figure>
+        <h6>CIM: 55555</h6>
       </div>
       <div id="perfil-info">
-        <p>Fulano Rodriguês da Silva Santos Corrêa</p>
-        <p>CIM: 55555</p>
-        <p>Venerável Mestre Marcelo Moreira Tostes</p>
+        <h6>FULANO RODRIGUÊS DA SILVA SANTOS CORRÊA</h6>
+        <h6>VENERÁVEL MESTRE MARCELO MOREIRA TOSTES N° 511</h6>
         <p>Iniciação: 01/01/2000</p>
         <p>Elevação: 01/01/2000</p>
         <p>Exaltação: 01/01/2000</p>

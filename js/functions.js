@@ -116,6 +116,7 @@ window.onscroll = function () {
 let menuMobile = document.getElementById("menu-mobile");
 let iconeMobile = document.querySelector("#mobile i");
 let header = document.getElementById("top");
+let modal = document.getElementById("modal-area");
 
 function mobile() {
     menuMobile.classList.toggle("alterado");
@@ -125,7 +126,7 @@ window.addEventListener("click", function (evento) {
 
     let elemento = evento.target;
 
-    if (!menuMobile.contains(elemento) && !header.contains(elemento)) {
+    if (!menuMobile.contains(elemento) && !header.contains(elemento) && !modal.contains(elemento)) {
         if (menuMobile.classList.contains("alterado")) {
 
             menuMobile.classList.toggle("alterado");

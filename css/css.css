@@ -1268,12 +1268,12 @@
 #perfil-info h6 {
     color: #222;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 13px;
     margin-bottom: 4px;
 }
 
-#perfil-info h6:nth-child(1){
-    font-size: 13px;
+#perfil-info h6:nth-child(2){
+    font-size: 12px;
 }
 
 #btn-config {
@@ -1519,12 +1519,20 @@
         width: 75%;
     }
 
-    #perfil-info p {
-        font-size: 15px;
+    #perfil-img h6{
+        font-size: 18px;
     }
 
-    #perfil-info p:nth-child(1) {
-        font-size: 17px;
+    #perfil-info h6 {
+        font-size: 18px;
+    }
+
+    #perfil-info h6:nth-child(2){
+        font-size: 16px;
+    }
+
+    #perfil-info p {
+        font-size: 15px;
     }
 
     #topicos button {

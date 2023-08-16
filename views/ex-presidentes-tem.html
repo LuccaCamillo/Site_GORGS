@@ -34,19 +34,19 @@
         <div id="modal-recuperar">
           <form action="">
             <input type="text" placeholder="CPF" required>
-            <button type="submit" onclick="mostrarMensagemRecuperar()">Enviar</button>
+            <button type="submit" onclick="mostrarMensagem('mensagem-recuperacao')">Enviar</button>
             <h5 id="mensagem-recuperacao">Uma nova senha para meu email!</h5>
           </form>
-          <a onclick="modalRecurar(); ocultarMensagemRecuperar();">Lembrou da Senha? Faça o Login</a>
+          <a onclick="modalRecurar()">Lembrou da Senha? Faça o Login</a>
         </div>
         <div id="modal-primeiro">
           <form action="">
             <input type="text" placeholder="CPF" required>
             <input type="text" placeholder="CIM" required>
-            <button type="submit" onclick="mostrarMensagemPrimeiro()">Enviar</button>
+            <button type="submit" onclick="mostrarMensagem('mensagem-primeiro')">Enviar</button>
             <h5 id="mensagem-primeiro">Uma senha para meu email!</h5>
           </form>
-          <a onclick="modalPrimeiro(); ocultarMensagemPrimeiro();">Não é seu primeiro acesso? Faça o Login</a>
+          <a onclick="modalPrimeiro()">Não é seu primeiro acesso? Faça o Login</a>
         </div>
       </div>
     </section>
@@ -73,18 +73,18 @@
           </div>
         </div>
       </figure>
-  
+
       <div id="mobile">
-      <button onclick="mobile()"><i class="fa-sharp fa-solid fa-bars"></i></button>
-    </div>
-  
+        <button onclick="mobile()"><i id="icone" class="fa-sharp fa-solid fa-bars"></i></button>
+      </div>
+
       <!-- Menu padrão -->
-  
+
       <nav id="menu">
         <ul>
-  
+
           <div id="dropdown-main">
-  
+
             <div id="dropdown">
               <a id="dropdown-titulo">
                 <p>
@@ -110,7 +110,7 @@
                 </li>
               </ul>
             </div>
-  
+
             <div id="dropdown">
               <a id="dropdown-titulo">
                 <p>
@@ -144,7 +144,7 @@
                 </li>
               </ul>
             </div>
-  
+
             <div id="dropdown">
               <a id="dropdown-titulo">
                 Institucional
@@ -179,42 +179,44 @@
                 </li>
               </ul>
             </div>
-  
+
             <div id="dropdown">
               <a id="dropdown-titulo" href="../views/noticias.html">Notícias</a>
             </div>
-  
+
             <div id="dropdown">
               <a id="dropdown-titulo" href="../views/contato.html">Contatos</a>
             </div>
-  
+
             <div id="dropdown">
               <a id="dropdown-titulo" href="">Eleição</a>
             </div>
-  
+
           </div>
-  
+
           <div id="btn-area">
             <button id="area" onclick="areaRestritaFechada()">Olá, Fulano
               <i id="icon-area" class="fa-solid fa-chevron-down"></i>
             </button>
           </div>
-  
+
         </ul>
       </nav>
-  
+
       <!-- Menu Mobile -->
-  
+
       <nav id="menu-mobile">
-  
+
         <div id="perfil">
           <div id="perfil-img">
-            <img src="../img/sem_foto.jpg">
+            <figure>
+              <img src="../img/sem_foto.jpg">
+            </figure>
+            <h6>CIM: 55555</h6>
           </div>
           <div id="perfil-info">
-            <p>Fulano Rodriguês da Silva Santos Corrêa</p>
-            <p>CIM: 55555</p>
-            <p>Venerável Mestre Marcelo Moreira Tostes</p>
+            <h6>FULANO RODRIGUÊS DA SILVA SANTOS CORRÊA</h6>
+            <h6>VENERÁVEL MESTRE MARCELO MOREIRA TOSTES N° 511</h6>
             <p>Iniciação: 01/01/2000</p>
             <p>Elevação: 01/01/2000</p>
             <p>Exaltação: 01/01/2000</p>
@@ -230,9 +232,9 @@
           <hr>
           <button onclick="dropdownMenuLateral('meu-perfil-top-mobi', 'perfil-arrow-mobi')">
             Meu Perfil
-            <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down droped-arrow"></i>
+            <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down"></i>
           </button>
-          <div id="meu-perfil-top-mobi" class="droped-cont">
+          <div id="meu-perfil-top-mobi">
             <a href="">Página do Irmão</a>
             <hr>
             <a href="">Dados</a>
@@ -348,15 +350,15 @@
             </button>
           </a>
           <hr>
-          <a href="">
-            <button>
-              Eleição
-            </button>
-          </a>
-          <hr>
           <a href="../views/contato.html">
             <button>
               Contatos
+            </button>
+          </a>
+          <hr>
+          <a href="">
+            <button>
+              Eleição
             </button>
           </a>
           <hr>
@@ -374,13 +376,13 @@
           <hr>
         </div>
       </nav>
-  
+
       <div id="home">
         <a href="#top">
           <i class="fa-solid fa-arrow-up"></i>
         </a>
       </div>
-  
+
     </header>
 
     <main id="main">
@@ -428,12 +430,14 @@
     <section id="meus-dados">
       <div id="perfil">
         <div id="perfil-img">
-          <img src="../img/sem_foto.jpg">
+          <figure>
+            <img src="../img/sem_foto.jpg">
+          </figure>
+          <h6>CIM: 55555</h6>
         </div>
         <div id="perfil-info">
-          <p>Fulano Rodriguês da Silva Santos Corrêa</p>
-          <p>CIM: 55555</p>
-          <p>Venerável Mestre Marcelo Moreira Tostes</p>
+          <h6>FULANO RODRIGUÊS DA SILVA SANTOS CORRÊA</h6>
+          <h6>VENERÁVEL MESTRE MARCELO MOREIRA TOSTES N° 511</h6>
           <p>Iniciação: 01/01/2000</p>
           <p>Elevação: 01/01/2000</p>
           <p>Exaltação: 01/01/2000</p>
