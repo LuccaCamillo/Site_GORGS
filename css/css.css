@@ -787,7 +787,7 @@
 
 #card figure {
     background-color: #F7CC22;
-    height: 14vw;
+    height: 14.3vw;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -810,6 +810,7 @@
     margin: 7%;
     transition: 0.2s;
     font-size: 1.2vw;
+    overflow: hidden;
 }
 
 #card h4:hover {
@@ -818,12 +819,13 @@
 }
 
 #card p {
-    height: 5vw;
+    height: 5.2vw;
     font-size: 1vw;
     color: #444;
     margin: 7%;
     cursor: default;
     font-size: 1.1vw;
+    overflow: hidden;
 }
 
 #card h6 {
@@ -1635,7 +1637,7 @@
     }
 
     #card figure {
-        height: 26vw;
+        height: 26.5vw;
     }
 
     #card h4 {
@@ -1905,7 +1907,7 @@
     }
 
     #card figure {
-        height: 56vw;
+        height: 57vw;
     }
 
     #card h4 {
