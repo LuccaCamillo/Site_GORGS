@@ -4521,21 +4521,32 @@
 }
 
 #setor div {
-    width: 11vw;
-    height: 14vw;
+    width: 10vw;
     margin: 3vw 6vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#setor figure{
+    width: 100%;
+    height: 10vw;
+    border-radius: 100%;
+    border: solid 5px #444;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
 }
 
 #setor img {
-    width: 100%;
-    height: 75%;
-    border-radius: 100%;
-    border: solid 5px #444;
+    height: 100%;
 }
 
 #setor p {
-    height: 25%;
     width: 100%;
+    height: 3vw;
     margin-top: 1vw;
     text-align: center;
     font-size: 1.3vw;
@@ -4720,33 +4731,15 @@
 }
 
 #equipe {
+    width: 100%;
     border-top: solid 2px #042B44;
+    display: flex;
     margin: 3vw 0;
+    flex-direction: column;
 }
 
 #equipe h2 {
     font-size: 1.5vw;
-    margin: 2vw 0;
-    color: #042B44;
-}
-
-#equipe div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 3vw 0;
-}
-
-#equipe img {
-    width: 8vw;
-    height: 8vw;
-    border: #999 5px solid;
-    border-radius: 100px;
-}
-
-#equipe h4 {
-    font-size: 1.2vw;
     margin: 2vw 0;
     color: #042B44;
 }
@@ -4784,16 +4777,8 @@
         margin: 6vw 0;
     }
 
-    #equipe div {
-        margin: 6vw 0;
-    }
-
     #equipe h2 {
         font-size: 3vw;
-    }
-
-    #equipe h4 {
-        font-size: 2.5vw;
     }
 
 }
@@ -6192,38 +6177,12 @@
     color: #F7CC22;
 }
 
-#equipe {
-    width: 100%;
-    border-top: solid 2px #042B44;
-    display: flex;
-    flex-direction: column;
-}
-
-#equipe h2 {
-    font-size: 1.5vw;
-    margin: 2vw 0;
-    color: #042B44;
-}
-
 #equipe-conteudo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 2vw 0;
-}
-
-#equipe img {
-    width: 8vw;
-    height: 8vw;
-    border: #999 5px solid;
-    border-radius: 100px;
-}
-
-#equipe h4 {
-    font-size: 1.2vw;
-    margin: 2vw 0;
-    color: #042B44;
 }
 
 #tjm-contato {
@@ -6300,19 +6259,6 @@
         height: 16vw;
         font-size: 2vw;
         margin: 4vw auto;
-    }
-
-    #equipe h2 {
-        font-size: 3vw;
-    }
-
-    #equipe img {
-        width: 16vw;
-        height: 16vw;
-    }
-
-    #equipe h4 {
-        font-size: 2vw;
     }
 
     #tjm-contato div {
