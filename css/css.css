@@ -806,6 +806,7 @@
 
 #card h4 {
     height: 4vw;
+    font-weight: bold;
     color: #222;
     margin: 7%;
     transition: 0.2s;
@@ -819,7 +820,7 @@
 }
 
 #card p {
-    height: 5.2vw;
+    height: 7vw;
     font-size: 1vw;
     color: #444;
     margin: 7%;
@@ -1265,13 +1266,14 @@
 #perfil-info p {
     font-size: 12px;
     color: #222;
+    margin: 0;
 }
 
 #perfil-info h6 {
     color: #222;
     font-weight: bold;
     font-size: 13px;
-    margin-bottom: 4px;
+    margin: 3px 0;
 }
 
 #perfil-info h6:nth-child(2){
@@ -1358,6 +1360,7 @@
     width: 100%;
     background-color: rgb(180, 180, 180);
     height: 1px;
+    border-top-style: none;
 }
 
 #home {
