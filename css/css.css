@@ -787,7 +787,7 @@
 
 #card figure {
     background-color: #F7CC22;
-    height: 14.3vw;
+    height: 14.2vw;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -805,7 +805,7 @@
 }
 
 #card h4 {
-    height: 4vw;
+    height: 4.1vw;
     font-weight: bold;
     color: #222;
     margin: 7%;
@@ -820,7 +820,7 @@
 }
 
 #card p {
-    height: 7vw;
+    height: 6.3vw;
     font-size: 1vw;
     color: #444;
     margin: 7%;
@@ -1640,7 +1640,7 @@
     }
 
     #card figure {
-        height: 26.5vw;
+        height: 26.6vw;
     }
 
     #card h4 {
@@ -1649,7 +1649,7 @@
     }
 
     #card p {
-        height: 18vw;
+        height: 18.2vw;
         font-size: 2.5vw;
     }
 
