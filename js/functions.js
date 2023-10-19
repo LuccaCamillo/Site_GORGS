@@ -300,8 +300,6 @@ if (btnNext != null && btnPrev != null) {
   let delay;
 
   btnNext.addEventListener("click", function () {
-    console.log(card.scrollWidth);
-    console.log(card1.clientWidth);
 
     if (card.scrollLeft >= scrollMaximo - limiteDiferenca) {
       card.scrollLeft = 0;
