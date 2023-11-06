@@ -466,3 +466,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+const patrocinio = document.getElementById('patrocinio');
+const links = document.querySelectorAll('#patrocinio a');
+
+patrocinio.addEventListener('animationend', () => {
+  patrocinio.style.animation = "none";
+});
+
+
+links.forEach(function (link) {
+  link.addEventListener('animationend', () => {
+    link.style.animation = "none";
+  });
+});

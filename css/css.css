@@ -684,6 +684,7 @@
 
 #video_capa {
     width: 100%;
+    z-index: 0;
 }
 
 #video_capa source {
@@ -1012,6 +1013,9 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 2%;
+    animation: z-index 1ms ease-out;
+    animation-timeline: view();
+    animation-range: cover 0% cover 70%;
 }
 
 #patrocinio a {
@@ -1019,6 +1023,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: appear 1ms ease-out;
+    animation-timeline: view();
+    animation-range: cover 0% cover 30%;
+}
+
+@keyframes appear {
+    from{
+        transform: translate(0, -20vw) scale(0.1);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes z-index {
+    from{
+        z-index: -1;
+    }
+
+    to {
+        z-index: 0;
+    }
 }
 
 #patrocinio img {
@@ -1449,8 +1478,8 @@
     justify-content: center;
     width: 80%;
     height: 3vw;
-    background-color: #F7CC22;
-    color: #042B44;
+    background-color: #042B44;
+    color: #fff;
     font-weight: bold;
     font-size: 1vw;
     transition: 0.2s;
@@ -1459,6 +1488,13 @@
 
 #dropdown-area a:hover{
     color: #fff;
+    background-color: #444;
+}
+
+#dropdown-area a:active{
+    color: #333;
+    background-color: #999;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 5px;
 }
 
 #dropdown-area h3 {
@@ -2707,6 +2743,13 @@
     border-top: solid 3px #F7CC22;
 }
 
+#contato-form button:active{
+    color: #333;
+    border-top: solid 3px #333;
+    background-color: rgb(220, 220, 220);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
+}
+
 @media (max-width: 768px) {
 
     #contato {
@@ -3050,12 +3093,12 @@
 
 #delecias-titulo {
     display: flex;
-    justify-content: space-between;
+    align-items: flex-end;
+    border-top: solid 2px #042B44;
 }
 
 #delecias-text {
     width: 80%;
-    border-top: solid 2px #042B44;
 }
 
 #delecias-text h2 {
@@ -3067,7 +3110,7 @@
 #delecias-text p {
     font-size: 1.3vw;
     margin-bottom: 4vw;
-    color: #777;
+    color: #333;
     width: 95%;
 }
 
@@ -3076,7 +3119,9 @@
 }
 
 #delecias-img img {
-    width: 100%;
+    width: 80%;
+    opacity: 0.6;
+    margin: 2vw 0;
 }
 
 #delecias-conteudo {
@@ -3092,7 +3137,7 @@
 #delecias-conteudo p {
     font-size: 1.3vw;
     margin-bottom: 2vw;
-    color: #777;
+    color: #333;
     width: 95%;
 }
 
@@ -3152,13 +3197,13 @@
     display: flex;
     width: 70%;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     margin-top: 20px;
+    border-top: solid 2px #042B44;
 }
 
 #departamentos-titulo {
-    width: 70%;
-    border-top: solid 2px #042B44;
+    width: 80%;
 }
 
 #departamentos-titulo h2 {
@@ -3169,19 +3214,20 @@
 
 #departamentos-titulo p {
     font-size: 1.3vw;
-    color: #777;
+    color: #333;
     margin-bottom: 3vw;
 }
 
 #departamentos-icone {
-    width: 30%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #departamentos-icone img {
-    width: 70%;
+    width: 90%;
+    opacity: 0.6;
 }
 
 #departamentos-navegacao {
@@ -3196,7 +3242,7 @@
     width: 20vw;
     height: 6vw;
     padding: 0 3%;
-    border-top: solid 3px #F7CC22;
+    border-top: solid 3px #042B44;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: #042B44;
     font-weight: bold;
@@ -3208,6 +3254,13 @@
 #departamentos-navegacao button:hover {
     cursor: pointer;
     color: #F7CC22;
+    border-top: solid 3px #F7CC22;
+}
+
+#departamentos-navegacao button:active {
+    color: #555;
+    border-top: solid 3px #555;
+    background-color: rgb(240, 240, 240);
 }
 
 @media (max-width: 768px) {
@@ -3707,7 +3760,7 @@
     width: 100%;
     height: 100%;
     padding: 0 10%;
-    border-top: solid 3px #F7CC22;
+    border-top: solid 3px #042B44;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: #042B44;
     font-weight: bold;
@@ -3719,6 +3772,13 @@
 #institucional-img button:hover {
     cursor: pointer;
     color: #F7CC22;
+    border-top: solid 3px #F7CC22;
+}
+
+#institucional-img button:active {
+    color: #555;
+    border-top: solid 3px #555;
+    background-color: rgb(240, 240, 240);
 }
 
 #institucional-sub {
@@ -4817,11 +4877,12 @@
 
 #ministerios-gorgs {
     display: flex;
+    align-items: flex-end;
+    border-top: solid 2px #042B44;
 }
 
 #ministerios-titulo {
-    width: 70%;
-    border-top: solid 2px #042B44;
+    width: 80%;
 }
 
 #ministerios-titulo h2 {
@@ -4832,12 +4893,12 @@
 
 #ministerios-titulo p {
     font-size: 1.3vw;
-    color: #777;
+    color: #333;
     margin-bottom: 3vw;
 }
 
 #misnisterios-icone {
-    width: 30%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -4845,6 +4906,8 @@
 
 #misnisterios-icone img {
     width: 70%;
+    opacity: 0.6;
+    margin: 2vw 0;
 }
 
 #ministerios-navegacao {
@@ -4870,7 +4933,7 @@
     width: 100%;
     height: 100%;
     padding: 0 6%;
-    border-top: solid 3px #F7CC22;
+    border-top: solid 3px #042B44;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: #042B44;
     font-weight: bold;
@@ -4882,6 +4945,14 @@
 #ministerios-navegacao button:hover {
     cursor: pointer;
     color: #F7CC22;
+    border-top: solid 3px #F7CC22;
+}
+
+#ministerios-navegacao button:active {
+    cursor: pointer;
+    color: #555;
+    border-top: solid 3px #555;
+    background-color: rgb(240, 240, 240);
 }
 
 @media (max-width: 768px) {
@@ -5029,6 +5100,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin: 2vw 0;
 }
 
 #noticia-img figure{
@@ -5094,6 +5166,9 @@
     height: 10vw;
     border: 1px solid rgb(220, 220, 220);
     color: #777;
+    height: auto;
+    resize: vertical;
+    
 }
 
 #noticia-rodape textarea:focus {
@@ -5810,17 +5885,16 @@
 #palm {
     width: 70%;
     margin-top: 20px;
+    border-top: solid 2px #042B44;
 }
 
 #palm-conteudo {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
 }
 
 #palm-titulo {
-    width: 60%;
-    border-top: solid 2px #042B44;
+    width: 70%;
 }
 
 #palm-titulo h2 {
@@ -5831,19 +5905,21 @@
 
 #palm-titulo p {
     font-size: 1.3vw;
-    color: #777;
+    color: #444;
     margin-bottom: 1.5vw;
 }
 
 #palm-img {
-    width: 40%;
+    width: 30%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 
 #palm-img img {
-    width: 25vw;
+    width: 85%;
+    opacity: 0.6;
+    margin-bottom: 1.5vw;
 }
 
 #palm-atribuicoes {
@@ -5859,7 +5935,7 @@
 
 #atribuicoes-titulo p {
     font-size: 1.3vw;
-    color: #777;
+    color: #444;
     margin-bottom: 1.5vw;
 }
 
@@ -5878,7 +5954,7 @@
     width: 100%;
     height: 6vw;
     padding: 0 3%;
-    border-top: solid 3px #F7CC22;
+    border-top: solid 3px #042B44;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: #042B44;
     font-weight: bold;
@@ -5890,6 +5966,14 @@
 #atribuicoes-btns button:hover {
     cursor: pointer;
     color: #F7CC22;
+    border-top: solid 3px #F7CC22;
+}
+
+#atribuicoes-btns button:active{
+    color: #555;
+    border-top: solid 3px #555;
+    background-color: rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
 }
 
 @media (max-width: 768px) {
@@ -6010,6 +6094,13 @@
     border-top: solid 3px #e4b600;
 }
 
+#navegacao button:active{
+    color: #555;
+    border-top: solid 3px #555;
+    background-color: rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
+}
+
 
 @media (max-width: 768px) {
 
@@ -6055,11 +6146,11 @@
 #poder-judiciario-conteudo {
     display: flex;
     margin-bottom: 3vw;
+    border-top: solid 2px #042B44;
 }
 
 #poder-juduciario-titulo {
-    width: 60%;
-    border-top: solid 2px #042B44;
+    width: 75%;
 }
 
 #poder-juduciario-titulo h2 {
@@ -6070,19 +6161,20 @@
 
 #poder-juduciario-titulo p {
     font-size: 1.3vw;
-    color: #777;
+    color: #444;
     margin-bottom: 1.5vw;
 }
 
 #poder-juridico-img {
-    width: 40%;
+    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #poder-juridico-img img {
-    width: 15vw;
+    width: 85%;
+    opacity: 0.6;
 }
 
 #atribuicoes {
@@ -6094,12 +6186,6 @@
     font-size: 1.5vw;
     margin: 2vw 0;
     color: #042B44;
-}
-
-#atribuicoes-titulo p {
-    font-size: 1.3vw;
-    color: #777;
-    margin-bottom: 1.5vw;
 }
 
 #atribuicoes-btns {
@@ -6133,10 +6219,6 @@
 
     #atribuicoes-titulo h2 {
         font-size: 3vw;
-    }
-
-    #atribuicoes-titulo p {
-        font-size: 2vw;
     }
 
     #atribuicoes-btns {
