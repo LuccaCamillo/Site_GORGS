@@ -470,13 +470,25 @@ document.addEventListener("DOMContentLoaded", function () {
 const patrocinio = document.getElementById('patrocinio');
 const links = document.querySelectorAll('#patrocinio a');
 
-patrocinio.addEventListener('animationend', () => {
-  patrocinio.style.animation = "none";
-});
+const noticiasTitulo = document.getElementById('ultimas-noticias-titulo');
+const digitalTitulo = document.getElementById('gorgs-tv-titulo');
 
-
-links.forEach(function (link) {
-  link.addEventListener('animationend', () => {
-    link.style.animation = "none";
+if(patrocinio){
+  patrocinio.addEventListener('animationend', () => {
+    patrocinio.style.animation = "none";
   });
-});
+
+  noticiasTitulo.addEventListener('animationend', () => {
+    noticiasTitulo.style.animation = "none";
+  });
+
+  digitalTitulo.addEventListener('animationend', () => {
+    digitalTitulo.style.animation = "none";
+  });
+  
+  links.forEach(function (link) {
+    link.addEventListener('animationend', () => {
+      link.style.animation = "none";
+    });
+  });
+}

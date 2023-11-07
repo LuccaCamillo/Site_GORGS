@@ -554,91 +554,6 @@
     color: #fff;
 }
 
-#btn-busca {
-    width: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#btn-busca button {
-    height: 40%;
-    width: 100%;
-    cursor: pointer;
-    background-color: rgb(240, 240, 240);
-    color: #042B44;
-    transition: 0.2s;
-}
-
-#btn-busca button i {
-    font-size: 1.2vw;
-}
-
-#btn-busca button:hover {
-    background-color: #042B44;
-    cursor: pointer;
-    color: #fff;
-    height: 100%;
-}
-
-#busca {
-    display: none;
-    width: 80%;
-    height: 100%;
-    justify-content: end;
-}
-
-#busca-main {
-    width: 60%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#input-voltar {
-    width: 90%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#input-voltar input {
-    width: 96%;
-    height: 40%;
-    font-size: 1.2vw;
-    padding: 0 2.5vw;
-    border: 1px solid #ccc;
-    color: #777;
-    transition: 0.2s;
-
-    background-image: url(../img/search-grey.png);
-    background-repeat: no-repeat;
-    background-position: 0.5vw;
-    background-size: 4%;
-}
-
-#input-voltar input:focus {
-    outline: none;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
-}
-
-#btn-voltar {
-    width: 10%;
-    height: 40%;
-    font-size: 1.4vw;
-    cursor: pointer;
-    background-color: rgb(240, 240, 240);
-    transition: 0.2s;
-}
-
-#btn-voltar:hover {
-    background-color: #042B44;
-    cursor: pointer;
-    color: #fff;
-    height: 100%;
-}
-
 #mobile {
     display: none;
     width: 10%;
@@ -729,6 +644,38 @@
     margin: 0 0.5vw;
 }
 
+#patrocinio {
+    width: 100%;
+    background-color: rgb(220, 220, 220);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2%;
+    animation: z-index 1ms ease-out;
+    animation-timeline: view();
+    animation-range: cover 0% cover 70%;
+}
+
+#patrocinio a {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: topappear 1ms ease-out;
+    animation-timeline: view();
+    animation-range: cover 0% cover 30%;
+}
+
+#patrocinio img {
+    width: 12vw;
+    transition: 0.2s;
+}
+
+#patrocinio img:hover {
+    cursor: pointer;
+    transform: scale(1.08);
+}
+
 #ultimas-noticias {
     width: 70%;
     height: 40%;
@@ -742,6 +689,10 @@
 #ultimas-noticias-titulo {
     color: #042B44;
     margin: 40px 0;
+
+    animation: sideappear 1ms ease-out;
+    animation-timeline: view();
+    animation-range: cover 0% cover 40%;
 }
 
 #card {
@@ -774,7 +725,6 @@
 #btn-noticia-next {
     right: 14.5vw;
 }
-
 
 #btn-noticia-prev:hover,
 #btn-noticia-next:hover {
@@ -861,78 +811,13 @@
     border-top: solid 2px #042B44;
 }
 
-#gorgs-tv-titulo h2 {
-    margin: 20px 0;
+#gorgs-tv-titulo {
     color: #042B44;
-}
+    margin: 40px 0;
 
-#gorgs-tv-titulo p {
-    color: #555;
-    margin-bottom: 20px;
-}
-
-#gorgs-tv-videos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(240, 240, 240);
-    overflow: hidden;
-}
-
-#video {
-    width: calc(94% / 2);
-    height: 18vw;
-    margin: 1vw;
-    flex-shrink: 0;
-}
-
-#video a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-#video img {
-    width: 100%;
-    height: 100%;
-    transition: 0.2s;
-}
-
-#video a:hover img {
-    transform: scale(1.1);
-}
-
-#video a:hover {
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
-}
-
-#gorgs-tv-videos button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1vw;
-    width: 3vw;
-    height: 3vw;
-    background-color: red;
-    color: #fff;
-    transition: 0.2s;
-    position: absolute;
-}
-
-#gorgs-tv-videos button:hover {
-    cursor: pointer;
-    background-color: black;
-}
-
-#btn-tv-left {
-    left: 15%;
-}
-
-#btn-tv-right {
-    right: 15%;
+    animation: sideappear 1ms ease-out;
+    animation-timeline: view();
+    animation-range: cover 0% cover 40%;
 }
 
 #gorgs-digital {
@@ -1004,60 +889,6 @@
 
 #btn-banner2-right{
     right: 15%;
-}
-
-#patrocinio {
-    width: 100%;
-    background-color: rgb(220, 220, 220);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 2%;
-    animation: z-index 1ms ease-out;
-    animation-timeline: view();
-    animation-range: cover 0% cover 70%;
-}
-
-#patrocinio a {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: appear 1ms ease-out;
-    animation-timeline: view();
-    animation-range: cover 0% cover 30%;
-}
-
-@keyframes appear {
-    from{
-        transform: translate(0, -20vw) scale(0.1);
-        opacity: 0;
-    }
-
-    to {
-        transform: translate(0, 0) scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes z-index {
-    from{
-        z-index: -1;
-    }
-
-    to {
-        z-index: 0;
-    }
-}
-
-#patrocinio img {
-    width: 12vw;
-    transition: 0.2s;
-}
-
-#patrocinio img:hover {
-    cursor: pointer;
-    transform: scale(1.08);
 }
 
 #rodape {
@@ -1426,12 +1257,49 @@
     transition: 0.2s;
 }
 
+@keyframes topappear {
+    from{
+        transform: translate(0, -20vw);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes sideappear {
+    from{
+        translate: -20vw 0;
+        opacity: 0;
+    }
+
+    to {
+        translate: 0 0;
+        opacity: 1;
+    }
+}
+
+@keyframes z-index {
+    from{
+        z-index: -1;
+    }
+
+    to {
+        z-index: 0;
+    }
+}
+
+/* CSS das funções de Dropdown */
+
 #dropdown-area button {
     width: 100%;
     height: 3vw;
     display: flex;
     text-align: start;
-    padding: 1vw 1.5vw;
+    align-items: center;
+    padding: 0 1.5vw;
     border-radius: 5px;
     background-color: rgb(240, 240, 240);
     cursor: pointer;
@@ -1865,6 +1733,19 @@
         font-size: 1.9vw;
     }
 
+
+    #dropdown-area button {
+        height: 6vw;
+        padding: 0 2.5vw;
+        font-size: 2.5vw;
+        margin: 0.5vw 0;
+    }
+
+    #dropdown-area i {
+        margin-right: 2vw;
+        font-size: 2.5vw;
+    }
+
 }
 
 @media (max-width: 450px) {
@@ -1916,6 +1797,10 @@
 
     #maconaria_capa h1 {
         font-size: 6vw;
+    }
+
+    #patrocinio a {
+        animation: none;
     }
 
     #ultimas-noticias-titulo {
@@ -3753,12 +3638,11 @@
 
 #institucional-img a{
     width: 100%;
-    height: 4vw;
 }
 
 #institucional-img button{
     width: 100%;
-    height: 100%;
+    height: 4vw;
     padding: 0 10%;
     border-top: solid 3px #042B44;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -3978,6 +3862,10 @@
 
     #historia {
         width: 85%;
+    }
+
+    #historia div div {
+        flex-direction: column;
     }
 
     #historia h2 {
