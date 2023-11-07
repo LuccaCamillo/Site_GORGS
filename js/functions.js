@@ -467,6 +467,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Animações de elementos da Home
+
 const patrocinio = document.getElementById('patrocinio');
 const links = document.querySelectorAll('#patrocinio a');
 
@@ -492,3 +494,42 @@ if(patrocinio){
     });
   });
 }
+
+// Animação de elementos do Institucional
+
+const titles = document.querySelectorAll('#inst-lojas div');
+let lojasSimb = 0;
+let lojasPesq = 0;
+
+function countSimb() {
+  if (lojasSimb <= 255) {
+    
+    document.getElementById('simb').innerHTML = lojasSimb;
+
+    lojasSimb++;
+    setTimeout(countSimb, 10);
+  }
+}
+
+function countPesq() {
+  if (lojasPesq <= 8) {
+    
+    document.getElementById('pesq').innerHTML = lojasPesq;
+
+    lojasPesq++;
+    setTimeout(countPesq, 250);
+  }
+}
+
+titles.forEach(function (title) {
+
+  title.addEventListener('animationstart', () => {
+    countSimb();
+    countPesq();
+  });
+
+  title.addEventListener('animationend', () => {
+    title.style.animation = "none";
+  });
+
+});
