@@ -1301,6 +1301,18 @@
     }
 }
 
+@keyframes tratados {
+    from {
+        opacity: 0;
+        transform: translate(10vw, 0);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
 /* CSS das funções de Dropdown */
 
 #dropdown-area button {
@@ -1384,7 +1396,7 @@
 #dropdown-area p {
     font-size: 1vw;
     margin: 1vw 0;
-    color: #777;
+    color: #444;
 }
 
 @media (max-width: 1250px) {
@@ -2042,7 +2054,7 @@
 #agenda-titulo p {
     font-size: 1.3vw;
     margin: 3vw 0;
-    color: #777;
+    color: #444;
 }
 
 #agenda-descricao {
@@ -2095,7 +2107,7 @@
     margin-bottom: 4vw;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    color: #777;
+    color: #444;
     background-color: rgb(230, 230, 230);
 }
 
@@ -2168,7 +2180,7 @@
     #agenda-titulo p {
         font-size: 2vw;
         margin: 3vw 0;
-        color: #777;
+        color: #444;
     }
 
     #agenda-descricao {
@@ -2298,10 +2310,14 @@
 
 #titulo-conf {
     display: flex;
+    border-top: solid 2px #042B44;
+    align-items: flex-end;
 }
 
 #titulo-conf img {
-    width: 100%;
+    width: 80%;
+    margin-bottom: 2vw;
+    opacity: 0.6;
 }
 
 #titulo-conf h2 {
@@ -2312,27 +2328,27 @@
 
 #titulo-conf p {
     font-size: 1.3vw;
-    margin-bottom: 4vw;
-    color: #777;
+    margin-bottom: 2vw;
+    color: #444;
 }
 
 #titulo-conf div:nth-child(1) {
-    border-top: solid 2px #042B44;
-    width: 80%;
+    width: 75%;
 }
 
 #titulo-conf div:nth-child(2) {
-    width: 20%;
+    width: 25%;
 }
 
 #conteudo-conf {
     display: flex;
     flex-direction: column;
+    border-top: solid 2px #042B44;
 }
 
 #conteudo-conf h2 {
     font-size: 1.2vw;
-    margin: 1vw 0;
+    margin: 2vw 0;
     color: #222;
 }
 
@@ -2381,7 +2397,11 @@
 #tratados p {
     font-size: 1.3vw;
     margin: 1vw 0;
-    color: #777;
+    color: #444;
+
+    animation: tratados 1ms ease-in-out;
+    animation-timeline: view();
+    animation-range: cover 0% cover 10%;
 }
 
 #tratados span {
@@ -2474,7 +2494,7 @@
 #contato-titulo p {
     font-size: 1.3vw;
     margin-bottom: 6vw;
-    color: #777;
+    color: #444;
 }
 
 #contato-digital {
@@ -2761,7 +2781,7 @@
 #ministros p {
     font-size: 1.3vw;
     margin: 1vw 0;
-    color: #777;
+    color: #444;
 }
 
 #ministros-membros{
@@ -2777,7 +2797,7 @@
 #ministro-comp p{
     text-align: center;
     font-size: 1vw;
-    color: #777;
+    color: #444;
     margin: 0.8vw auto;
 }
 
@@ -2853,7 +2873,7 @@
 #atribuicoes p {
     font-size: 1.3vw;
     margin: 0.5vw 0;
-    color: #777;
+    color: #444;
 }
 
 @media (max-width: 768px) {
@@ -2910,18 +2930,36 @@
 
 #ritos {
     width: 70%;
+    border-top: solid 2px #042B44;
+}
+
+#rito{
+    display: flex;
+}
+
+#rito-parte1{
+    width: 60%;
+}
+
+#rito div div{
+    margin-bottom: 2vw;
+}
+
+#ritos h2{
+    font-size: 1.5vw;
+    margin: 2vw 0;
+    color: #042B44;
 }
 
 #ritos h6 {
     font-size: 1vw;
-    margin-top: 2vw;
     margin-bottom: 0.5vw;
-    color: #333;
+    color: #042B44;
 }
 
 #ritos p {
     font-size: 1vw;
-    color: #666;
+    color: #444;
 }
 
 @media (max-width: 768px) {
@@ -2950,7 +2988,7 @@
     width: 20vw;
     height: 6vw;
     padding: 0 3%;
-    border-top: solid 3px #F7CC22;
+    border-top: solid 2px #042B44;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: #042B44;
     font-weight: bold;
@@ -2961,7 +2999,15 @@
 
 #ministros button:hover {
     cursor: pointer;
-    color: #F7CC22;
+    color: #e4b600;
+    border-top: solid 3px #e4b600;
+}
+
+#ministros button:active{
+    color: #555;
+    border-top: solid 3px #555;
+    background-color: rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
 }
 
 @media (max-width: 768px) {
@@ -2993,7 +3039,7 @@
 }
 
 #delecias-text {
-    width: 80%;
+    width: 75%;
 }
 
 #delecias-text h2 {
@@ -3004,19 +3050,19 @@
 
 #delecias-text p {
     font-size: 1.3vw;
-    margin-bottom: 4vw;
+    margin-bottom: 2vw;
     color: #333;
     width: 95%;
 }
 
 #delecias-img {
-    width: 20%;
+    width: 25%;
 }
 
 #delecias-img img {
-    width: 80%;
+    width: 85%;
     opacity: 0.6;
-    margin: 2vw 0;
+    margin-bottom: 2vw;
 }
 
 #delecias-conteudo {
@@ -3251,7 +3297,7 @@
 #gm-gma-titulo p {
     font-size: 1.3vw;
     margin-bottom: 4vw;
-    color: #777;
+    color: #444;
 }
 
 #gm-gma-conteudo {
@@ -3354,7 +3400,7 @@
 #grao-mestrado-titulo p {
     font-size: 1.2vw;
     margin-bottom: 2vw;
-    color: #777;
+    color: #444;
 }
 
 #grao-mestrado-titulo a {
@@ -3368,7 +3414,7 @@
     height: 6vw;
     padding: 0 10%;
     margin-top: 3vw;
-    border-top: solid 3px #F7CC22;
+    border-top: solid 3px #042B44;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: #042B44;
     font-weight: bold;
@@ -3379,7 +3425,15 @@
 
 #grao-mestrado-titulo button:hover {
     cursor: pointer;
-    color: #F7CC22;
+    color: #e4b600;
+    border-top: solid 3px #e4b600;
+}
+
+#grao-mestrado-titulo button:active{
+    color: #555;
+    border-top: solid 3px #555;
+    background-color: rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
 }
 
 #grao-mestrado-midia {
@@ -3471,13 +3525,13 @@
     display: flex;
     width: 70%;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     margin-top: 20px;
+    border-top: solid 2px #042B44;
 }
 
 #ilustre-conselho-titulo {
-    border-top: solid 2px #042B44;
-    width: 70%;
+    width: 75%;
 }
 
 #ilustre-conselho-titulo h2 {
@@ -3488,12 +3542,12 @@
 
 #ilustre-conselho-titulo p {
     font-size: 1.3vw;
-    color: #777;
-    margin-bottom: 3vw;
+    color: #444;
+    margin-bottom: 2vw;
 }
 
 #ilustre-conselho-icone {
-    width: 30%;
+    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3501,6 +3555,8 @@
 
 #ilustre-conselho-icone img {
     width: 80%;
+    opacity: 0.6;
+    margin-bottom: 3vw;
 }
 
 #membros {
@@ -3514,30 +3570,54 @@
     color: #042B44;
 }
 
-#membros div {
-    margin: 2% 0;
-}
-
 #membros h5 {
     font-size: 1vw;
-    color: #777;
+    color: #444;
 }
 
 #membros h6 {
     font-size: 1vw;
-    color: #777;
+    color: #444;
 }
 
 #membros h4 {
     font-size: 1.2vw;
-    margin: 2vw 0;
     color: #042B44;
 }
 
 #membros h5 {
     font-size: 1vw;
     margin: 1vw 0;
-    color: #777;
+    color: #444;
+}
+
+#membros-cargos{
+    display: flex;
+}
+
+#membros-adm{
+    width: 60%;
+}
+
+#membros-adm div{
+    margin-bottom: 2vw;
+}
+
+#membros-comissao div{
+    margin-bottom: 2vw;
+}
+
+#membros-listas{
+    border-top: solid 2px #042B44;
+}
+
+#membros-lista{
+    display: flex;
+    margin: 0 0;
+}
+
+#membros-lista div:nth-child(1){
+    width: 60%;
 }
 
 @media (max-width: 768px) {
@@ -3600,7 +3680,7 @@
 #institucional-titulo p {
     font-size: 1.2vw;
     margin: 1vw 0;
-    color: #777;
+    color: #444;
 }
 
 #institucional-titulo h5 {
@@ -3628,7 +3708,7 @@
 #institucional-text p {
     font-size: 1.2vw;
     margin-bottom: 2.8vw;
-    color: #777;
+    color: #444;
 }
 
 #institucional-img {
@@ -3682,13 +3762,13 @@
 }
 
 #institucional-sub-text {
-    width: 70%;
+    width: 75%;
 }
 
 #institucional-sub-text p {
     font-size: 1.2vw;
     margin-bottom: 1vw;
-    color: #777;
+    color: #444;
 }
 
 #institucional-sub-text h5 {
@@ -3698,7 +3778,7 @@
 }
 
 #institucional-sub-img {
-    width: 30%;
+    width: 25%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -3706,7 +3786,8 @@
 }
 
 #institucional-sub-img img {
-    width: 80%;
+    width: 100%;
+    opacity: 0.6;
 }
 
 #inst-lojas {
@@ -3784,7 +3865,7 @@
 #historia p {
     font-size: 1.2vw;
     margin: 1vw 0;
-    color: #777;
+    color: #444;
 }
 
 #historia img {
@@ -3975,7 +4056,7 @@
 #loja-titulo p {
     font-size: 1.3vw;
     margin-bottom: 2vw;
-    color: #777;
+    color: #444;
 }
 
 #loja-setor {
@@ -4199,7 +4280,7 @@
 #lojas-titulo p {
     font-size: 1.1vw;
     margin: 2vw 0;
-    color: #777;
+    color: #444;
 }
 
 #lojas-titulo img {
@@ -4322,7 +4403,7 @@
 #campos div p {
     width: 50%;
     font-size: 1.1vw;
-    color: #777;
+    color: #444;
 }
 
 #campos div select {
@@ -4360,7 +4441,7 @@
 
 #lojas-ordenar p {
     font-size: 1.1vw;
-    color: #777;
+    color: #444;
 }
 
 #lojas-ordenar select {
@@ -4586,14 +4667,12 @@
 #maconaria-titulo {
     display: flex;
     width: 100%;
-}
-
-#maconaria-text {
     border-top: solid 2px #042B44;
+    align-items: flex-end;
 }
 
 #maconaria-text {
-    width: 70%;
+    width: 75%;
 }
 
 #maconaria-text h2 {
@@ -4604,19 +4683,21 @@
 
 #maconaria-text p {
     font-size: 1.3vw;
-    margin-bottom: 4vw;
-    color: #777;
+    margin-bottom: 2vw;
+    color: #444;
 }
 
 #maconaria-img {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 30%;
+    align-items: flex-end;
+    width: 25%;
 }
 
 #maconaria-img img {
-    width: 15vw;
+    width: 85%;
+    opacity: 0.6;
+    margin-bottom: 2vw;
 }
 
 #oq-e {
@@ -4701,7 +4782,7 @@
 
 #mesa-diretora-conteudo p {
     font-size: 1vw;
-    color: #777;
+    color: #444;
     margin: 0.8vw auto;
 }
 
@@ -5048,7 +5129,7 @@
     margin-bottom: 2%;
     font-size: 0.7vw;
     font-weight: bold;
-    color: #777;
+    color: #444;
 }
 
 #noticia-rodape a {
@@ -5067,7 +5148,7 @@
     width: 90%;
     height: 10vw;
     border: 1px solid rgb(220, 220, 220);
-    color: #777;
+    color: #444;
     height: auto;
     resize: vertical;
     
@@ -5273,7 +5354,7 @@
 #noticias-texto p {
     font-size: 1vw;
     margin-bottom: 2vw;
-    color: #777;
+    color: #444;
 }
 
 #noticias-texto a {
@@ -5679,11 +5760,12 @@
 
 #ordem-titulo {
     display: flex;
+    border-top: solid 2px #042B44;
+    align-items: flex-end;
 }
 
 #ordem-text {
-    width: 70%;
-    border-top: solid 2px #042B44;
+    width: 75%;
 }
 
 #ordem-text h2 {
@@ -5694,29 +5776,32 @@
 
 #ordem-text p {
     font-size: 1.3vw;
-    margin-bottom: 4vw;
-    color: #777;
+    margin-bottom: 1.5vw;
+    color: #444;
 }
 
 #ordem-img {
-    width: 30%;
+    width: 25%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
 #ordem-img img {
-    width: 80%;
+    width: 95%;
+    margin-bottom: 2vw;
+    opacity: 0.6;
 }
 
 #ordem-conteudo {
     display: flex;
     flex-direction: column;
+    border-top: solid 2px #042B44;
 }
 
 #ordem-conteudo h2 {
     font-size: 1.2vw;
-    margin: 1vw 0;
+    margin: 2vw 0;
     color: #222;
 }
 
@@ -6081,7 +6166,7 @@
 
 #atribuicoes {
     border-top: solid 2px #042B44;
-    margin: 3vw 0;
+    margin: 2vw 0;
 }
 
 #atribuicoes-titulo h2 {
@@ -6155,7 +6240,7 @@
 
 #tjm-conteudo p {
     font-size: 1vw;
-    color: #777;
+    color: #444;
     margin: 0.8vw 0;
 }
 
@@ -6194,7 +6279,7 @@
     width: 80%;
     text-align: center;
     font-size: 1vw;
-    color: #777;
+    color: #444;
     margin: 0.5vw auto;
 }
 
