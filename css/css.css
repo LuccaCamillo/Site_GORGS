@@ -3320,8 +3320,8 @@
     font-size: 0.7vw;
     background-color: #F9F9F9;
     cursor: default;
-    border-radius: 5px 0px 0px 0px;
     pointer-events: none;
+    border-radius: 5px 0px 0px 0px;
     transition: 0.2s;
 }
 
@@ -6132,7 +6132,7 @@
 
 #poder-judiciario-conteudo {
     display: flex;
-    margin-bottom: 3vw;
+    margin-bottom: 2vw;
     border-top: solid 2px #042B44;
 }
 
@@ -6164,22 +6164,151 @@
     opacity: 0.6;
 }
 
-#atribuicoes {
+#atribuicoes-juridico {
     border-top: solid 2px #042B44;
     margin: 2vw 0;
 }
 
-#atribuicoes-titulo h2 {
+#atribuicoes-juridico h2 {
     font-size: 1.5vw;
     margin: 2vw 0;
     color: #042B44;
 }
 
-#atribuicoes-btns {
+#atribuicoes-juridico p {
+    font-size: 1.3vw;
+    margin: 0.5vw 0;
+    color: #444;
+}
+
+#tribunais{
+    border-top: solid 2px #042B44;
+}
+
+#tribunais-btn{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 3vw 0;
+    justify-content: center;
+    margin-top: 3vw;
+}
+
+#tribunais-btn button{
+    width: 25%;
+    height: 3vw;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 1px;
+    color: #666;
+    font-weight: bold;
+    background-color: #D0D0D7;
+    font-size: 0.8vw;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+}
+
+#tribunais-btn button.alterado{
+    cursor: default;
+    background-color: #F9F9F9;
+    pointer-events: all;
+}
+
+#tribunais-conteudo{
+    background-color: #F9F9F9;
+    overflow: hidden;
+}
+
+#juridicao-default h3{
+    color: #666;
+    font-size: 1.2vw;
+}
+
+#tjm, #tem, #mpm, #juridicao-default {
+    width: 100%;
+    padding: 3vw;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 1px;
+    transition: translate 0.5s ease-out;
+    translate: 0 0;
+}
+
+#tribunais-conteudo div.alterado{
+    translate: -20vw 0;
+    position: absolute;
+    opacity: 0;
+}
+
+#tribunais-conteudo div h2 {
+    font-size: 1.2vw;
+    margin-bottom: 1vw;
+    color: #042B44;
+}
+
+#tribunais-conteudo div p {
+    font-size: 1vw;
+    color: #444;
+    margin: 0.4vw 0;
+}
+
+#tribunais-conteudo div a{
+    margin: 0 auto;
+}
+
+#tribunais-conteudo div button {
+    width: 20vw;
+    height: 6vw;
+    padding: 0 3%;
+    border-top: solid 3px #042B44;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: #042B44;
+    font-weight: bold;
+    background-color: #fff;
+    transition: 0.2s;
+    font-size: 1vw;
+    margin: 2vw 0;
+}
+
+#tribunais-conteudo div button:hover {
+    cursor: pointer;
+    color: #e4b600;
+    border-top: solid 3px #e4b600;
+}
+
+#tribunais-conteudo div button:active{
+    color: #555;
+    border-top: solid 3px #555;
+    background-color: rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
+}
+
+#judiciario-contato {
+    width: 100%;
+    border-top: solid 2px #042B44;
+    display: flex;
+    flex-direction: column;
+}
+
+#judiciario-contato div {
+    height: 4vw;
+}
+
+#judiciario-contato h2 {
+    font-size: 1.5vw;
+    margin: 2vw 0;
+    color: #042B44;
+}
+
+#judiciario-contato span {
+    font-size: 1.3vw;
+    color: #222;
+}
+
+#judiciario-contato i {
+    font-size: 1.3vw;
+    color: #042B44;
+}
+
+#judiciario-contato h5 {
+    font-size: 1.2vw;
+    margin-bottom: 2.5vw;
+    color: #042B44;
 }
 
 @media (max-width: 768px) {
@@ -6200,214 +6329,43 @@
         width: 22vw;
     }
 
-    #atribuicoes {
-        margin: 6vw 0;
-    }
-
-    #atribuicoes-titulo h2 {
+    #atribuicoes-juridico h2 {
         font-size: 3vw;
     }
 
-    #atribuicoes-btns {
-        margin: 6vw 0;
-    }
-
-}
-
-
-
-
-
-/* -TJM */
-
-#tjm {
-    width: 70%;
-    margin-top: 20px;
-}
-
-#tjm-conteudo {
-    width: 100%;
-    border-top: solid 2px #042B44;
-    display: flex;
-    flex-direction: column;
-}
-
-#tjm-conteudo h2 {
-    font-size: 1.5vw;
-    margin: 2vw 0;
-    color: #042B44;
-}
-
-#tjm-conteudo p {
-    font-size: 1vw;
-    color: #444;
-    margin: 0.8vw 0;
-}
-
-#tjm-presidente {
-    margin: 2vw auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#tjm-presidente img {
-    width: 20vw;
-    height: 80%;
-    border: solid 5px #F7CC22;
-}
-
-#tjm-presidente div {
-    width: 20vw;
-    height: 20%;
-    border: solid 5px #F7CC22;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#tjm-presidente div h3 {
-    width: 80%;
-    text-align: center;
-    font-size: 1.1vw;
-    margin: 0.5vw auto;
-    color: #042B44;
-}
-
-#tjm-presidente div p {
-    width: 80%;
-    text-align: center;
-    font-size: 1vw;
-    color: #444;
-    margin: 0.5vw auto;
-}
-
-#tjm-conteudo a {
-    margin: 0 auto;
-}
-
-#tjm-conteudo button {
-    width: 20vw;
-    height: 6vw;
-    padding: 0 3%;
-    border-top: solid 3px #F7CC22;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    color: #042B44;
-    font-weight: bold;
-    background-color: #fff;
-    transition: 0.2s;
-    font-size: 1vw;
-    margin: 2vw auto;
-}
-
-#tjm-conteudo button:hover {
-    cursor: pointer;
-    color: #F7CC22;
-}
-
-#equipe-conteudo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2vw 0;
-}
-
-#tjm-contato {
-    width: 100%;
-    border-top: solid 2px #042B44;
-    display: flex;
-    flex-direction: column;
-}
-
-#tjm-contato div {
-    height: 4vw;
-}
-
-#tjm-contato h2 {
-    font-size: 1.5vw;
-    margin: 2vw 0;
-    color: #042B44;
-}
-
-#tjm-contato span {
-    font-size: 1.3vw;
-    color: #222;
-}
-
-#tjm-contato i {
-    font-size: 1.3vw;
-    color: #042B44;
-}
-
-#tjm-contato h5 {
-    font-size: 1.2vw;
-    margin-bottom: 2.5vw;
-    color: #042B44;
-}
-
-@media (max-width: 768px) {
-
-    #tjm {
-        width: 95%;
-    }
-
-    #tjm-conteudo h2 {
+    #tribunais-conteudo div h2 {
         font-size: 3vw;
     }
 
-    #tjm-conteudo p {
+    #tribunais-conteudo div p {
         font-size: 2vw;
     }
 
-    #tjm-presidente {
-        margin: 4vw auto;
-    }
-
-    #tjm-presidente img {
-        width: 50vw;
-    }
-
-    #tjm-presidente div {
-        width: 50vw;
-    }
-
-    #tjm-presidente div h3 {
-        font-size: 2vw;
-        margin: 1vw auto;
-    }
-
-    #tjm-presidente div p {
-        font-size: 2vw;
-        margin: 1vw auto;
-    }
-
-    #tjm-conteudo button {
+    #tribunais-conteudo div button {
         width: 50vw;
         height: 16vw;
         font-size: 2vw;
         margin: 4vw auto;
     }
 
-    #tjm-contato div {
+    #judiciario-contato div {
         height: 7vw;
     }
 
-    #tjm-contato h2 {
+    #judiciario-contato h2 {
         font-size: 3vw;
         margin: 2vw 0;
     }
 
-    #tjm-contato span {
+    #judiciario-contato span {
         font-size: 2.5vw;
     }
 
-    #tjm-contato i {
+    #judiciario-contato i {
         font-size: 2.5vw;
     }
 
-    #tjm-contato h5 {
+    #judiciario-contato h5 {
         font-size: 2vw;
     }
 

@@ -2,454 +2,211 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poder Judiciário</title>
-    <link rel="icon" href="../img/logo_icon.png">
-    <link rel="stylesheet" href="../css/css.css">
-    <link href="../assets/css/solid.css" rel="stylesheet">
-    <link href="../assets/css/brands.css" rel="stylesheet">
-    <link href="../assets/css/fontawesome.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poder Judiciário</title>
+  <link rel="icon" href="../img/logo_icon.png">
+  <link rel="stylesheet" href="../css/css.css">
+  <link href="../assets/css/solid.css" rel="stylesheet">
+  <link href="../assets/css/brands.css" rel="stylesheet">
+  <link href="../assets/css/fontawesome.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <section id="modal-area">
-      <div id="modal-conteudo">
-        <div id="modal-img">
-          <img src="../img/logo_icon.png">
-          <button id="btn-fechar-area" onclick="areaRestritaAberta()"><i class="fa-sharp fa-solid fa-xmark"></i></button>
-        </div>
-        <div id="modal-campos">
-          <form action="">
-            <input type="text" placeholder="CIM" required>
-            <input type="password" placeholder="Senha" required>
-            <div id="recaptcha" class="g-recaptcha" data-sitekey="your_site_key"></div>
-            <button type="submits">Acessar</button>
-          </form>
-            <a onclick="modalRecurar()">Esqueci minha senha</a>
-            <a onclick="modalPrimeiro()">Primeiro acesso</a>
-        </div>
-        <div id="modal-recuperar">
-          <form action="">
-            <input type="text" placeholder="CPF" required>
-            <button type="submit" onclick="mostrarMensagem('mensagem-recuperacao')">Enviar</button>
-            <h5 id="mensagem-recuperacao">Uma nova senha para meu email!</h5>
-          </form>
-          <a onclick="modalRecurar()">Lembrou da Senha? Faça o Login</a>
-        </div>
-        <div id="modal-primeiro">
-          <form action="">
-            <input type="text" placeholder="CPF" required>
-            <input type="text" placeholder="CIM" required>
-            <button type="submit" onclick="mostrarMensagem('mensagem-primeiro')">Enviar</button>
-            <h5 id="mensagem-primeiro">Uma senha para meu email!</h5>
-          </form>
-          <a onclick="modalPrimeiro()">Não é seu primeiro acesso? Faça o Login</a>
-        </div>
+  <section id="modal-area">
+    <div id="modal-conteudo">
+      <div id="modal-img">
+        <img src="../img/logo_icon.png">
+        <button id="btn-fechar-area" onclick="areaRestritaAberta()"><i class="fa-sharp fa-solid fa-xmark"></i></button>
       </div>
-    </section>
+      <div id="modal-campos">
+        <form action="">
+          <input type="text" placeholder="CIM" required>
+          <input type="password" placeholder="Senha" required>
+          <div id="recaptcha" class="g-recaptcha" data-sitekey="your_site_key"></div>
+          <button type="submits">Acessar</button>
+        </form>
+        <a onclick="modalRecurar()">Esqueci minha senha</a>
+        <a onclick="modalPrimeiro()">Primeiro acesso</a>
+      </div>
+      <div id="modal-recuperar">
+        <form action="">
+          <input type="text" placeholder="CPF" required>
+          <button type="submit" onclick="mostrarMensagem('mensagem-recuperacao')">Enviar</button>
+          <h5 id="mensagem-recuperacao">Uma nova senha para meu email!</h5>
+        </form>
+        <a onclick="modalRecurar()">Lembrou da Senha? Faça o Login</a>
+      </div>
+      <div id="modal-primeiro">
+        <form action="">
+          <input type="text" placeholder="CPF" required>
+          <input type="text" placeholder="CIM" required>
+          <button type="submit" onclick="mostrarMensagem('mensagem-primeiro')">Enviar</button>
+          <h5 id="mensagem-primeiro">Uma senha para meu email!</h5>
+        </form>
+        <a onclick="modalPrimeiro()">Não é seu primeiro acesso? Faça o Login</a>
+      </div>
+    </div>
+  </section>
 
-    <header id="top">
-      <figure id="logo">
-        <a href="../index.html">
-          <img src="../img/logo-gorgs.png">
+  <header id="top">
+    <figure id="logo">
+      <a href="../index.html">
+        <img src="../img/logo-gorgs.png">
+      </a>
+      <div id="logo-cont">
+        <a id="logo-home" href="../index.html">
+          <img src="../img/logo-txt.png">
         </a>
-        <div id="logo-cont">
-          <a id="logo-home" href="../index.html">
-            <img src="../img/logo-txt.png">
+        <div>
+          <a id="icone-facebook" href="https://www.facebook.com/grandeorienters" target="_blank">
+            <i class="fa-brands fa-square-facebook"></i>
           </a>
-          <div>
-            <a id="icone-facebook" href="https://www.facebook.com/grandeorienters" target="_blank">
-              <i class="fa-brands fa-square-facebook"></i>
+          <a id="icone-twitter" href="https://twitter.com/gorgs_comab" target="_blank">
+            <i class="fa-brands fa-square-x-twitter"></i>
+          </a>
+          <a id="icone-youtube" href="https://www.youtube.com/channel/UCqd2UyXMiOHVNWdphQYjc0Q" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </figure>
+
+    <div id="mobile">
+      <button onclick="mobile()"><i id="icone" class="fa-sharp fa-solid fa-bars"></i></button>
+    </div>
+
+    <!-- Menu padrão -->
+
+    <nav id="menu">
+      <ul>
+
+        <div id="dropdown-main">
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              <p>
+                GORGS Digital
+              </p>
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
             </a>
-            <a id="icone-twitter" href="https://twitter.com/gorgs_comab" target="_blank">
-              <i class="fa-brands fa-square-x-twitter"></i>
+            <ul id="dropdown-item">
+              <li>
+                <a href="">Ciclo de Palestras</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Cursos</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Biblioteca Virtual</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">GORGS TV</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              <p>
+                Gestão Loja
+              </p>
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
             </a>
-            <a id="icone-youtube" href="https://www.youtube.com/channel/UCqd2UyXMiOHVNWdphQYjc0Q" target="_blank">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="">Processos</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Cadastro da Loja</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Nominata</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Irmãos da Loja</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Financeiro</a>
+                <hr>
+              </li>
+              <li>
+                <a href="">Sistema de Lojas</a>
+              </li>
+            </ul>
           </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo">
+              Institucional
+              <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i></a>
+            <ul id="dropdown-item">
+              <li>
+                <a href="../views/institucional.html">O GORGS</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/poder-executivo.html">Poder Executivo</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/palm.html">Poder Legislativo</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/poder-judiciario.html">Poder Judiciário</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/lojas.html">Lojas Maçônicas</a>
+                <hr>
+              </li>
+              <li>
+                <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="../views/noticias.html">Notícias</a>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="../views/contato.html">Contatos</a>
+          </div>
+
+          <div id="dropdown">
+            <a id="dropdown-titulo" href="">Eleição</a>
+          </div>
+
         </div>
-      </figure>
 
-      <div id="mobile">
-        <button onclick="mobile()"><i id="icone" class="fa-sharp fa-solid fa-bars"></i></button>
-      </div>
-
-      <!-- Menu padrão -->
-
-      <nav id="menu">
-        <ul>
-
-          <div id="dropdown-main">
-
-            <div id="dropdown">
-              <a id="dropdown-titulo">
-                <p>
-                  GORGS Digital
-                </p>
-                <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul id="dropdown-item">
-                <li>
-                  <a href="">Ciclo de Palestras</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="">Cursos</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="">Biblioteca Virtual</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="">GORGS TV</a>
-                </li>
-              </ul>
-            </div>
-
-            <div id="dropdown">
-              <a id="dropdown-titulo">
-                <p>
-                  Gestão Loja
-                </p>
-                <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul id="dropdown-item">
-                <li>
-                  <a href="">Processos</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="">Cadastro da Loja</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="">Nominata</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="">Irmãos da Loja</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="">Financeiro</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="">Sistema de Lojas</a>
-                </li>
-              </ul>
-            </div>
-
-            <div id="dropdown">
-              <a id="dropdown-titulo">
-                Institucional
-                <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i></a>
-              <ul id="dropdown-item">
-                <li>
-                  <a href="../views/institucional.html">O GORGS</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="../views/poder-executivo.html">Poder Executivo</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="../views/palm.html">Poder Legislativo</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="../views/poder-judiciario.html">Poder Judiciário</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="../views/lojas.html">Lojas Maçônicas</a>
-                  <hr>
-                </li>
-                <li>
-                  <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
-                </li>
-              </ul>
-            </div>
-
-            <div id="dropdown">
-              <a id="dropdown-titulo" href="../views/noticias.html">Notícias</a>
-            </div>
-
-            <div id="dropdown">
-              <a id="dropdown-titulo" href="../views/contato.html">Contatos</a>
-            </div>
-
-            <div id="dropdown">
-              <a id="dropdown-titulo" href="">Eleição</a>
-            </div>
-
-          </div>
-
-          <div id="btn-area">
-            <button id="area" onclick="areaRestritaFechada()">Olá, Fulano
-              <i id="icon-area" class="fa-solid fa-chevron-down"></i>
-            </button>
-          </div>
-
-        </ul>
-      </nav>
-
-      <!-- Menu Mobile -->
-
-      <nav id="menu-mobile">
-
-        <div id="perfil">
-          <div id="perfil-img">
-            <figure>
-              <img src="../img/sem_foto.jpg">
-            </figure>
-            <h6>CIM: 55555</h6>
-          </div>
-          <div id="perfil-info">
-            <h6>FULANO RODRIGUÊS DA SILVA SANTOS CORRÊA</h6>
-            <h6>VENERÁVEL MESTRE MARCELO MOREIRA TOSTES N° 511</h6>
-            <p>Iniciação: 01/01/2000</p>
-            <p>Elevação: 01/01/2000</p>
-            <p>Exaltação: 01/01/2000</p>
-            <p>Instalação: 01/01/2000</p>
-          </div>
-          <a id="btn-config" href="">
-            <i class="fa-solid fa-gear"></i>
-          </a>
+        <div id="btn-area">
+          <button id="area" onclick="areaRestritaFechada()">Olá, Fulano
+            <i id="icon-area" class="fa-solid fa-chevron-down"></i>
+          </button>
         </div>
-        <div id="topicos">
-          <hr>
-          <hr>
-          <hr>
-          <button onclick="dropdownMenuLateral('meu-perfil-top-mobi', 'perfil-arrow-mobi')">
-            Meu Perfil
-            <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div id="meu-perfil-top-mobi">
-            <a href="">Página do Irmão</a>
-            <hr>
-            <a href="">Dados</a>
-            <hr>
-            <a href="">Preferências</a>
-            <hr>
-            <a href="">Financeiro</a>
-            <hr>
-            <a href="">Presenças</a>
-            <hr>
-            <a href="">Troca de Senha</a>
-          </div>
-          <hr>
-          <button onclick="dropdownMenuLateral('publicacoes-top-mobi', 'publicacoes-arrow-mobi')">
-            Publicações
-            <i id="publicacoes-arrow-mobi" class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div id="publicacoes-top-mobi">
-            <a href="">Boletim Informativo</a>
-            <hr>
-            <a href="">Legislação</a>
-            <hr>
-            <a href="">Rituais Especiais</a>
-            <hr>
-            <a href="">Formulários</a>
-            <hr>
-            <a href="">Diversos</a>
-            <hr>
-            <a href="">Eleição</a>
-          </div>
-          <hr>
-          <button onclick="dropdownMenuLateral('loja-top-mobi', 'loja-arrow-mobi')">
-            Loja
-            <i id="loja-arrow-mobi" class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div id="loja-top-mobi">
-            <a href="">Atas / Balaústres</a>
-            <hr>
-            <a href="">Candidatos</a>
-            <hr>
-            <a href="">Aniversários</a>
-          </div>
-          <hr>
-          <a href="">
-            <button>
-              Troca de Loja
-            </button>
-          </a>
-          <hr>
-          <a href="">
-            <button>
-              Banco de Negócios
-            </button>
-          </a>
-          <hr>
-          <hr>
-          <hr>
-          <button onclick="dropdownMenuLateral('digital-top', 'digital-arrow')">
-            GORGS Digital
-            <i id="digital-arrow" class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div id="digital-top">
-            <a href="">Ciclo de Palestras</a>
-            <hr>
-            <a href="">Cursos</a>
-            <hr>
-            <a href="">Biblioteca Virtual</a>
-            <hr>
-            <a href="">GORGS TV</a>
-          </div>
-          <hr>
-          <button onclick="dropdownMenuLateral('gerir-top', 'gerir-arrow')">
-            Gestão Loja
-            <i id="gerir-arrow" class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div id="gerir-top">
-            <a href="">Processos</a>
-            <hr>
-            <a href="">Cadastro da Loja</a>
-            <hr>
-            <a href="">Nominata</a>
-            <hr>
-            <a href="">Irmãos da Loja</a>
-            <hr>
-            <a href="">Financeiro</a>
-            <hr>
-            <a href="">Sistema de Lojas</a>
-          </div>
-          <hr>
-          <button onclick="dropdownMenuLateral('inst-top', 'inst-arrow')">
-            Institucional
-            <i id="inst-arrow" class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div id="inst-top">
-            <a href="../views/institucional.html">O GORGS</a>
-            <hr>
-            <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
-            <hr>
-            <a href="../views/poder-executivo.html">Poder Executivo</a>
-            <hr>
-            <a href="../views/palm.html">Poder Legislativo</a>
-            <hr>
-            <a href="../views/poder-judiciario.html">Poder Judiciário</a>
-            <hr>
-            <a href="../views/lojas.html">Lojas Maçônicas</a>
-            <hr>
-            <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
-          </div>
-          <hr>
-          <a href="../views/noticias.html">
-            <button>
-              Notícias
-            </button>
-          </a>
-          <hr>
-          <a href="../views/contato.html">
-            <button>
-              Contatos
-            </button>
-          </a>
-          <hr>
-          <a href="">
-            <button>
-              Eleição
-            </button>
-          </a>
-          <hr>
-          <hr>
-          <hr>
-          <a href="">
-            <button>
-              Sair
-            </button>
-          </a>
-          <hr>
-          <button id="area-mobile" onclick="areaRestritaAberta()">FAÇA SEU LOGIN</button>
-          <hr>
-          <hr>
-          <hr>
-        </div>
-      </nav>
 
-      <div id="home">
-        <a href="#top">
-          <i class="fa-solid fa-arrow-up"></i>
-        </a>
-      </div>
+      </ul>
+    </nav>
 
-    </header>
+    <!-- Menu Mobile -->
 
-    <main id="main">
-        <div id="poder-judiciario">
-            <div id="poder-judiciario-conteudo">
-                <div id="poder-juduciario-titulo">
-                    <h2>PODER JUDICIÁRIO</h2>
-                    <p>O Poder Judiciário do Grande Oriente do Rio Grande do Sul é composto pelo Tribunal de Justiça Maçônica, Tribunal Eleitoral Maçônico e Ministério Público Maçônico.</p>
-                    <p>O Tribunal de Justiça Maçônica, estabelecido em 1895, conta com nove juízes com qualificações específicas e vedações de cargos maçônicos adicionais. O Tribunal Eleitoral Maçônico possui sete juízes, incluindo um indicado pelo Tribunal de Justiça. </p>
-                    <p>O Ministério Público Maçônico, liderado pelo Grande Procurador de Justiça Maçônica, supervisiona o cumprimento das leis e regulamentos maçônicos.</p>
-                </div>
-                <div id="poder-juridico-img">
-                    <img src="../img/icone_tribunal.png">
-                </div>
-            </div>
-            <div id="palm-atribuicoes">
-                <div id="atribuicoes-titulo">
-                    <h2>ATRIBUIÇÕES</h2>
-                    <p>Compete aos Tribunais, eleger seus Presidentes e definir os demais membros dos Órgãos de Direção;
-                        elaborar seus Regimentos Internos; manter, defender, guardar e fazer respeitar
-                        o Estatuto Social, o Regulamento Geral e as Leis; processar e julgar todos os delitos que não forem suscetíveis de
-                        conciliação, de modo que se mantenha a correta observância dos deveres e direitos maçônicos;
-                        Assegurar o processo contraditório, proporcionando ao acusado a mais ampla defesa.</p>
-                </div>
-                <div id="atribuicoes-btns">
-                    <a href="../views/tjm.html"><button>Tribunal de Justiça Maçônica</button></a>
-                    <a href="../views/tem.html"><button>Tribunal Eleitoral Maçônico</button></a>
-                    <a href="../views/mpm.html"><button>Ministério Público Maçônico</button></a>
-                </div>
-            </div>
-        </div>
-    </main>
+    <nav id="menu-mobile">
 
-    <footer id="rodape">
-
-      <div id="rodape-logo">
-          <img src="../img/logo-branco.png">
-      </div>
-
-      <div id="rodape-endereco">
-          <div>
-              <h4>Palácio Maçônico:</h4>
-              <p>Rua Jerônimo Coelho, 116 - Centro.</p>
-              <p>CEP: 90010-240.</p>
-              <h5>Fone: (51) 3272-3700</h5>
-          </div>
-
-          <div>
-              <h4>Centro Templário:</h4>
-              <p>Rua Quatro Jacós, 75 - Menino Deus.</p>
-              <p>CEP: 90150-010.</p>
-              <h5>Fone: (51) 3095-1612 </h5>
-          </div>
-
-      </div>
-    </footer>
-
-    <section id="radio">
-        <audio id="player" controls loop preload src="https://stream-50.zeno.fm/t91ercqdz38uv?zs=L0_XyZvYRwOHDdket63HBw">
-        </audio>
-        <button id="btn-radio" onclick="ocultarRadio()">
-          <img id="radio-logo" src="../img/logo-radio.png">
-          <i id="icone-radio" class="fa-solid fa-chevron-left"></i>
-        </button>
-    </section>
-
-    <section id="meus-dados">
       <div id="perfil">
         <div id="perfil-img">
           <figure>
@@ -470,15 +227,16 @@
         </a>
       </div>
       <div id="topicos">
-        <button onclick="dropdownMenuLateral('meu-perfil-top', 'perfil-arrow')">
+        <hr>
+        <hr>
+        <hr>
+        <button onclick="dropdownMenuLateral('meu-perfil-top-mobi', 'perfil-arrow-mobi')">
           Meu Perfil
-          <i id="perfil-arrow" class="fa-solid fa-chevron-down droped-arrow"></i>
+          <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down"></i>
         </button>
-        <div id="meu-perfil-top" class="droped-cont">
+        <div id="meu-perfil-top-mobi">
           <a href="">Página do Irmão</a>
-        <hr>
-        <a href="">Mensagens</a>
-        <hr>
+          <hr>
           <a href="">Dados</a>
           <hr>
           <a href="">Preferências</a>
@@ -490,11 +248,11 @@
           <a href="">Troca de Senha</a>
         </div>
         <hr>
-        <button onclick="dropdownMenuLateral('publicacoes-top', 'publicacoes-arrow')">
+        <button onclick="dropdownMenuLateral('publicacoes-top-mobi', 'publicacoes-arrow-mobi')">
           Publicações
-          <i id="publicacoes-arrow" class="fa-solid fa-chevron-down"></i>
+          <i id="publicacoes-arrow-mobi" class="fa-solid fa-chevron-down"></i>
         </button>
-        <div id="publicacoes-top">
+        <div id="publicacoes-top-mobi">
           <a href="">Boletim Informativo</a>
           <hr>
           <a href="">Legislação</a>
@@ -508,11 +266,11 @@
           <a href="">Eleição</a>
         </div>
         <hr>
-        <button onclick="dropdownMenuLateral('loja-top', 'loja-arrow')">
+        <button onclick="dropdownMenuLateral('loja-top-mobi', 'loja-arrow-mobi')">
           Loja
-          <i id="loja-arrow" class="fa-solid fa-chevron-down"></i>
+          <i id="loja-arrow-mobi" class="fa-solid fa-chevron-down"></i>
         </button>
-        <div id="loja-top">
+        <div id="loja-top-mobi">
           <a href="">Atas / Balaústres</a>
           <hr>
           <a href="">Candidatos</a>
@@ -532,18 +290,374 @@
           </button>
         </a>
         <hr>
+        <hr>
+        <hr>
+        <button onclick="dropdownMenuLateral('digital-top', 'digital-arrow')">
+          GORGS Digital
+          <i id="digital-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="digital-top">
+          <a href="">Ciclo de Palestras</a>
+          <hr>
+          <a href="">Cursos</a>
+          <hr>
+          <a href="">Biblioteca Virtual</a>
+          <hr>
+          <a href="">GORGS TV</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('gerir-top', 'gerir-arrow')">
+          Gestão Loja
+          <i id="gerir-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="gerir-top">
+          <a href="">Processos</a>
+          <hr>
+          <a href="">Cadastro da Loja</a>
+          <hr>
+          <a href="">Nominata</a>
+          <hr>
+          <a href="">Irmãos da Loja</a>
+          <hr>
+          <a href="">Financeiro</a>
+          <hr>
+          <a href="">Sistema de Lojas</a>
+        </div>
+        <hr>
+        <button onclick="dropdownMenuLateral('inst-top', 'inst-arrow')">
+          Institucional
+          <i id="inst-arrow" class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="inst-top">
+          <a href="../views/institucional.html">O GORGS</a>
+          <hr>
+          <a href="../views/grao-mestrado.html">Grão-Mestrado</a>
+          <hr>
+          <a href="../views/poder-executivo.html">Poder Executivo</a>
+          <hr>
+          <a href="../views/palm.html">Poder Legislativo</a>
+          <hr>
+          <a href="../views/poder-judiciario.html">Poder Judiciário</a>
+          <hr>
+          <a href="../views/lojas.html">Lojas Maçônicas</a>
+          <hr>
+          <a href="../views/ordens-paramaconicas.html">Ordens Paramaçônicas</a>
+        </div>
+        <hr>
+        <a href="../views/noticias.html">
+          <button>
+            Notícias
+          </button>
+        </a>
+        <hr>
+        <a href="../views/contato.html">
+          <button>
+            Contatos
+          </button>
+        </a>
+        <hr>
+        <a href="">
+          <button>
+            Eleição
+          </button>
+        </a>
+        <hr>
+        <hr>
+        <hr>
         <a href="">
           <button>
             Sair
           </button>
         </a>
         <hr>
+        <button id="area-mobile" onclick="areaRestritaAberta()">FAÇA SEU LOGIN</button>
+        <hr>
+        <hr>
+        <hr>
       </div>
-    </section>
+    </nav>
 
-    <script type="text/javascript" src="../js/functions.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://kit.fontawesome.com/ed1cc67055.js" crossorigin="anonymous"></script>
+    <div id="home">
+      <a href="#top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+
+  </header>
+
+  <main id="main">
+    <div id="poder-judiciario">
+      <div id="poder-judiciario-conteudo">
+        <div id="poder-juduciario-titulo">
+          <h2>PODER JUDICIÁRIO</h2>
+          <p>O Poder Judiciário do Grande Oriente do Rio Grande do Sul é composto pelo Tribunal de Justiça Maçônica,
+            Tribunal Eleitoral Maçônico e Ministério Público Maçônico.</p>
+          <p>O Tribunal de Justiça Maçônica, estabelecido em 1895, conta com nove juízes com qualificações específicas e
+            vedações de cargos maçônicos adicionais. O Tribunal Eleitoral Maçônico possui sete juízes, incluindo um
+            indicado pelo Tribunal de Justiça. </p>
+          <p>O Ministério Público Maçônico, liderado pelo Grande Procurador de Justiça Maçônica, supervisiona o
+            cumprimento das leis e regulamentos maçônicos.</p>
+        </div>
+        <div id="poder-juridico-img">
+          <img src="../img/icone_tribunal.png">
+        </div>
+      </div>
+      <div id="atribuicoes-juridico">
+        <h2>ATRIBUIÇÕES</h2>
+        <p>Compete aos Tribunais, eleger seus Presidentes e definir os demais membros dos Órgãos de Direção;
+          elaborar seus Regimentos Internos; manter, defender, guardar e fazer respeitar
+          o Estatuto Social, o Regulamento Geral e as Leis; processar e julgar todos os delitos que não forem
+          suscetíveis de
+          conciliação, de modo que se mantenha a correta observância dos deveres e direitos maçônicos;
+          Assegurar o processo contraditório, proporcionando ao acusado a mais ampla defesa.</p>
+      </div>
+      <div id="tribunais">
+        <div id="area-tribunais">
+          <div id="tribunais-btn">
+            <button id="btn-tjm">Tribunal de Justiça Maçônica</button>
+            <button id="btn-tem">Tribunal Eleitoral Maçônico</button>
+            <button id="btn-mpm">Ministério Público Maçônico</button>
+          </div>
+          <div id="tribunais-conteudo">
+
+            <div id="juridicao-default">
+              <h3>Clique em alguma aba para visualizar os conteúdos...</h3>
+            </div>
+
+            <div id="tjm" class="alterado">
+              <h2>TRIBUNAL DE JUSTIÇA MAÇÔNICA – TJM</h2>
+              <p>O Tribunal de Justiça Maçônica, regido pela Constituição do Grande Oriente do Rio Grande do Sul, foi
+                estabelecido em 1985 com membros nomeados em 1995. Inicialmente programado para começar em maio de 1895,
+                efetivamente iniciou suas atividades em janeiro de 1899.</p>
+              <p>Com sede em Porto Alegre, abrange a jurisdição do GORGS, composto por nove juízes com requisitos
+                específicos. A escolha dos juízes ocorre por lista tríplice encaminhada pelo Grão-Mestre, e é proibido
+                que juízes exerçam outros cargos maçônicos. O tribunal é liderado por Presidente, Vice-Presidente e
+                Corregedor.</p>
+              <div id="ministros-membros">
+                <div id="ministro">
+                  <figure>
+                    <img src="../img/sem_foto.jpg">
+                  </figure>
+                  <div>
+                    <h3>Presidente Luis Clóvis Machadoda Rocha Júnior</h3>
+                  </div>
+                </div>
+              </div>
+              <div id="ministro-comp">
+                <p>Vice-Presidente: Fernando José Sebben</p>
+                <p>Corregedor: Zairo Francisco Castaldello</p>
+                <p>Juiz: David Pereira Garcia Júnior</p>
+              </div>
+              <a href="ex-presidentes-tjm.html"><button>GALERIA DE EX-PRESIDENTES</button></a>
+            </div>
+
+            <div id="tem" class="alterado">
+              <h2>TRIBUNAL ELEITORAL MAÇÔNICO – TEM</h2>
+              <p>O Tribunal Eleitoral Maçônico, sediado em Porto Alegre, abrange a jurisdição do GORGS e consiste em 7
+                juízes, podendo ser ampliado pela própria iniciativa do tribunal e deliberação da Assembleia
+                Legislativa.</p>
+              <p>Sob a direção de um Presidente, um Vice-Presidente e um Corregedor, a composição inclui um juiz
+                indicado pelo Tribunal de Justiça Maçônica, enquanto os demais são eleitos e nomeados com as mesmas
+                formalidades dos juízes do Tribunal de Justiça, seguindo as condições de elegibilidade estabelecidas.
+              </p>
+              <div id="ministros-membros">
+                <div id="ministro">
+                  <figure>
+                    <img src="../img/sem_foto.jpg">
+                  </figure>
+                  <div>
+                    <h3>Presidente Alex Sandro Sebben</h3>
+                  </div>
+                </div>
+              </div>
+              <div id="ministro-comp">
+                <p>Vice-Presidente: Alberto Valim de Lima Júnior</p>
+                <p>Corregedor: Florentino da Costa Floriano</p>
+                <p>Representante do TJM: Zairo Francisco Castaldello</p>
+              </div>
+
+              <a href="ex-presidentes-tem.html"><button>GALERIA DE EX-PRESIDENTES</button></a>
+            </div>
+
+            <div id="mpm" class="alterado">
+              <h2>MINISTÉRIO PÚBLICO MAÇÔNICO – MPM</h2>
+              <p>O Ministério Público Maçônico é liderado pelo Grande Procurador de Justiça Maçônica, com o apoio dos 1º
+                e 2º Subprocuradores de Justiça Maçônica. A nomeação do Grande Procurador ocorre após seleção pela
+                Assembleia Legislativa entre uma lista tríplice apresentada pelo Grão-Mestre.</p>
+              <p>Os Subprocuradores são indicados, aprovados pela Assembleia Legislativa e nomeados pelo Grão-Mestre.
+                Esses membros, todos Mestres Maçons, apresentando denúncias quando necessário. Suas funções incluem atuar nos Tribunais de Justiça
+                Maçônica e Eleitoral.</p>
+              <div id="ministros-membros">
+                <div id="ministro">
+                  <figure>
+                    <img src="../img/sem_foto.jpg">
+                  </figure>
+                  <div>
+                    <h3>Grande Procurador Leonardo Beux Tonietto</h3>
+                  </div>
+                </div>
+              </div>
+              <div id="ministro-comp">
+                <p>1° Subprocurador: João Firmino Torelly Bastos</p>
+              </div>
+            </div>
+
+          </div>
+          <div id="judiciario-equipe">
+            <div id="equipe">
+              <h2>EQUIPE</h2>
+              <div id="setor">
+                <figure>
+                  <img src="../img/Huberto-Martins-Rosa.jpg">
+                </figure>
+                <p>Huberto Martins Rosa</p>
+              </div>
+            </div>
+            <div id="judiciario-contato">
+              <h2>CONTATO</h2>
+              <div>
+                <span><i class="fa-solid fa-phone"></i> Telefone:</span>
+                <h5>(51) 3095-1612</h5>
+              </div>
+              <div>
+                <span><i class="fa-solid fa-envelope"></i> E-mail:</span>
+                <h5>tjmgorgs@gmail.com</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="rodape">
+
+    <div id="rodape-logo">
+      <img src="../img/logo-branco.png">
+    </div>
+
+    <div id="rodape-endereco">
+      <div>
+        <h4>Palácio Maçônico:</h4>
+        <p>Rua Jerônimo Coelho, 116 - Centro.</p>
+        <p>CEP: 90010-240.</p>
+        <h5>Fone: (51) 3272-3700</h5>
+      </div>
+
+      <div>
+        <h4>Centro Templário:</h4>
+        <p>Rua Quatro Jacós, 75 - Menino Deus.</p>
+        <p>CEP: 90150-010.</p>
+        <h5>Fone: (51) 3095-1612 </h5>
+      </div>
+
+    </div>
+  </footer>
+
+  <section id="radio">
+    <audio id="player" controls loop preload src="https://stream-50.zeno.fm/t91ercqdz38uv?zs=L0_XyZvYRwOHDdket63HBw">
+    </audio>
+    <button id="btn-radio" onclick="ocultarRadio()">
+      <img id="radio-logo" src="../img/logo-radio.png">
+      <i id="icone-radio" class="fa-solid fa-chevron-left"></i>
+    </button>
+  </section>
+
+  <section id="meus-dados">
+    <div id="perfil">
+      <div id="perfil-img">
+        <figure>
+          <img src="../img/sem_foto.jpg">
+        </figure>
+        <h6>CIM: 55555</h6>
+      </div>
+      <div id="perfil-info">
+        <h6>FULANO RODRIGUÊS DA SILVA SANTOS CORRÊA</h6>
+        <h6>VENERÁVEL MESTRE MARCELO MOREIRA TOSTES N° 511</h6>
+        <p>Iniciação: 01/01/2000</p>
+        <p>Elevação: 01/01/2000</p>
+        <p>Exaltação: 01/01/2000</p>
+        <p>Instalação: 01/01/2000</p>
+      </div>
+      <a id="btn-config" href="">
+        <i class="fa-solid fa-gear"></i>
+      </a>
+    </div>
+    <div id="topicos">
+      <button onclick="dropdownMenuLateral('meu-perfil-top', 'perfil-arrow')">
+        Meu Perfil
+        <i id="perfil-arrow" class="fa-solid fa-chevron-down droped-arrow"></i>
+      </button>
+      <div id="meu-perfil-top" class="droped-cont">
+        <a href="">Página do Irmão</a>
+        <hr>
+        <a href="">Mensagens</a>
+        <hr>
+        <a href="">Dados</a>
+        <hr>
+        <a href="">Preferências</a>
+        <hr>
+        <a href="">Financeiro</a>
+        <hr>
+        <a href="">Presenças</a>
+        <hr>
+        <a href="">Troca de Senha</a>
+      </div>
+      <hr>
+      <button onclick="dropdownMenuLateral('publicacoes-top', 'publicacoes-arrow')">
+        Publicações
+        <i id="publicacoes-arrow" class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div id="publicacoes-top">
+        <a href="">Boletim Informativo</a>
+        <hr>
+        <a href="">Legislação</a>
+        <hr>
+        <a href="">Rituais Especiais</a>
+        <hr>
+        <a href="">Formulários</a>
+        <hr>
+        <a href="">Diversos</a>
+        <hr>
+        <a href="">Eleição</a>
+      </div>
+      <hr>
+      <button onclick="dropdownMenuLateral('loja-top', 'loja-arrow')">
+        Loja
+        <i id="loja-arrow" class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div id="loja-top">
+        <a href="">Atas / Balaústres</a>
+        <hr>
+        <a href="">Candidatos</a>
+        <hr>
+        <a href="">Aniversários</a>
+      </div>
+      <hr>
+      <a href="">
+        <button>
+          Troca de Loja
+        </button>
+      </a>
+      <hr>
+      <a href="">
+        <button>
+          Banco de Negócios
+        </button>
+      </a>
+      <hr>
+      <a href="">
+        <button>
+          Sair
+        </button>
+      </a>
+      <hr>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="../js/functions.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://kit.fontawesome.com/ed1cc67055.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

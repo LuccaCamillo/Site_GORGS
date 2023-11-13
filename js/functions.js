@@ -242,6 +242,56 @@ function gmGma() {
   gma.classList.toggle("alterado");
 }
 
+// Poder judiciario - Juridições
+
+const selecione = document.getElementById("juridicao-default");
+
+const tjm = document.getElementById("tjm");
+const tem = document.getElementById("tem");
+const mpm = document.getElementById("mpm");
+
+const btnTjm = document.getElementById("btn-tjm");
+const btnTem = document.getElementById("btn-tem");
+const btnMpm = document.getElementById("btn-mpm");
+
+btnTjm.addEventListener("click", () => {
+  selecione.classList.add("alterado");
+
+  tem.classList.add("alterado");
+  mpm.classList.add("alterado");
+  tjm.classList.remove("alterado");
+
+  btnTem.classList.remove("alterado");
+  btnMpm.classList.remove("alterado");
+  btnTjm.classList.add("alterado");
+});
+
+btnTem.addEventListener("click", () => {
+  selecione.classList.add("alterado");
+
+  tjm.classList.add("alterado");
+  mpm.classList.add("alterado");
+  tem.classList.remove("alterado");
+
+  btnTjm.classList.remove("alterado");
+  btnMpm.classList.remove("alterado");
+  btnTem.classList.add("alterado");
+});
+
+btnMpm.addEventListener("click", () => {
+  selecione.classList.add("alterado");
+
+  tem.classList.add("alterado");
+  tjm.classList.add("alterado");
+  mpm.classList.remove("alterado");
+
+  btnTjm.classList.remove("alterado");
+  btnTem.classList.remove("alterado");
+  btnMpm.classList.add("alterado");
+});
+
+// Copiar enderços - Contatos
+
 function copySede1() {
   var text = "Rua Jerônimo Coelho, 116 - Centro";
   var copyArea = document.createElement("textarea");
@@ -300,7 +350,6 @@ if (btnNext != null && btnPrev != null) {
   let delay;
 
   btnNext.addEventListener("click", function () {
-
     if (card.scrollLeft >= scrollMaximo - limiteDiferenca) {
       card.scrollLeft = 0;
       delay = 750;
@@ -469,27 +518,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Animações de elementos da Home
 
-const patrocinio = document.getElementById('patrocinio');
-const links = document.querySelectorAll('#patrocinio a');
+const patrocinio = document.getElementById("patrocinio");
+const links = document.querySelectorAll("#patrocinio a");
 
-const noticiasTitulo = document.getElementById('ultimas-noticias-titulo');
-const digitalTitulo = document.getElementById('gorgs-tv-titulo');
+const noticiasTitulo = document.getElementById("ultimas-noticias-titulo");
+const digitalTitulo = document.getElementById("gorgs-tv-titulo");
 
-if(patrocinio){
-  patrocinio.addEventListener('animationend', () => {
+if (patrocinio) {
+  patrocinio.addEventListener("animationend", () => {
     patrocinio.style.animation = "none";
   });
 
-  noticiasTitulo.addEventListener('animationend', () => {
+  noticiasTitulo.addEventListener("animationend", () => {
     noticiasTitulo.style.animation = "none";
   });
 
-  digitalTitulo.addEventListener('animationend', () => {
+  digitalTitulo.addEventListener("animationend", () => {
     digitalTitulo.style.animation = "none";
   });
-  
+
   links.forEach(function (link) {
-    link.addEventListener('animationend', () => {
+    link.addEventListener("animationend", () => {
       link.style.animation = "none";
     });
   });
@@ -497,14 +546,13 @@ if(patrocinio){
 
 // Animação de elementos do Institucional
 
-const titles = document.querySelectorAll('#inst-lojas div');
+const titles = document.querySelectorAll("#inst-lojas div");
 let lojasSimb = 0;
 let lojasPesq = 0;
 
 function countSimb() {
   if (lojasSimb <= 255) {
-    
-    document.getElementById('simb').innerHTML = lojasSimb;
+    document.getElementById("simb").innerHTML = lojasSimb;
 
     lojasSimb++;
     setTimeout(countSimb, 10);
@@ -513,8 +561,7 @@ function countSimb() {
 
 function countPesq() {
   if (lojasPesq <= 8) {
-    
-    document.getElementById('pesq').innerHTML = lojasPesq;
+    document.getElementById("pesq").innerHTML = lojasPesq;
 
     lojasPesq++;
     setTimeout(countPesq, 250);
@@ -522,14 +569,12 @@ function countPesq() {
 }
 
 titles.forEach(function (title) {
-
-  title.addEventListener('animationstart', () => {
+  title.addEventListener("animationstart", () => {
     countSimb();
     countPesq();
   });
 
-  title.addEventListener('animationend', () => {
+  title.addEventListener("animationend", () => {
     title.style.animation = "none";
   });
-
 });
