@@ -32,19 +32,19 @@
         <div id="modal-recuperar">
           <form action="">
             <input type="text" placeholder="CPF" required>
-            <button type="submit" onclick="mostrarMensagemRecuperar()">Enviar</button>
+            <button type="submit" onclick="mostrarMensagem('mensagem-recuperacao')">Enviar</button>
             <h5 id="mensagem-recuperacao">Uma nova senha para meu email!</h5>
           </form>
-          <a onclick="modalRecurar(); ocultarMensagemRecuperar();">Lembrou da Senha? Faça o Login</a>
+          <a onclick="modalRecurar()">Lembrou da Senha? Faça o Login</a>
         </div>
         <div id="modal-primeiro">
           <form action="">
             <input type="text" placeholder="CPF" required>
             <input type="text" placeholder="CIM" required>
-            <button type="submit" onclick="mostrarMensagemPrimeiro()">Enviar</button>
+            <button type="submit" onclick="mostrarMensagem('mensagem-primeiro')">Enviar</button>
             <h5 id="mensagem-primeiro">Uma senha para meu email!</h5>
           </form>
-          <a onclick="modalPrimeiro(); ocultarMensagemPrimeiro();">Não é seu primeiro acesso? Faça o Login</a>
+          <a onclick="modalPrimeiro()">Não é seu primeiro acesso? Faça o Login</a>
         </div>
       </div>
     </section>
@@ -63,7 +63,7 @@
               <i class="fa-brands fa-square-facebook"></i>
             </a>
             <a id="icone-twitter" href="https://twitter.com/gorgs_comab" target="_blank">
-              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-square-x-twitter"></i>
             </a>
             <a id="icone-youtube" href="https://www.youtube.com/channel/UCqd2UyXMiOHVNWdphQYjc0Q" target="_blank">
               <i class="fa-brands fa-youtube"></i>
@@ -71,18 +71,18 @@
           </div>
         </div>
       </figure>
-  
+
       <div id="mobile">
-      <button onclick="mobile()"><i class="fa-sharp fa-solid fa-bars"></i></button>
-    </div>
-  
+        <button onclick="mobile()"><i id="icone" class="fa-sharp fa-solid fa-bars"></i></button>
+      </div>
+
       <!-- Menu padrão -->
-  
+
       <nav id="menu">
         <ul>
-  
+
           <div id="dropdown-main">
-  
+
             <div id="dropdown">
               <a id="dropdown-titulo">
                 <p>
@@ -108,11 +108,11 @@
                 </li>
               </ul>
             </div>
-  
+
             <div id="dropdown">
               <a id="dropdown-titulo">
                 <p>
-                  Gerir Loja
+                  Gestão Loja
                 </p>
                 <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
               </a>
@@ -142,7 +142,7 @@
                 </li>
               </ul>
             </div>
-  
+
             <div id="dropdown">
               <a id="dropdown-titulo">
                 Institucional
@@ -177,42 +177,44 @@
                 </li>
               </ul>
             </div>
-  
+
             <div id="dropdown">
               <a id="dropdown-titulo" href="../views/noticias.html">Notícias</a>
             </div>
-  
-            <div id="dropdown">
-              <a id="dropdown-titulo" href="">Eleição</a>
-            </div>
-  
+
             <div id="dropdown">
               <a id="dropdown-titulo" href="../views/contato.html">Contatos</a>
             </div>
-  
+
+            <div id="dropdown">
+              <a id="dropdown-titulo" href="">Eleição</a>
+            </div>
+
           </div>
-  
+
           <div id="btn-area">
             <button id="area" onclick="areaRestritaFechada()">Olá, Fulano
               <i id="icon-area" class="fa-solid fa-chevron-down"></i>
             </button>
           </div>
-  
+
         </ul>
       </nav>
-  
+
       <!-- Menu Mobile -->
-  
+
       <nav id="menu-mobile">
-  
+
         <div id="perfil">
           <div id="perfil-img">
-            <img src="../img/sem_foto.jpg">
+            <figure>
+              <img src="../img/sem_foto.jpg">
+            </figure>
+            <h6>CIM: 55555</h6>
           </div>
           <div id="perfil-info">
-            <p>Fulano Rodriguês da Silva Santos Corrêa</p>
-            <p>CIM: 55555</p>
-            <p>Venerável Mestre Marcelo Moreira Tostes</p>
+            <h6>FULANO RODRIGUÊS DA SILVA SANTOS CORRÊA</h6>
+            <h6>VENERÁVEL MESTRE MARCELO MOREIRA TOSTES N° 511</h6>
             <p>Iniciação: 01/01/2000</p>
             <p>Elevação: 01/01/2000</p>
             <p>Exaltação: 01/01/2000</p>
@@ -228,9 +230,9 @@
           <hr>
           <button onclick="dropdownMenuLateral('meu-perfil-top-mobi', 'perfil-arrow-mobi')">
             Meu Perfil
-            <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down droped-arrow"></i>
+            <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down"></i>
           </button>
-          <div id="meu-perfil-top-mobi" class="droped-cont">
+          <div id="meu-perfil-top-mobi">
             <a href="">Página do Irmão</a>
             <hr>
             <a href="">Dados</a>
@@ -303,7 +305,7 @@
           </div>
           <hr>
           <button onclick="dropdownMenuLateral('gerir-top', 'gerir-arrow')">
-            Gerir Loja
+            Gestão Loja
             <i id="gerir-arrow" class="fa-solid fa-chevron-down"></i>
           </button>
           <div id="gerir-top">
@@ -346,15 +348,15 @@
             </button>
           </a>
           <hr>
-          <a href="">
-            <button>
-              Eleição
-            </button>
-          </a>
-          <hr>
           <a href="../views/contato.html">
             <button>
               Contatos
+            </button>
+          </a>
+          <hr>
+          <a href="">
+            <button>
+              Eleição
             </button>
           </a>
           <hr>
@@ -372,47 +374,46 @@
           <hr>
         </div>
       </nav>
-  
+
       <div id="home">
         <a href="#top">
           <i class="fa-solid fa-arrow-up"></i>
         </a>
       </div>
-  
+
     </header>
 
     <main id="main">
         <div id="ministros">
             <h2>MINISTÉRIO DA GUARDA SELOS</h2>
             <p>O Ministério da Guarda dos Selos é o responsável por preservar os registros históricos do GORGS, de Lojas, de Triângulos e de Maçons da jurisdição.</p>
+            <div id="ministros-membros">
             <div id="ministro">
-                <img src="../img/Danilo.jpg">
-                <div>
+              <figure>
+                <img src="../img/Danilo1.jpg">
+              </figure>
+              <div>
                     <h3>Ministro Danilo Alceu Kunzler</h3>
-                    <h5>Loja “Estância da Acácia”</h5>
+                    <h5>Loja - Estância da Acácia</h5>
                     <h4>danilo.k@terra.com.br</h4>
-                    <h5>51 99983-4618</h5>
+                    <h5>(51) 99983-4618</h5>
                 </div>
             </div>
-            <div id="ministro">
-              <img src="../img/sem_foto.jpg">
-              <div>
-                  <h3>Ministro Marson Alquati </h3>
-                  <h5>Loja “Confraternidade”</h5>
-                  <h4>marsonalquati@hotmail.com</h4>
-                  <h5>54 99935-8771</h5>
-              </div>
           </div>
         </div>
         <div id="setores">
             <h2>EQUIPE</h2>
             <div id="setor">
                 <div>
+                  <figure>
                     <img src="../img/Renan.jpg">
+                  </figure>
                     <p>Renan da Silva Moraes</p>
                 </div>
                 <div>
-                  <img src="../img/sem_foto.jpg">
+                  <figure style="background-color: #BBBED1;">
+                    <img src="../img/sem_foto.jpg">
+                  </figure>
                   <p>Lucca Koligoski Camillo</p>
               </div>
             </div>
@@ -469,12 +470,14 @@
     <section id="meus-dados">
       <div id="perfil">
         <div id="perfil-img">
-          <img src="../img/sem_foto.jpg">
+          <figure>
+            <img src="../img/sem_foto.jpg">
+          </figure>
+          <h6>CIM: 55555</h6>
         </div>
         <div id="perfil-info">
-          <p>Fulano Rodriguês da Silva Santos Corrêa</p>
-          <p>CIM: 55555</p>
-          <p>Venerável Mestre Marcelo Moreira Tostes</p>
+          <h6>FULANO RODRIGUÊS DA SILVA SANTOS CORRÊA</h6>
+          <h6>VENERÁVEL MESTRE MARCELO MOREIRA TOSTES N° 511</h6>
           <p>Iniciação: 01/01/2000</p>
           <p>Elevação: 01/01/2000</p>
           <p>Exaltação: 01/01/2000</p>

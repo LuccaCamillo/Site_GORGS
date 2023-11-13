@@ -34,19 +34,19 @@
       <div id="modal-recuperar">
         <form action="">
           <input type="text" placeholder="CPF" required>
-          <button type="submit" onclick="mostrarMensagemRecuperar()">Enviar</button>
+          <button type="submit" onclick="mostrarMensagem('mensagem-recuperacao')">Enviar</button>
           <h5 id="mensagem-recuperacao">Uma nova senha para meu email!</h5>
         </form>
-        <a onclick="modalRecurar(); ocultarMensagemRecuperar();">Lembrou da Senha? Faça o Login</a>
+        <a onclick="modalRecurar()">Lembrou da Senha? Faça o Login</a>
       </div>
       <div id="modal-primeiro">
         <form action="">
           <input type="text" placeholder="CPF" required>
           <input type="text" placeholder="CIM" required>
-          <button type="submit" onclick="mostrarMensagemPrimeiro()">Enviar</button>
+          <button type="submit" onclick="mostrarMensagem('mensagem-primeiro')">Enviar</button>
           <h5 id="mensagem-primeiro">Uma senha para meu email!</h5>
         </form>
-        <a onclick="modalPrimeiro(); ocultarMensagemPrimeiro();">Não é seu primeiro acesso? Faça o Login</a>
+        <a onclick="modalPrimeiro()">Não é seu primeiro acesso? Faça o Login</a>
       </div>
     </div>
   </section>
@@ -65,7 +65,7 @@
             <i class="fa-brands fa-square-facebook"></i>
           </a>
           <a id="icone-twitter" href="https://twitter.com/gorgs_comab" target="_blank">
-            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-square-x-twitter"></i>
           </a>
           <a id="icone-youtube" href="https://www.youtube.com/channel/UCqd2UyXMiOHVNWdphQYjc0Q" target="_blank">
             <i class="fa-brands fa-youtube"></i>
@@ -75,7 +75,7 @@
     </figure>
 
     <div id="mobile">
-      <button onclick="mobile()"><i class="fa-sharp fa-solid fa-bars"></i></button>
+      <button onclick="mobile()"><i id="icone" class="fa-sharp fa-solid fa-bars"></i></button>
     </div>
 
     <!-- Menu padrão -->
@@ -114,7 +114,7 @@
           <div id="dropdown">
             <a id="dropdown-titulo">
               <p>
-                Gerir Loja
+                Gestão Loja
               </p>
               <i id="dropdown-icon" class="fa-solid fa-chevron-down"></i>
             </a>
@@ -185,11 +185,11 @@
           </div>
 
           <div id="dropdown">
-            <a id="dropdown-titulo" href="">Eleição</a>
+            <a id="dropdown-titulo" href="../views/contato.html">Contatos</a>
           </div>
 
           <div id="dropdown">
-            <a id="dropdown-titulo" href="../views/contato.html">Contatos</a>
+            <a id="dropdown-titulo" href="">Eleição</a>
           </div>
 
         </div>
@@ -209,12 +209,14 @@
 
       <div id="perfil">
         <div id="perfil-img">
-          <img src="../img/sem_foto.jpg">
+          <figure>
+            <img src="../img/sem_foto.jpg">
+          </figure>
+          <h6>CIM: 55555</h6>
         </div>
         <div id="perfil-info">
-          <p>Fulano Rodriguês da Silva Santos Corrêa</p>
-          <p>CIM: 55555</p>
-          <p>Venerável Mestre Marcelo Moreira Tostes</p>
+          <h6>FULANO RODRIGUÊS DA SILVA SANTOS CORRÊA</h6>
+          <h6>VENERÁVEL MESTRE MARCELO MOREIRA TOSTES N° 511</h6>
           <p>Iniciação: 01/01/2000</p>
           <p>Elevação: 01/01/2000</p>
           <p>Exaltação: 01/01/2000</p>
@@ -230,9 +232,9 @@
         <hr>
         <button onclick="dropdownMenuLateral('meu-perfil-top-mobi', 'perfil-arrow-mobi')">
           Meu Perfil
-          <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down droped-arrow"></i>
+          <i id="perfil-arrow-mobi" class="fa-solid fa-chevron-down"></i>
         </button>
-        <div id="meu-perfil-top-mobi" class="droped-cont">
+        <div id="meu-perfil-top-mobi">
           <a href="">Página do Irmão</a>
           <hr>
           <a href="">Dados</a>
@@ -305,7 +307,7 @@
         </div>
         <hr>
         <button onclick="dropdownMenuLateral('gerir-top', 'gerir-arrow')">
-          Gerir Loja
+          Gestão Loja
           <i id="gerir-arrow" class="fa-solid fa-chevron-down"></i>
         </button>
         <div id="gerir-top">
@@ -348,29 +350,29 @@
           </button>
         </a>
         <hr>
-        <a href="">
-          <button>
-            Eleição
-          </button>
-        </a>
-        <hr>
         <a href="../views/contato.html">
           <button>
             Contatos
           </button>
         </a>
         <hr>
+        <a href="">
+          <button>
+            Eleição
+          </button>
+        </a>
+        <hr>
         <hr>
         <hr>
         <a href="">
-            <button>
-              Sair
-            </button>
-          </a>
-          <hr>
-          <button id="area-mobile" onclick="areaRestritaAberta()">FAÇA SEU LOGIN</button>
-          <hr>
-          <hr>
+          <button>
+            Sair
+          </button>
+        </a>
+        <hr>
+        <button id="area-mobile" onclick="areaRestritaAberta()">FAÇA SEU LOGIN</button>
+        <hr>
+        <hr>
         <hr>
       </div>
     </nav>
@@ -388,8 +390,8 @@
       <div id="titulo-conf">
         <div>
           <h2>CONFEDERAÇÕES MAÇÔNICAS</h2>
-          <p>As potências Maçônicas regulares reúnem-se em grandes blocos maçônicos em todo mundo. Conheça aqui as
-            confederações Maçônicas.</p>
+          <p>As potências Maçônicas regulares são agrupadas em grandes blocos maçônicos em todo o mundo, formando as confederações Maçônicas. Essas confederações desempenham papéis significativos na coordenação e no fortalecimento das atividades maçônicas em escala global.</p>
+          <p>Com suas redes interligadas e estruturas de governança bem definidas, as confederações Maçônicas trabalham para promover os ideais de fraternidade, ética e conhecimento, fundamentais para a filosofia maçônica.</p>
         </div>
         <div>
           <img src="../img/icone_confederacoes2.png">
@@ -561,246 +563,246 @@
                     </div>
                   </div>
                   <h3>Zona 1</h3>
-                  <p><a href="http://www.dcgrandlodge.org/"  target="_blank">Grande Loja, FAAM, do Distrito de Columbia</a></p>
-                  <p><a href="http://www.masonesdebajacalifornia.com/"  target="_blank">Grande Loja do Estado de Baja California</a></p>
-                  <p><a href="https://www.granlogia-cosmos.org/"  target="_blank">Grand Lodge Cosmos do Estado de Chihuaha</a></p>
+                  <p><a href="http://www.dcgrandlodge.org/" target="_blank">Grande Loja, FAAM, do Distrito de
+                      Columbia</a></p>
+                  <p><a href="http://www.masonesdebajacalifornia.com/" target="_blank">Grande Loja do Estado de Baja
+                      California</a></p>
+                  <p><a href="https://www.granlogia-cosmos.org/" target="_blank">Grand Lodge Cosmos do Estado de
+                      Chihuaha</a></p>
                   <p>Grande Loja Benito Juarez do Estado de Coahuila</p>
                   <p>Grande Loja Guadalupe Victoria do Estado de Durango</p>
                   <p>Grande Loja do Estado de Hidalgo</p>
                   <p>Grande Loja Benito Juárez do Estado de Oaxaca</p>
                   <p>Grande Loja Pacífico do Estado de Sonora</p>
-                  <p><a href="http://www.granlogiaelpotosi.mx/site/"  target="_blank">Grande Loja do Estado Soberano e Independente El
+                  <p><a href="http://www.granlogiaelpotosi.mx/site/" target="_blank">Grande Loja do Estado Soberano e
+                      Independente El
                       Potosí</a></p>
-                  <p><a href="http://mrgleq.webs.com/"  target="_blank">Grande Loga do Estado de Querétaro</a></p>
+                  <p><a href="http://mrgleq.webs.com/" target="_blank">Grande Loga do Estado de Querétaro</a></p>
                   <p>Andrés Quintana Roo Grande Loja do Estado de Quintana Roo</p>
-                  <p><a href="http://www.muyrespetablegranlogiadesinaloa.org/"  target="_blank">Grande Loja de Antigos, Gratuitos e
+                  <p><a href="http://www.muyrespetablegranlogiadesinaloa.org/" target="_blank">Grande Loja de Antigos,
+                      Gratuitos e
                       Aceitos
                       Maçons de Sinaloa</a></p>
                   <p><a href="https://www.facebook.com/logiarestauracion.masoneriatabasco">Grande Loja do Estado
                       Restauração de Tabasco</a></p>
-                  <p><a href="http://www.mrglvm.org/"  target="_blank">Grand Lodge Valley of Mexico</a></p>
-                  <p><a href="http://www.glumver.com/"  target="_blank">Gra Logia Unida Mexicana do Estado de Veracruz</a></p>
+                  <p><a href="http://www.mrglvm.org/" target="_blank">Grand Lodge Valley of Mexico</a></p>
+                  <p><a href="http://www.glumver.com/" target="_blank">Gra Logia Unida Mexicana do Estado de
+                      Veracruz</a></p>
                   <h3>Zona 2</h3>
-                  <p><a href="http://www.granlogiacuba.org/"  target="_blank">Grande Loja de Cuba</a></p>
-                  <p><a href="http://www.glnf.fr/"  target="_blank">Gande Loge Nationale Française</a></p>
-                  <p><a href="http://www.godh1824.ht/"  target="_blank">Grande Oriente d’Haiti de 1824</a></p>
+                  <p><a href="http://www.granlogiacuba.org/" target="_blank">Grande Loja de Cuba</a></p>
+                  <p><a href="http://www.glnf.fr/" target="_blank">Gande Loge Nationale Française</a></p>
+                  <p><a href="http://www.godh1824.ht/" target="_blank">Grande Oriente d’Haiti de 1824</a></p>
                   <p><a href="http://www.granlogiasoberanadepr.org/GLSPR/Portal.html">Grande Loja Soberana de Maçons
                       Livres e Aceitos de Porto Rico</a></p>
-                  <p><a href="http://www.granlogiard.org/"  target="_blank">Grande Loja da República Dominicana</a></p>
+                  <p><a href="http://www.granlogiard.org/" target="_blank">Grande Loja da República Dominicana</a></p>
                   <h3>Zona 3</h3>
                   <p>Grande Loja da Costa Rica</p>
-                  <p><a href="http://www.glc.sv/"  target="_blank">Grande Loja Cuscatlan de El Salvador</a></p>
-                  <p><a href="http://www.granlogiaguatemala.org/"  target="_blank">Grande Loja da Guatemala</a></p>
+                  <p><a href="http://www.glc.sv/" target="_blank">Grande Loja Cuscatlan de El Salvador</a></p>
+                  <p><a href="http://www.granlogiaguatemala.org/" target="_blank">Grande Loja da Guatemala</a></p>
                   <p>Grande Loja de Honduras</p>
                   <p>Soberano Grande Loja Simbólica da Nicarágua</p>
-                  <p><a href="http://www.granlogiadepanama.org/"  target="_blank">Grande Loja do Panamá</a></p>
+                  <p><a href="http://www.granlogiadepanama.org/" target="_blank">Grande Loja do Panamá</a></p>
                   <h3>Zona 4</h3>
                   <p>Grande Loja Nacional da Colômbia com Sede em Barranquilla</p>
-                  <p><a href="http://granlogiadecolombia.co/"  target="_blank">Grande Loja da Colômbia com sede em Bogotá</a></p>
+                  <p><a href="http://granlogiadecolombia.co/" target="_blank">Grande Loja da Colômbia com sede em
+                      Bogotá</a></p>
                   <p>Grande Loja dos Andes com sede em Bucaramanga</p>
-                  <p><a href="http://www.glodc.com/"  target="_blank">Grande Loja Ocidental da Colômbia com sede em Cali</a></p>
-                  <p><a href="http://www.serenisimagranlogiacartagena.org/"  target="_blank">Grande Loja Nacional Serenissima da Colômbia
+                  <p><a href="http://www.glodc.com/" target="_blank">Grande Loja Ocidental da Colômbia com sede em
+                      Cali</a></p>
+                  <p><a href="http://www.serenisimagranlogiacartagena.org/" target="_blank">Grande Loja Nacional
+                      Serenissima da Colômbia
                       com sede em Cartagena das Índias</a></p>
-                  <p><a href="http://www.granlogiaorientaldecolombia.com/"  target="_blank">Grand Oriental Lodge da Colômbia Francisco de
+                  <p><a href="http://www.granlogiaorientaldecolombia.com/" target="_blank">Grand Oriental Lodge da
+                      Colômbia Francisco de
                       Paula Santander</a></p>
                   <p>Grande Loja do Equador</p>
-                  <p><a href="http://www.glede.com.ec/"  target="_blank">Grande Loja Equatorial do Equador</a></p>
-                  <p><a href="http://www.granlogia.org.ve/"  target="_blank">Grande Loja da República da Venezuela</a></p>
+                  <p><a href="http://www.glede.com.ec/" target="_blank">Grande Loja Equatorial do Equador</a></p>
+                  <p><a href="http://www.granlogia.org.ve/" target="_blank">Grande Loja da República da Venezuela</a>
+                  </p>
                   <h3>Zona 5</h3>
-                  <p><a href="http://www.gleac.com.br/"  target="_blank">Grande Loja Maçônica do Estado do Acre</a></p>
-                  <p><a href="http://www.glomeal.com.br/"  target="_blank">Grande Loja Maçônica do Estado de Alagoas</a></p>
-                  <p><a href="http://www.glomap.org.br/"  target="_blank">Grande Loja Maçônica do Estado de Amapá</a></p>
-                  <p><a href="http://www.glomam.org.br/"  target="_blank">Grande Loja Maçônica do Amazonas</a></p>
-                  <p><a href="http://www.gleb.org.br/"  target="_blank">Grande Loja Maçônica do Estado da Bahia</a></p>
-                  <p><a href="http://www.glmdf.org.br/"  target="_blank">Grande Loja Maçônica do Distrito Federal</a></p>
-                  <p><a href="http://www.glmees.org.br/v2/"  target="_blank">Grande Loja Maçônica do Estado do Espírito Santo</a></p>
-                  <p><a href="http://www.gleg.com.br/"  target="_blank">Grande Loja Maçônica do Estado de Goiás</a></p>
-                  <p><a href="http://www.glema.com.br/"  target="_blank">Grande Loja Maçônica do Estado do Maranhão</a></p>
-                  <p><a href="http://www.glemt.org/"  target="_blank">Grande Loja Maçônica do Estado de Mato Grosso</a></p>
-                  <p><a href="http://www.grandelojams.org.br/"  target="_blank">Grande Loja Maçônica do Mato Grosso do Sul</a></p>
-                  <p><a href="http://www.glmmg.org.br/app/"  target="_blank">Grande Loja Maçônica de Minas Gerais</a></p>
-                  <p><a href="http://www.glepa.org.br/"  target="_blank">Grande Loja Maçônica do Estado do Pará</a></p>
-                  <p><a href="http://glp.org.br/site/"  target="_blank">Grande Loja do Paraná</a></p>
-                  <p><a href="http://glpe.com.br/"  target="_blank">Grande Loja Maçônica de Pernambuco</a></p>
-                  <p><a href="http://www.glmpi.com.br/"  target="_blank">Grande Loja Maçônica do Piauí</a></p>
-                  <p><a href="http://www.glern.org/"  target="_blank">Grande Loja Maçônica do Estado do Rio Grande do Norte</a></p>
-                  <p><a href="http://www.glojars.org.br/"  target="_blank">Grande Loja Maçônica do Estado do Rio Grande do Sul</a></p>
-                  <p><a href="http://www.glomaron.org.br/"  target="_blank">Grande Loja Maçônica do Estado de Rondônia</a></p>
-                  <p><a href="https://glomerr.mvu.com.br/"  target="_blank">Grande Loja Maçônica do Estado de Roraima</a></p>
-                  <p><a href="http://www.mrglsc.org.br/"  target="_blank">Grande Loja de Santa Catarina</a></p>
-                  <p><a href="http://www.glesp.org.br/"  target="_blank">Grande Loja Maçônica do Estado de São Paulo</a></p>
-                  <p><a href="http://glmese.com/"  target="_blank">Grande Loja Maçônica do Estado de Sergipe</a></p>
+                  <p><a href="http://www.gleac.com.br/" target="_blank">Grande Loja Maçônica do Estado do Acre</a></p>
+                  <p><a href="http://www.glomeal.com.br/" target="_blank">Grande Loja Maçônica do Estado de Alagoas</a>
+                  </p>
+                  <p><a href="http://www.glomap.org.br/" target="_blank">Grande Loja Maçônica do Estado de Amapá</a></p>
+                  <p><a href="http://www.glomam.org.br/" target="_blank">Grande Loja Maçônica do Amazonas</a></p>
+                  <p><a href="http://www.gleb.org.br/" target="_blank">Grande Loja Maçônica do Estado da Bahia</a></p>
+                  <p><a href="http://www.glmdf.org.br/" target="_blank">Grande Loja Maçônica do Distrito Federal</a></p>
+                  <p><a href="http://www.glmees.org.br/v2/" target="_blank">Grande Loja Maçônica do Estado do Espírito
+                      Santo</a></p>
+                  <p><a href="http://www.gleg.com.br/" target="_blank">Grande Loja Maçônica do Estado de Goiás</a></p>
+                  <p><a href="http://www.glema.com.br/" target="_blank">Grande Loja Maçônica do Estado do Maranhão</a>
+                  </p>
+                  <p><a href="http://www.glemt.org/" target="_blank">Grande Loja Maçônica do Estado de Mato Grosso</a>
+                  </p>
+                  <p><a href="http://www.grandelojams.org.br/" target="_blank">Grande Loja Maçônica do Mato Grosso do
+                      Sul</a></p>
+                  <p><a href="http://www.glmmg.org.br/app/" target="_blank">Grande Loja Maçônica de Minas Gerais</a></p>
+                  <p><a href="http://www.glepa.org.br/" target="_blank">Grande Loja Maçônica do Estado do Pará</a></p>
+                  <p><a href="http://glp.org.br/site/" target="_blank">Grande Loja do Paraná</a></p>
+                  <p><a href="http://glpe.com.br/" target="_blank">Grande Loja Maçônica de Pernambuco</a></p>
+                  <p><a href="http://www.glmpi.com.br/" target="_blank">Grande Loja Maçônica do Piauí</a></p>
+                  <p><a href="http://www.glern.org/" target="_blank">Grande Loja Maçônica do Estado do Rio Grande do
+                      Norte</a></p>
+                  <p><a href="http://www.glojars.org.br/" target="_blank">Grande Loja Maçônica do Estado do Rio Grande
+                      do Sul</a></p>
+                  <p><a href="http://www.glomaron.org.br/" target="_blank">Grande Loja Maçônica do Estado de
+                      Rondônia</a></p>
+                  <p><a href="https://glomerr.mvu.com.br/" target="_blank">Grande Loja Maçônica do Estado de Roraima</a>
+                  </p>
+                  <p><a href="http://www.mrglsc.org.br/" target="_blank">Grande Loja de Santa Catarina</a></p>
+                  <p><a href="http://www.glesp.org.br/" target="_blank">Grande Loja Maçônica do Estado de São Paulo</a>
+                  </p>
+                  <p><a href="http://glmese.com/" target="_blank">Grande Loja Maçônica do Estado de Sergipe</a></p>
                   <p><a href="http://blog.msmacom.com.br/grande-loja-maconica-estado-tocantins">Grande Loja Maçônica do
                       Estado do Tocantins</a></p>
-                  <p><a href="http://www.goemt.org.br/"  target="_blank">Grande Oriente do Estado de Mato Grosso</a></p>
-                  <p><a href="http://www.goms.org.br/"  target="_blank">Grande Oriente do Mato Grosso do Sul</a></p>
-                  <p><a href="http://www.gomg.org.br/"  target="_blank">Grande Oriente de Minas Gerais</a></p>
-                  <p><a href="http://www.gop.org.br/"  target="_blank">Grande Oriente do Paraná</a></p>
-                  <p><a href="http://www.gop-sp.org.br/"  target="_blank">Grande Oriente Paulista</a></p>
-                  <p><a href="http://www.gorgs.org.br/"  target="_blank">Grande Oriente do Rio Grande do Sul</a></p>
-                  <p><a href="https://gosc.org.br/"  target="_blank">Grande Oriente de Santa Catarina</a></p>
+                  <p><a href="http://www.goemt.org.br/" target="_blank">Grande Oriente do Estado de Mato Grosso</a></p>
+                  <p><a href="http://www.goms.org.br/" target="_blank">Grande Oriente do Mato Grosso do Sul</a></p>
+                  <p><a href="http://www.gomg.org.br/" target="_blank">Grande Oriente de Minas Gerais</a></p>
+                  <p><a href="http://www.gop.org.br/" target="_blank">Grande Oriente do Paraná</a></p>
+                  <p><a href="http://www.gop-sp.org.br/" target="_blank">Grande Oriente Paulista</a></p>
+                  <p><a href="http://www.gorgs.org.br/" target="_blank">Grande Oriente do Rio Grande do Sul</a></p>
+                  <p><a href="https://gosc.org.br/" target="_blank">Grande Oriente de Santa Catarina</a></p>
                   <h3>Zona 6</h3>
-                  <p><a href="http://www.masoneria-argentina.org.ar/"  target="_blank">Grande Loja da Argentina de Maçons Livres e
+                  <p><a href="http://www.masoneria-argentina.org.ar/" target="_blank">Grande Loja da Argentina de Maçons
+                      Livres e
                       Aceitos</a></p>
-                  <p><a href="http://www.granlogiadebolivia.bo/"  target="_blank">Grande Loja da Bolívia</a></p>
-                  <p><a href="http://www.gob.org.br/"  target="_blank">Grande Oriente do Brasil</a></p>
-                  <p><a href="http://www.granlogia.cl/"  target="_blank">Grande Loja do Chile</a></p>
-                  <p><a href="http://www.gle.org/"  target="_blank">Grande Loja da Espanha, de Maçons Antigos, Livres e Aceitos</a></p>
-                  <p><a href="http://granlogia.org.py/"  target="_blank">Grande Loja Simbólica do Paraguai</a></p>
-                  <p><a href="http://www.glperu.org.pe/"  target="_blank">Grande Loja dos Antigos, Livre e Aceito Maçons da República do
+                  <p><a href="http://www.granlogiadebolivia.bo/" target="_blank">Grande Loja da Bolívia</a></p>
+                  <p><a href="http://www.gob.org.br/" target="_blank">Grande Oriente do Brasil</a></p>
+                  <p><a href="http://www.granlogia.cl/" target="_blank">Grande Loja do Chile</a></p>
+                  <p><a href="http://www.gle.org/" target="_blank">Grande Loja da Espanha, de Maçons Antigos, Livres e
+                      Aceitos</a></p>
+                  <p><a href="http://granlogia.org.py/" target="_blank">Grande Loja Simbólica do Paraguai</a></p>
+                  <p><a href="http://www.glperu.org.pe/" target="_blank">Grande Loja dos Antigos, Livre e Aceito Maçons
+                      da República do
                       Peru</a></p>
-                  <p><a href="http://www.gllp.pt/"  target="_blank">Grande Loja Legal do Portugal / GLRP</a></p>
-                  <p><a href="http://www.masoneriadeluruguay.org/"  target="_blank">Grande Loja da Maçonaria do Uruguai</a></p>
+                  <p><a href="http://www.gllp.pt/" target="_blank">Grande Loja Legal do Portugal / GLRP</a></p>
+                  <p><a href="http://www.masoneriadeluruguay.org/" target="_blank">Grande Loja da Maçonaria do
+                      Uruguai</a></p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div id="dropdown-area">
-            <button onclick="dropdown('cont3', 'seta3')">
-              <i id="seta3" class="fa-solid fa-chevron-down"></i>CONFERÊNCIA MUNDIAL DAS GRANDES LOJAS
-              REGULARES</button>
-            <div id="cont3">
-              <div id="ordem-div">
-                <div>
-                  <img src="../img/icone_confederacoes2.png">
-                </div>
-                <div>
-                  <p>EM BREVE MAIS INFORMAÇÕES</p>
-                  <a href="">ACESSE AQUI</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="dropdown-area">
-            <button onclick="dropdown('cont4', 'seta4')">
-              <i id="seta4" class="fa-solid fa-chevron-down"></i>LIST OF LODGES</button>
-            <div id="cont4">
-              <div id="ordem-div">
-
-                <div>
-                  <img src="../img/icone_confederacoes2.png">
-                </div>
-                <div>
-                  <p>EM BREVE MAIS INFORMAÇÕES</p>
-                  <a href="">ACESSE AQUI</a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div id="tratados">
           <h2>Tratados de Reconhecimentos e Amizade do GORGS</h2>
-          <p>1 Grande Loja do Rio Grande do Sul (CMSB) – (Recognition and Sharing of Territory)</p>
-          <p>2 The National Grand Lodge of Romania</p>
-          <p>3 Gran Logia de España</p>
-          <p>4 United Grand Lodges of Germany</p>
-          <p>5 Grand Lodge of the District of Columbia</p>
-          <p>6 Grand Lodge of the State of New York</p>
-          <p>7 Grand Lodge of Pennsylvania</p>
-          <p>8 The Grand Lodge of Connecticut</p>
-          <p>9 The Grand Lodge of Maryland</p>
-          <p>10 The Grand Lodge of Hawaii of F. & A.M.</p>
-          <p>11 The Grand Lodge of A. F. M. of South Carolina</p>
-          <p>12 The Grand Lodge of Maine</p>
-          <p>13 The Grand Lodge of Florida of F. & A.M.</p>
-          <p>14 Grand Lodge of Michigan</p>
-          <p>15 The Grand Lodge of Massachusetts of A. F. & A.M.</p>
-          <p>16 The Masonic Grand Lodge Of Oregon</p>
-          <p>17 The Grand Lodge of New Hampshire</p>
-          <p>18 Grand Lodge of South Dakota</p>
-          <p>19 The Grand Lodge of A.F. & A.M. of Montana</p>
-          <p>20 The Grand Lodge of Vermont of F. & A.M.</p>
-          <p>21 The Grand Lodge of A. F. & A. M. of North Carolina</p>
-          <p>22 The Grand Lodge of Kentucky F. & A.M.</p>
-          <p>23 The M.W. Grand Lodge of A.F. & A.M. of the State of West Virginia</p>
-          <p>24 The Grand Lodge of A.F. & A.M. of Virginia</p>
-          <p>25 The Grand Lodge F. & A.M. of Alabama</p>
-          <p>26 The Grand Lodge of Texas</p>
-          <p>27 The Grand Lodge of Kansas</p>
-          <p>28 The Grand Lodge of Idaho</p>
-          <p>29 Grand Lodge of Rhode Island and Providence Plantation</p>
-          <p>30 The Grand Lodge of Minnesota</p>
-          <p>31 Grand Lodge of F. & A.M. of Tennessee</p>
-          <p>32 The United Grand Lodge of New South Wales</p>
-          <p>33 Grand Lodge of A.F. & A.M. of British Columbia and Yukon – Canada</p>
-          <p>34 The Grand Lodge of Canada – In The Province of Ontario of A.F. & A.M.</p>
-          <p>35 The Grand Lodge of Quebec of A.F. & A.M. – Canada</p>
-          <p>36 Grand Lodge of Slovakia</p>
-          <p>37 Grande Loja Legal de Portugal</p>
-          <p>38 Grande Loja de Santa Catarina (CMSB)</p>
-          <p>39 Grande Loja do Mato Grosso (CMSB)</p>
-          <p>40 Grande Loja do Paraná (CMSB)</p>
-          <p>41 Grande Loja Maçônica do Distrito Federal (CMSB)</p>
-          <p>42 Grande Loja Maçônica do Estado da Bahia (CMSB)</p>
-          <p>43 Grande Oriente do Paraná (COMAB – CMI)</p>
-          <p>44 Grande Oriente do Mato Grosso (COMAB – CMI)</p>
-          <p>45 Grande Oriente de Santa Catarina (COMAB – CMI)</p>
-          <p>46 Gran Logia Simbolica del Paraguay</p>
-          <p>47 40. Grand Orient D’Haiti</p>
-          <p>48 Gran Logia del Uruguay</p>
-          <p>49 Grande Loge Unie de Côte D’Ivoire</p>
-          <p>50 Gran Logia de la Republica de Venezuela</p>
-          <p>51 Gran Logia de Colombia</p>
-          <p>52 Ser. Gran Logia Nacional de Colombia con Sede en Cartagena de Indias</p>
-          <p>53 Gran Logia de Los Andes com sede em Bucamaranga</p>
-          <p>54 Gran Logia de la Argentina</p>
-          <p>55 Gran Logia de Chile</p>
-          <p>56 Gran Logia de Panamá</p>
-          <p>57 Gran Logia de Guatemala</p>
-          <p>58 Gran Logia de Honduras</p>
-          <p>59 Gran Logia Cuscatlán El Salvador</p>
-          <p>60 Gran Logia Equinoccial del Ecuador</p>
-          <p>61 Gran Logia de Costa Rica</p>
-          <p>62 Gran Logia del Peru</p>
-          <p>63 Gran Logia Simbólica de Nicarágua</p>
-          <p>64 Gran Logia de Bolívia</p>
-          <p>65 Gran Logia Soberana de Puerto Rico</p>
-          <p>66 Gran Logia de la República Dominicana</p>
-          <p>67 Grande Loge Suisse Alpina</p>
-          <p>68 Grand East of the Netherlands</p>
-          <p>69 Gran Logia de Cuba</p>
-          <p>70 Grande Oriente d´Italia</p>
-          <p>71 Gran Logia de Puerto Rico</p>
-          <p>72 Gran Logia del Estado “Andrés Quintana Roo”</p>
-          <p>73 Gran Logia Regular y Confederada Del Estado de Chiapas</p>
-          <p>74 Gran Logia “Cosmos” del Estado de Chihuahua</p>
-          <p>75 Gran Logia “Benito Juárez” del Estado de Coahuila</p>
-          <p>76 Gran Logia De Estado Soberana e Independiente “El Potosí” de LL.’. y AA.’. MM.’.</p>
-          <p>77 Gran Logia del Estado de Nayarit</p>
-          <p>78 Gran Logia del Estado de Hidalgo Fundada en 1940</p>
-          <p>79 Gran Logia “Occidental Mexicana” de AA.’. LL.’. y AA.’. MM.’. del Estado de Jalisco</p>
-          <p>80 Gran Logia del Estado de Campeche</p>
-          <p>81 Gran Logia del Estado de Nuevo León</p>
-          <p>82 Gran Logia de Estado “Baja California” de A.Ly.A.M.</p>
-          <p>83 Gran Logia del Estado De Querétaro de AA.’. LL.’. y AA.’. MM.’.</p>
-          <p>84 Gran Logia Suroeste do Estado de Colima</p>
-          <p>85 Gran Logia del Estado de Sinaloa</p>
-          <p>86 Gran Logia Restauracion del Estado de Tabasco Lorenzo Hernandes Monteiro</p>
-          <p>87 Gran Logia “Unida Mexicana” De Ll.’. Y Aa.’. Mm.’. Del Estado De Veracruz</p>
-          <p>88 Gran Logia Benito Juárez del Estado de Oaxaca</p>
-          <p>89 Gran Logia “Unida La Oriental Peninsular” del Estado De Yucatán</p>
-          <p>90 Muy Respetable Gran Logia Valle de México</p>
-          <p>91 Gran Logia Guadalupe Victoria AA.’. LL.’. y AA.’. MM.’. del Estado de Durango</p>
-          <p>92 Gran Logia de AA.’. LL.’. y AA.’. MM.’. de Tamaulipas</p>
-          <p>93 The Grand Lodge of the State of Louisiana</p>
-          <p>94 Regularna Velika Loza Srbije (G.L. Sérvia)</p>
-          <p>95 Grand Lodge of Canada in the Province of Ontario</p>
-          <p>96 Grand Lodge F&AM of Ohio</p>
-          <p>97 Most Worshipful Prince Hall Grand Lodge of Texas</p>
-          <p>98 The Grand Lodge of New Jersey Free & Accept Masons</p>
-          <p>99 Grande Loja de Montenegro</p>
-          <p>100 Grande Oriente do Brasil</p>
-          <p>101 Grande Oriente de Pernambuco (COMAB)</p>
-          <p>102 Grande Oriente do Amazonas (COMAB)</p>
-          <p>103 Grande Oriente da Paraíba (COMAB)</p>
-          <p>104 Grande Oriente de Roraima (COMAB)</p>
-          <p>105 Grande Oriente do Mato Grosso do Sul (COMAB)</p>
-          <p>106 Prince Hall Grand Lodge f.&a.m. of the State of California</p>
-          <p>107 Grande Loja do Japão</p>
-          <span>(atualizada em 31/5/2019)</span>
+          <p>Grade Loja Regular e Confederada do Estado de Chiapas</p>
+          <p>Gran Logia "Cosmos" del Estado de Chihuahua</p>
+          <p>Gran Logia de Bolivia</p>
+          <p>Gran Logia de Chile</p>
+          <p>Gran Logia de Cuba</p>
+          <p>Gran Logia de España</p>
+          <p>Gran Logia de Estado Baja California</p>
+          <p>Gran Logia de Estado de Baja California</p>
+          <p>Gran Logia de Francmasones Antíguos y Aceptados de Costa Rica</p>
+          <p>Gran Logia de La Masoneria Del Uruguay</p>
+          <p>Gran Logia de la Republica del Perú</p>
+          <p>Gran Logia de la República Dominicana</p>
+          <p>Gran Logia del Estado de Mexico</p>
+          <p>Gran Logia del Estado de Querétaro</p>
+          <p>Gran Logia Simbolica de Nicaragua</p>
+          <p>Gran Logia Simbolica Del Paraguay</p>
+          <p>Gran Logia Soberana de Puerto Rico </p>
+          <p>Gran Loja Simbolica de Nicaragua</p>
+          <p>Gran Oriente Unido Cordoba y Sucre</p>
+          <p>Grand East of the Netherlands</p>
+          <p>Grand Lodge "Benito Juarez" del Estado de Coahuila</p>
+          <p>Grand Lodge Free and Accepted Masons of the State of New York</p>
+          <p>Grand Lodge of Ancient Free and Accepted Masons of Britsh Columbia and Yukon</p>
+          <p>Grand Lodge of Ancient Free and Accepted Masons os South Australia and the Northern Territoty</p>
+          <p>Grand Lodge of Anciente and Free Masons of Maryland</p>
+          <p>Grand Lodge of Anciente Free Masons of South Carolina</p>
+          <p>Grand Lodge of Canada in the Province of Ontario</p>
+          <p>Grand Lodge of Connecticut</p>
+          <p>Grand Lodge of Florida</p>
+          <p>Grand Lodge of Free and Accepted Masons of Alabama</p>
+          <p>Grand Lodge of Free and Accepted Masons of Japan</p>
+          <p>Grand Lodge of Free and Accepted Masons of Minnesota</p>
+          <p>Grand Lodge of Free and Accepted Masons of Texas</p>
+          <p>Grand Lodge of Free and Accepted Masons of the State of Rhode Island and Providence Plantations</p>
+          <p>Grand Lodge of Free and Acepted Masons of Ohio</p>
+          <p>Grand Lodge of Freemansonry in Montana</p>
+          <p>Grand Lodge of Hawaii</p>
+          <p>Grand Lodge of Kansas</p>
+          <p>Grand Lodge of Kentucky</p>
+          <p>Grand Lodge of Montenegro</p>
+          <p>Grand Lodge of New Hampshire</p>
+          <p>Grand Lodge of New Jersey</p>
+          <p>Grand Lodge of North Carolina</p>
+          <p>Grand Lodge of Pennsylvania</p>
+          <p>Grand Lodge of Quebec</p>
+          <p>Grand Lodge of Romania</p>
+          <p>Grand Lodge of South Dakota</p>
+          <p>Grand Lodge of Tennessee</p>
+          <p>Grand Lodge of the District of Columbia</p>
+          <p>Grand Lodge of the State of California</p>
+          <p>Grand Lodge of the State of Louisiana</p>
+          <p>Grand Lodge of the State of West Virginia</p>
+          <p>Grand Logia of Slovakia</p>
+          <p>Grande Loge Nationale Française</p>
+          <p>Grande Loge Suisse Alpina</p>
+          <p>Grande Logia D' Haiti</p>
+          <p>Grande Logia de Honduras</p>
+          <p>Grande Logia de Sinaloa</p>
+          <p>Grande Loja "Benito Juarez" do Estado de Coahuila</p>
+          <p>Grande Loja "Cosmos" do Estado de Chihuahua</p>
+          <p>Grande Loja "Occidental Mexicana" do Estado de Jalisco</p>
+          <p>Grande Loja "Restauracion" do Estado de Tabasco</p>
+          <p>Grande Loja "Unida Mexicana" do Estado de Veracruz</p>
+          <p>Grande Loja "Unidala Oriental Peninsular" do Estado de Yucatán</p>
+          <p>Grande Loja Cuscatlán el Salvador</p>
+          <p>Grande Loja da Colombia</p>
+          <p>Grande Loja da Rússia </p>
+          <p>Grande Loja de Estado Soberana e Independente "El Potosí"</p>
+          <p>Grande Loja de Guatemala</p>
+          <p>Grande Loja de Santa Catarina</p>
+          <p>Grande Loja de Tamaulipas</p>
+          <p>Grande Loja do Distrito Federal</p>
+          <p>Grande Loja do Esado Baja California</p>
+          <p>Grande Loja do Estado "Andrés Quintana Roo" </p>
+          <p>Grande Loja do Estado de Campeche</p>
+          <p>Grande Loja do Estado de Hidalgo</p>
+          <p>Grande Loja do Estado de Nayarit</p>
+          <p>Grande Loja do Estado de Nuevo Léon</p>
+          <p>Grande Loja do Estado de Sinaloa</p>
+          <p>Grande Loja do Panamá</p>
+          <p>Grande Loja do Paraná</p>
+          <p>Grande Loja Equinoccial do Ecuador</p>
+          <p>Grande Loja Guadalupe Victoria do Estado de Durango</p>
+          <p>Grande Loja Maçonica do Amapá</p>
+          <p>Grande Loja Maçônica do Estado da Bahia</p>
+          <p>Grande Loja Maçonica do Estado de Mato Grosso</p>
+          <p>Grande Loja Maçonica do Estado do Ceará</p>
+          <p>Grande Loja Maçonica do Estado do Maranhão</p>
+          <p>Grande Loja Maçônica do Estado do Mato Grosso</p>
+          <p>Grande Loja Maçonica do Estado do Para</p>
+          <p>Grande Loja Maçonica do Estado do Rio Grande do Sul</p>
+          <p>Grande Loja Nacional da Colombia com sede em Cartagena de Indias</p>
+          <p>Grande Loja Suroeste" do Estado de Colima</p>
+          <p>Grande Loja Valle de México</p>
+          <p>Grande Oriente Amazonense</p>
+          <p>Grande Oriente D'Italia</p>
+          <p>Grande Oriente da Bahia</p>
+          <p>Grande Oriente da Paraíba</p>
+          <p>Grande Oriente de Alagoas</p>
+          <p>Grande Oriente de Goias</p>
+          <p>Grande Oriente de Mato Grosso</p>
+          <p>Grande Oriente de Roraima</p>
+          <p>Grande Oriente de Santa Catarina</p>
+          <p>Grande Oriente do Brasil</p>
+          <p>Grande Oriente do Estado de Mato Grosso</p>
+          <p>Grande Oriente do Estado de Pernambuco</p>
+          <p>Grande Oriente do Estado do Maranhão</p>
+          <p>Grande Oriente do Estado do Mato Grosso do Sul</p>
+          <p>Grande Oriente do Mato Grosso do Sul</p>
+          <p>Grande Oriente do Piaui</p>
+          <p>Grande Oriente do Rio de Janeiro</p>
+          <p>Grande Oriente do Rio Grande do Norte</p>
+          <p>Grande Oriente Paulista</p>
+          <p>Masonic Grand Lodge of Oregon</p>
+          <p>United Grand Lodge of New South Wales and the Australian Capital Territory</p>
+          <p>Vereingte Grossloge von Deutschland</p>
         </div>
       </div>
     </div>
@@ -842,12 +844,14 @@
   <section id="meus-dados">
     <div id="perfil">
       <div id="perfil-img">
-        <img src="../img/sem_foto.jpg">
+        <figure>
+          <img src="../img/sem_foto.jpg">
+        </figure>
+        <h6>CIM: 55555</h6>
       </div>
       <div id="perfil-info">
-        <p>Fulano Rodriguês da Silva Santos Corrêa</p>
-        <p>CIM: 55555</p>
-        <p>Venerável Mestre Marcelo Moreira Tostes</p>
+        <h6>FULANO RODRIGUÊS DA SILVA SANTOS CORRÊA</h6>
+        <h6>VENERÁVEL MESTRE MARCELO MOREIRA TOSTES N° 511</h6>
         <p>Iniciação: 01/01/2000</p>
         <p>Elevação: 01/01/2000</p>
         <p>Exaltação: 01/01/2000</p>
