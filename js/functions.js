@@ -254,6 +254,8 @@ const btnTjm = document.getElementById("btn-tjm");
 const btnTem = document.getElementById("btn-tem");
 const btnMpm = document.getElementById("btn-mpm");
 
+if (btnTjm){
+
 btnTjm.addEventListener("click", () => {
   selecione.classList.add("alterado");
 
@@ -289,6 +291,8 @@ btnMpm.addEventListener("click", () => {
   btnTem.classList.remove("alterado");
   btnMpm.classList.add("alterado");
 });
+
+}
 
 // Copiar enderços - Contatos
 
@@ -564,7 +568,7 @@ function countPesq() {
     document.getElementById("pesq").innerHTML = lojasPesq;
 
     lojasPesq++;
-    setTimeout(countPesq, 250);
+    setTimeout(countPesq, 258);
   }
 }
 

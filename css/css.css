@@ -3341,12 +3341,13 @@
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 1px;
     border-radius: 5px;
-    transition: opacity 0.5s;
-    opacity: 1;
+    transition: 0.8s ease-out;
+    translate: 0 0;
 }
 
 #gma-gma-img img.alterado {
-    width: 0%;
+    translate: -20vw 0vw;
+    position: fixed;
     opacity: 0;
 }
 
@@ -6225,13 +6226,13 @@
     display: flex;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 1px;
-    transition: translate 0.5s ease-out;
+    transition: translate 0.6s ease-out;
     translate: 0 0;
 }
 
 #tribunais-conteudo div.alterado{
-    translate: -20vw 0;
-    position: absolute;
+    translate: -80vw 0vw;
+    position: fixed;
     opacity: 0;
 }
 
@@ -6279,14 +6280,10 @@
 }
 
 #judiciario-contato {
-    width: 100%;
-    border-top: solid 2px #042B44;
     display: flex;
     flex-direction: column;
-}
-
-#judiciario-contato div {
-    height: 4vw;
+    justify-content: space-evenly;
+    margin: 0 auto;
 }
 
 #judiciario-contato h2 {
@@ -6307,8 +6304,15 @@
 
 #judiciario-contato h5 {
     font-size: 1.2vw;
-    margin-bottom: 2.5vw;
     color: #042B44;
+}
+
+#membro{
+    display: flex;
+}
+
+#membro div{
+    width: 40%;
 }
 
 @media (max-width: 768px) {
@@ -6331,6 +6335,29 @@
 
     #atribuicoes-juridico h2 {
         font-size: 3vw;
+    }
+
+    #atribuicoes-juridico p {
+        font-size: 2vw;
+    }
+
+    #tribunais-conteudo #ministro figure{
+        height: 46vw;
+    }
+
+    #tribunais-conteudo #ministro div h3 {
+        height: 8vw;
+        margin: 0 0;
+    }
+
+    #tribunais-btn button{
+        width: 33%;
+        height: 6vw;
+        font-size: 1.5vw;
+    }
+
+    #juridicao-default h3{
+        font-size: 1.8vw;
     }
 
     #tribunais-conteudo div h2 {
@@ -6367,6 +6394,10 @@
 
     #judiciario-contato h5 {
         font-size: 2vw;
+    }
+
+    #membro div{
+        width: 50%;
     }
 
 }
