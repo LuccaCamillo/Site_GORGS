@@ -3381,15 +3381,15 @@
 /* -GRÃO-MESTRADO */
 
 #grao-mestrado {
-    display: flex;
     width: 70%;
-    justify-content: space-between;
+    display: flex;
+    align-items: flex-end;
     margin-top: 20px;
+    border-top: solid 2px #042B44;
 }
 
 #grao-mestrado-titulo {
-    width: 30%;
-    border-top: solid 2px #042B44;
+    width: 75%;
 }
 
 #grao-mestrado-titulo h2 {
@@ -3404,55 +3404,52 @@
     color: #444;
 }
 
-#grao-mestrado-titulo a {
+#grao-mestrado-logo{
+    width: 25%;
+}
+
+#grao-mestrado-logo figure{
+    width: 85%;
+    margin: 2vw 0;
+}
+
+#grao-mestrado-logo img{
     width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-#grao-mestrado-titulo button {
-    width: 100%;
-    height: 6vw;
-    padding: 0 10%;
-    margin-top: 3vw;
-    border-top: solid 3px #042B44;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    color: #042B44;
-    font-weight: bold;
-    background-color: #fff;
-    transition: 0.2s;
-    font-size: 1vw;
-}
-
-#grao-mestrado-titulo button:hover {
-    cursor: pointer;
-    color: #e4b600;
-    border-top: solid 3px #e4b600;
-}
-
-#grao-mestrado-titulo button:active{
-    color: #555;
-    border-top: solid 3px #555;
-    background-color: rgb(240, 240, 240);
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
+    opacity: 0.6;
 }
 
 #grao-mestrado-midia {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 70%;
+    border-top: solid 2px #042B44;
 }
 
 #grao-mestrado-midia div {
+    width: 40%;
+    margin: 2vw 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    margin-left: 2vw;
-    width: 23vw;
 }
 
-#grao-mestrado-midia img {
+#grao-mestrado-icone{
+    width: 20%;
+    z-index: -1;
+}
+
+#grao-mestrado-icone img{
+    width: 100%;
+    opacity: 0.2;
+    transform: scale(2);
+}
+
+#grao-mestrado-midia div figure{
+    width: 100%;
+}
+
+#grao-mestrado-midia div img {
     width: 100%;
     border: #042B44 solid 2px;
 }
@@ -3466,6 +3463,61 @@
 #grao-mestrado-midia div p {
     font-size: 1vw;
     color: #555;
+}
+
+#grao-mestrado-atribuicoes{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    border-top: solid 2px #042B44;
+}
+
+#grao-mestrado-atribuicoes h2 {
+    font-size: 1.5vw;
+    margin: 2vw 0;
+    color: #042B44;
+}
+
+#grao-mestrado-atribuicoes div{
+    display: flex;
+    justify-content: space-between;
+}
+
+#grao-mestrado-atribuicoes p {
+    width: 70%;
+    font-size: 1.2vw;
+    color: #444;
+}
+
+#grao-mestrado-atribuicoes a {
+    width: 25%;
+    height: 6vw;
+}
+
+#grao-mestrado-atribuicoes button {
+    width: 100%;
+    height: 100%;
+    padding: 0 10%;
+    border-top: solid 3px #042B44;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: #042B44;
+    font-weight: bold;
+    background-color: #fff;
+    transition: 0.2s;
+    font-size: 1vw;
+}
+
+#grao-mestrado-atribuicoes button:hover {
+    cursor: pointer;
+    color: #e4b600;
+    border-top: solid 3px #e4b600;
+}
+
+#grao-mestrado-atribuicoes button:active{
+    color: #555;
+    border-top: solid 3px #555;
+    background-color: rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px;
 }
 
 @media (max-width: 768px) {
