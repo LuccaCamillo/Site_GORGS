@@ -3523,20 +3523,29 @@
 @media (max-width: 768px) {
 
     #grao-mestrado {
-        width: 85%;
-        flex-direction: column;
+        width: 95%;
+        align-items: center;
     }
 
     #grao-mestrado-titulo {
+        width: 70%;
+    }
+
+    #grao-mestrado-logo{
+        width: 30%;
+    }
+
+    #grao-mestrado-logo figure{
         width: 100%;
+        margin: 2vw 0;
     }
 
     #grao-mestrado-titulo h2 {
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
 
     #grao-mestrado-titulo p {
-        font-size: 2vw;
+        font-size: 2.5vw;
     }
 
     #grao-mestrado-titulo button {
@@ -3548,23 +3557,43 @@
     }
 
     #grao-mestrado-midia {
-        width: 100%;
-        margin-top: 3vw;
-    }
-
-    #grao-mestrado-midia div {
-        margin-left: 0vw;
-        width: 48%;
+        width: 95%;
     }
 
     #grao-mestrado-midia div h4 {
-        font-size: 2.2vw;
-        margin: 2vw 0;
+        font-size: 2.5vw;
     }
-
+    
     #grao-mestrado-midia div p {
         font-size: 2vw;
     }
+
+    #grao-mestrado-atribuicoes{
+        width: 95%;
+    }
+
+    #grao-mestrado-atribuicoes div{
+        align-items: center;
+    }
+
+    #grao-mestrado-atribuicoes h2 {
+        font-size: 3.5vw;
+    }
+
+    #grao-mestrado-atribuicoes p {
+        font-size: 2.5vw;
+        width: 60%;
+    }
+
+    #grao-mestrado-atribuicoes a {
+        height: 15vw;
+        width: 35%;
+    }
+
+    #grao-mestrado-atribuicoes button {
+        font-size: 2.5vw;
+    }
+
 }
 
 
